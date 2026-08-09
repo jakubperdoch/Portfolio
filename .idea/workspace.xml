@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Update `Header` component styles: add hover effect with smooth transition">
-      <change afterPath="$PROJECT_DIR$/src/app/api/github/activity/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786317550872</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval">
+      <option name="closed" value="true" />
+      <created>1786318422371</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1786318422371</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +269,8 @@
     <MESSAGE value="Integrate SEO metadata and structured data (JSON-LD) for marketing pages; update `.gitignore` to include `.idea/` patterns." />
     <MESSAGE value="Add layout components (Header, Footer, BackToTop), update global styles, and adjust layout.tsx structure" />
     <MESSAGE value="Update `Header` component styles: add hover effect with smooth transition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update `Header` component styles: add hover effect with smooth transition" />
+    <MESSAGE value="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

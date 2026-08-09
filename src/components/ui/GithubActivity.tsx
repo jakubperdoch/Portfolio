@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 interface ActivityData {
   lastActive: string | null;
@@ -17,14 +18,16 @@ export default function GithubActivity() {
       .catch(() => {});
   }, []);
 
+  console.log(data);
+
   if (!data || !data.lastActive) return null;
 
   return (
     <div className="text-muted-foreground flex items-center gap-1.5 text-sm">
-      <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-      </span>
+      <div className="relative inline-flex h-4 w-4">
+        <IconBrandGithub size={16} className="absolute inline-flex animate-ping text-green-500" />
+        <IconBrandGithub size={16} className="absolute inline-flex" />
+      </div>
       <span className="font-heading">
         Last active {getTimeAgo(new Date(data.lastActive))}
         {data.commitsToday > 0 &&

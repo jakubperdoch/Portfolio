@@ -28,11 +28,7 @@ export default function GithubActivity() {
         <IconBrandGithub size={16} className="absolute inline-flex animate-ping text-green-500" />
         <IconBrandGithub size={16} className="absolute inline-flex" />
       </div>
-      <span className="font-heading">
-        Last active {getTimeAgo(new Date(data.lastActive))}
-        {data.commitsToday > 0 &&
-          ` · ${data.commitsToday} commit${data.commitsToday > 1 ? "s" : ""} today`}
-      </span>
+      <span className="font-heading">Last active {getTimeAgo(new Date(data.lastActive))}</span>
     </div>
   );
 }

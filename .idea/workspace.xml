@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/github/activity/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/github/activity/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786318422371</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging">
+      <option name="closed" value="true" />
+      <created>1786319045394</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1786319045394</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +279,8 @@
     <MESSAGE value="Add layout components (Header, Footer, BackToTop), update global styles, and adjust layout.tsx structure" />
     <MESSAGE value="Update `Header` component styles: add hover effect with smooth transition" />
     <MESSAGE value="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval" />
+    <MESSAGE value="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

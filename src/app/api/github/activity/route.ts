@@ -19,28 +19,16 @@ export async function GET() {
 
     const data = await res.json();
 
+    console.log("RAW EVENT:", JSON.stringify(data, null, 2));
     const pushEvents = data.filter((event: { type: string }) => event.type === "PushEvent");
     if (pushEvents.length === 0) {
       return NextResponse.json({ lastActive: null, commitsToday: 0 });
     }
-
     const lastEvent = pushEvents[0];
     const lastActiveDate = new Date(lastEvent.created_at);
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const commitsToday = pushEvents
-      .filter((e: { created_at: string }) => new Date(e.created_at) >= today)
-      .reduce(
-        (sum: number, e: { payload?: { commits?: { length: number }[] } }) =>
-          sum + (e.payload?.commits?.length || 0),
-        0
-      );
-
     return NextResponse.json({
       lastActive: lastActiveDate.toISOString(),
-      commitsToday,
     });
   } catch (error) {
     console.error("Error fetching GitHub activity:", error);

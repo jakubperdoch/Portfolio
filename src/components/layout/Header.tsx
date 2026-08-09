@@ -10,7 +10,7 @@ export default function Header() {
       <nav className="flex w-full items-center justify-between p-6 px-6 py-6 lg:px-12">
         <Link
           href="/"
-          className="font-heading text-xl font-bold tracking-tight text-zinc-900 capitalize"
+          className="font-heading text-xl font-bold tracking-tight text-zinc-900 capitalize transition-colors duration-300 ease-in-out hover:text-zinc-900/70"
         >
           Jakub
         </Link>

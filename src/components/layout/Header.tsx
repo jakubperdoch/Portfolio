@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { IconFileInvoice } from "@tabler/icons-react";
+import GithubActivity from "@/components/ui/GithubActivity";
 
 export default function Header() {
   return (
@@ -16,6 +17,8 @@ export default function Header() {
         </Link>
 
         <div className="flex items-center gap-6">
+          <GithubActivity />
+
           <motion.a
             href="/resume.pdf"
             download

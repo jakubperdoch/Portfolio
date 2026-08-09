@@ -40,4 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/.idea
+# Ignore all of .idea folder by default
+.idea/*

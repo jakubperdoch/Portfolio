@@ -1,6 +1,6 @@
 import React from "react";
 
-const JsonLd = ({ data }: { data: never }) => {
+const JsonLd = ({ data }: { data: unknown }) => {
   return (
     <script
       type="application/ld+json"

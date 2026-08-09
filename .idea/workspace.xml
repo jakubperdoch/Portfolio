@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Add marketing and case studies pages with corresponding client-side components">
-      <change afterPath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(marketing)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(marketing)/page.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Remove default Next.js homepage and restructure layout, adding placeholders for marketing components">
+      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/JsonLd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,18 +78,19 @@
     "javascript.preferred.runtime.type.id": "node",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
+    "js.linters.configure.manually.selectedeslint": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/jakubperdoch/Developer/portfolio/src/app/(apps)/case-studies/[slug]",
+    "last_opened_file_path": "/Users/jakubperdoch/Developer/portfolio/src/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.eslint": "/Users/jakubperdoch/Developer/portfolio/node_modules/eslint",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/jakubperdoch/Developer/portfolio/node_modules/prettier",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "configurable.tailwindcss",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Users/jakubperdoch/Developer/portfolio/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -103,11 +105,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/lib" />
       <recent name="$PROJECT_DIR$/src/app/(apps)/case-studies/[slug]" />
       <recent name="$PROJECT_DIR$/src/app/(marketing)/terms-of-service" />
       <recent name="$PROJECT_DIR$/src/app/(marketing)/work" />
       <recent name="$PROJECT_DIR$/src/app/(marketing)/privacy-policy" />
-      <recent name="$PROJECT_DIR$/src/app/(marketing)/my-gear" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app" />
@@ -206,7 +208,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786236323866</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Remove default Next.js homepage and restructure layout, adding placeholders for marketing components">
+      <option name="closed" value="true" />
+      <created>1786311034714</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1786311034714</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +230,8 @@
     <MESSAGE value="feat: add interactive TiltCard component with motion effects, enhance Nav with framer-motion, and revamp homepage hero layout" />
     <MESSAGE value="Add new dependencies to support PayloadCMS, AWS S3 storage, and various UI enhancements" />
     <MESSAGE value="Add marketing and case studies pages with corresponding client-side components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add marketing and case studies pages with corresponding client-side components" />
+    <MESSAGE value="Remove default Next.js homepage and restructure layout, adding placeholders for marketing components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove default Next.js homepage and restructure layout, adding placeholders for marketing components" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

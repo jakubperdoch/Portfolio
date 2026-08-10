@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Update `Header` to improve menu logic and animations, add comments for better structure clarification">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Remove debug logging from GitHub activity API and update workspace configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/github/activity/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/github/activity/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(marketing)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Footer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786322686873</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Remove debug logging from GitHub activity API and update workspace configuration">
+      <option name="closed" value="true" />
+      <created>1786386375628</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1786386375628</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +324,8 @@
     <MESSAGE value="Add Dock component with icons for LinkedIn, GitHub, and email; update `Header` to include new `DockMenu` and improve scroll behavior" />
     <MESSAGE value="Add `menuOpenHandler` prop to `DockMenu`, connect to `Header` menu logic, and implement full-screen menu animation" />
     <MESSAGE value="Update `Header` to improve menu logic and animations, add comments for better structure clarification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update `Header` to improve menu logic and animations, add comments for better structure clarification" />
+    <MESSAGE value="Remove debug logging from GitHub activity API and update workspace configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove debug logging from GitHub activity API and update workspace configuration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

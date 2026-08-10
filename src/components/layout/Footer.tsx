@@ -30,8 +30,10 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="h-screen bg-zinc-950">
+    <footer className="min-h-screen bg-zinc-950 pb-20">
       <div className='className="container lg:px-24" mx-auto px-6 pt-24 pb-8 md:px-12'>
         <section className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end lg:gap-12">
           <div className="max-w-3xl">
@@ -119,7 +121,12 @@ export default function Footer() {
               Contact
             </h3>
             <div className="flex flex-col gap-2">
-              <p className="font-heading font-light text-white/70">perdochjakub@gmail.com</p>
+              <a
+                href="mailto:perdochjakub@gmail.com"
+                className="font-heading font-light text-white/70 transition-colors duration-300 hover:text-white"
+              >
+                perdochjakub@gmail.com
+              </a>
               <p className="font-heading text-sm font-light text-white/50">Žilina, Slovensko</p>
             </div>
           </div>
@@ -147,7 +154,35 @@ export default function Footer() {
           </div>
         </section>
 
-        <Separator className="my-16 bg-zinc-600" />
+        <Separator className="my-10 bg-zinc-600" />
+
+        <section className="flex flex-col gap-4">
+          <motion.h1
+            initial={{ y: 100 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
+            className="font-heading to-muted-foreground w-fit bg-linear-to-br from-white/70 bg-clip-text text-8xl font-semibold tracking-tight text-transparent"
+          >
+            Jakub Perďoch
+          </motion.h1>
+
+          <div className="font-heading flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span className="text-white/70">
+              © {currentYear} Jakub Perďoch. All rights reserved.
+            </span>
+            <span className="hidden text-white/70 md:inline">•</span>
+            <a href="/privacy-policy" className="text-white/70 transition-colors hover:text-white">
+              Privacy Policy
+            </a>
+            <a
+              href="/terms-of-service"
+              className="text-white/70 transition-colors hover:text-white"
+            >
+              Terms of Service
+            </a>
+          </div>
+        </section>
       </div>
     </footer>
   );

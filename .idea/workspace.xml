@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Add `Footer` component with navigation and social links; update `layout.tsx` to include `Footer`.">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(marketing)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/BackToTop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/BackToTop.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786392875005</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links">
+      <option name="closed" value="true" />
+      <created>1786393449924</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1786393449924</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +344,8 @@
     <MESSAGE value="Update `Header` to improve menu logic and animations, add comments for better structure clarification" />
     <MESSAGE value="Remove debug logging from GitHub activity API and update workspace configuration" />
     <MESSAGE value="Add `Footer` component with navigation and social links; update `layout.tsx` to include `Footer`." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `Footer` component with navigation and social links; update `layout.tsx` to include `Footer`." />
+    <MESSAGE value="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <>
       <header className="absolute top-0 right-0 left-0 z-50 bg-white">
-        <nav className="flex w-full items-center justify-between p-6 px-6 py-6 lg:px-12">
+        <nav className="container mx-auto flex w-full items-center justify-between py-6">
           <Link
             href="/"
             className="font-heading text-xl font-bold tracking-tight text-zinc-900 capitalize transition-colors duration-300 ease-in-out hover:text-zinc-900/70"

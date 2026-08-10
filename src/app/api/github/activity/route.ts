@@ -19,7 +19,6 @@ export async function GET() {
 
     const data = await res.json();
 
-    console.log("RAW EVENT:", JSON.stringify(data, null, 2));
     const pushEvents = data.filter((event: { type: string }) => event.type === "PushEvent");
     if (pushEvents.length === 0) {
       return NextResponse.json({ lastActive: null, commitsToday: 0 });

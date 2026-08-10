@@ -106,6 +106,7 @@ export default function Header() {
         </nav>
       </header>
 
+      {/* Floating Dock Menu - Mobile or Scrolled */}
       <AnimatePresence mode="wait">
         {isScrolled && !fullMenuOpen && (
           <motion.div
@@ -124,6 +125,7 @@ export default function Header() {
         )}
       </AnimatePresence>
 
+      {/* Full Menu - Desktop - Fully Open */}
       <AnimatePresence mode="wait">
         {fullMenuOpen && (
           <motion.div

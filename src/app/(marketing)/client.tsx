@@ -1,8 +1,7 @@
 export default function HomeClient() {
-
-    return (
-        <div>
-            <h1>Home Client</h1>
-        </div>
-    )
+  return (
+    <div className="h-[300vh]">
+      <h1>Home Client</h1>
+    </div>
+  );
 }

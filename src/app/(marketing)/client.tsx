@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useMotionValue } from "motion/react";
 import { TextAnimate } from "@/components/ui/text-animate";
 import Image from "next/image";
 import { TagsRow } from "@/components/ui/TagsRow";
+import { IconBrandGithub, IconBrandLinkedin, IconFileInvoice, IconMail } from "@tabler/icons-react";
 
 const words = ["Design.", "Code.", "Build.", "Ship.", "Refine.", "Repeat."];
 
@@ -98,46 +99,98 @@ export default function HomeClient() {
           </AnimatePresence>
         </div>
 
-        <div className="max-w-xl space-y-2.5">
-          {/* Animated Tags Row */}
-          <TagsRow />
+        <section className="flex items-end justify-between gap-12">
+          <div className="max-w-xl space-y-2.5">
+            {/* Animated Tags Row */}
+            <TagsRow />
 
-          {/* Description */}
-          <p className="font-heading text-sm leading-relaxed font-light text-neutral-600 md:text-base">
-            Frontend Developer turning ideas into interfaces that move, respond, and feel alive.
-            Based in a town most maps skip past —{" "}
-            <span className="inline-flex items-center gap-1 font-medium text-neutral-900">
-              <svg
-                className="h-3 w-3"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Turzovka, Slovakia
-            </span>
-            , shipping for a much bigger one.
-          </p>
+            {/* Description */}
+            <p className="font-heading text-sm leading-relaxed font-light text-neutral-600 md:text-base">
+              Frontend Developer turning ideas into interfaces that move, respond, and feel alive.
+              Based in a town most maps skip past —{" "}
+              <span className="inline-flex items-center gap-1 font-medium text-neutral-900">
+                <svg
+                  className="h-3 w-3"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Turzovka, Slovakia
+              </span>
+              , shipping for a much bigger one.
+            </p>
 
-          {/* Available for projects - Animated Ping */}
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
-            className="inline-flex items-center gap-2"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-            </span>
-            <span className="font-heading text-xs font-light text-neutral-600 md:text-sm">
-              Available for projects
-            </span>
-          </motion.div>
-        </div>
+            {/* Available for projects - Animated Ping */}
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.4 }}
+              className="inline-flex items-center gap-2"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+              </span>
+              <span className="font-heading text-xs font-light text-neutral-600 md:text-sm">
+                Available for projects
+              </span>
+            </motion.div>
+          </div>
+
+          <div className="flex gap-4">
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+              href="https://www.linkedin.com/in/jakub-perďoch/"
+              target="_blank"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
+            >
+              <IconBrandLinkedin />
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.4 }}
+              href="https://github.com/jakubperdoch"
+              target="_blank"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
+            >
+              <IconBrandGithub />
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+              href="mailto:jakub.perdoch@gmail.com"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
+            >
+              <IconMail />
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.4 }}
+              href="/resume.pdf"
+              download
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
+            >
+              <IconFileInvoice />
+            </motion.a>
+          </div>
+        </section>
       </section>
     </>
   );

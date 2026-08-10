@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Refine `client.tsx` styling: update `overflow-hidden` to `overflow-visible` for improved layout rendering">
+      <change afterPath="$PROJECT_DIR$/src/components/ui/TagsRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +332,23 @@
       <option name="project" value="LOCAL" />
       <updated>1786400626663</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Update `HomeClient` text animations: refine word sequence and improve layout styling">
+      <option name="closed" value="true" />
+      <created>1786400788099</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1786400788099</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Refine `client.tsx` styling: update `overflow-hidden` to `overflow-visible` for improved layout rendering">
+      <option name="closed" value="true" />
+      <created>1786401288334</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1786401288334</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +378,9 @@
     <MESSAGE value="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links" />
     <MESSAGE value="Add `BackToTop` component to improve navigation and update `layout.tsx` for integration." />
     <MESSAGE value="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects" />
+    <MESSAGE value="Update `HomeClient` text animations: refine word sequence and improve layout styling" />
+    <MESSAGE value="Refine `client.tsx` styling: update `overflow-hidden` to `overflow-visible` for improved layout rendering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refine `client.tsx` styling: update `overflow-hidden` to `overflow-visible` for improved layout rendering" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

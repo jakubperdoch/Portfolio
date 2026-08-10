@@ -2,32 +2,30 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValue } from "motion/react";
-import { useSpring } from "framer-motion";
 import { TextAnimate } from "@/components/ui/text-animate";
 import Image from "next/image";
+import { TagsRow } from "@/components/ui/TagsRow";
+
+const words = ["Design.", "Code.", "Build.", "Ship.", "Refine.", "Repeat."];
 
 export default function HomeClient() {
-  const words = ["Design.", "Code.", "Build.", "Ship.", "Refine.", "Repeat."];
   const [wordIndex, setWordIndex] = useState(0);
   const [showImage, setShowImage] = useState(false);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const springConfig = { damping: 25, stiffness: 200, mass: 0.5 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, [words.length]);
+  }, []);
 
   return (
     <>
-      <section className="container mx-auto h-screen pt-24">
+      <section className="container mx-auto flex h-screen flex-col justify-between py-24">
         <div className="relative">
           <h1 className="font-heading text-8xl font-medium tracking-tighter text-zinc-500">
             Hi, I am{" "}
@@ -100,7 +98,46 @@ export default function HomeClient() {
           </AnimatePresence>
         </div>
 
-        <div></div>
+        <div className="max-w-xl space-y-2.5">
+          {/* Animated Tags Row */}
+          <TagsRow />
+
+          {/* Description */}
+          <p className="font-heading text-sm leading-relaxed font-light text-neutral-600 md:text-base">
+            Frontend Developer turning ideas into interfaces that move, respond, and feel alive.
+            Based in a town most maps skip past —{" "}
+            <span className="inline-flex items-center gap-1 font-medium text-neutral-900">
+              <svg
+                className="h-3 w-3"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Turzovka, Slovakia
+            </span>
+            , shipping for a much bigger one.
+          </p>
+
+          {/* Available for projects - Animated Ping */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
+            className="inline-flex items-center gap-2"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+            </span>
+            <span className="font-heading text-xs font-light text-neutral-600 md:text-sm">
+              Available for projects
+            </span>
+          </motion.div>
+        </div>
       </section>
     </>
   );

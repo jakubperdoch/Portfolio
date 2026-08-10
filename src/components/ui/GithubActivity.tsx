@@ -18,8 +18,6 @@ export default function GithubActivity() {
       .catch(() => {});
   }, []);
 
-  console.log(data);
-
   if (!data || !data.lastActive) return null;
 
   return (

@@ -7,7 +7,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import Image from "next/image";
 
 export default function HomeClient() {
-  const words = ["Plan.", "Build.", "Test.", "Deploy.", "Scale."];
+  const words = ["Design.", "Code.", "Build.", "Ship.", "Refine.", "Repeat."];
   const [wordIndex, setWordIndex] = useState(0);
   const [showImage, setShowImage] = useState(false);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
@@ -49,7 +49,7 @@ export default function HomeClient() {
               </span>
             </span>{" "}
             and I
-            <div className="flex flex-nowrap items-center gap-x-3 md:gap-x-6">
+            <div className="flex flex-nowrap items-center gap-x-3 overflow-visible md:gap-x-6">
               <span className="font-serif font-light whitespace-nowrap text-zinc-500 italic">
                 love to
               </span>

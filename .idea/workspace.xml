@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Add `BackToTop` component to improve navigation and update `layout.tsx` for integration.">
-      <change afterPath="$PROJECT_DIR$/public/icons/ghost.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/profile-picture.png" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786397717868</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects">
+      <option name="closed" value="true" />
+      <created>1786400626663</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1786400626663</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +359,8 @@
     <MESSAGE value="Add `Footer` component with navigation and social links; update `layout.tsx` to include `Footer`." />
     <MESSAGE value="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links" />
     <MESSAGE value="Add `BackToTop` component to improve navigation and update `layout.tsx` for integration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `BackToTop` component to improve navigation and update `layout.tsx` for integration." />
+    <MESSAGE value="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

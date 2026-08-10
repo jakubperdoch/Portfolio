@@ -53,7 +53,7 @@ export default function HomeClient() {
               <span className="font-serif font-light whitespace-nowrap text-zinc-500 italic">
                 love to
               </span>
-              <div className="relative inline-flex h-[1.2em] items-center overflow-hidden">
+              <div className="relative inline-flex h-[1.2em] items-center overflow-visible">
                 <span className="pointer-events-none whitespace-nowrap opacity-0">Deploy.</span>
                 <AnimatePresence mode="wait">
                   <TextAnimate

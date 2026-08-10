@@ -7,11 +7,15 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "motion/react";
 
-export default function DockMenu() {
+interface DockMenuProps {
+  menuOpenHandler: () => void;
+}
+
+export default function DockMenu({ menuOpenHandler }: DockMenuProps) {
   return (
     <div className="relative">
       <Dock direction="middle" className="rounded-full bg-zinc-900">
-        <DockIcon className="w-24!">
+        <DockIcon className="w-24!" onClick={menuOpenHandler}>
           <motion.div whileTap={{ scale: 0.95 }} className="flex items-center gap-2">
             <p className="font-heading text-lg text-white">Menu</p>
             <div className="flex flex-col items-end gap-1">

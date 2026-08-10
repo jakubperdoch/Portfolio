@@ -19,6 +19,18 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  useEffect(() => {
+    if (fullMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [fullMenuOpen]);
+
   return (
     <>
       <header className="absolute top-0 right-0 left-0 z-50 bg-white">
@@ -47,6 +59,7 @@ export default function Header() {
             </motion.a>
 
             <motion.button
+              onClick={() => setFullMenuOpen((val) => !val)}
               whileHover="menuButtonHover"
               whileTap="menuButtonTap"
               className="font-heading flex cursor-pointer items-center gap-1.5 uppercase"
@@ -106,8 +119,23 @@ export default function Header() {
 
             className="fixed bottom-8 left-1/2 z-60 -translate-x-1/2"
           >
-            <DockMenu />
+            <DockMenu menuOpenHandler={() => setFullMenuOpen((val) => !val)} />
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence mode="wait">
+        {fullMenuOpen && (
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{
+              duration: 0.8,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+            className="fixed inset-0 z-100 flex flex-col overflow-hidden bg-neutral-900"
+          ></motion.div>
         )}
       </AnimatePresence>
     </>

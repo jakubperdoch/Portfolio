@@ -14,7 +14,7 @@ export function TagsRow() {
   }, []);
 
   return (
-    <div className="relative flex flex-wrap gap-2">
+    <div className="relative flex gap-2">
       {tags.map((tag, index) => (
         <motion.div
           key={tag}
@@ -25,7 +25,7 @@ export function TagsRow() {
           style={!revealed ? { position: "absolute", top: 0, left: 0 } : undefined}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="font-heading rounded-full border border-zinc-200 bg-zinc-100 px-3 py-1 text-zinc-500"
+          className="font-heading rounded-full border border-zinc-200 bg-zinc-100 px-3 py-1 text-sm text-zinc-500 md:text-base"
         >
           {tag}
         </motion.div>

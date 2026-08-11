@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <>
       <header className="absolute top-0 right-0 left-0 z-50 bg-white">
-        <nav className="container mx-auto flex w-full items-center justify-between py-6">
+        <nav className="container mx-auto flex w-full items-center justify-between py-6 max-lg:px-8">
           <Link
             href="/"
             className="font-heading text-xl font-bold tracking-tight text-zinc-900 capitalize transition-colors duration-300 ease-in-out hover:text-zinc-900/70"
@@ -43,7 +43,7 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-6">
-            <GithubActivity />
+            <GithubActivity className="hidden md:flex" />
 
             <motion.a
               href="/resume.pdf"
@@ -52,7 +52,7 @@ export default function Header() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="font-heading flex items-center gap-1.5 rounded-full bg-zinc-900 px-4 py-2 text-sm text-white uppercase"
+              className="font-heading hidden items-center gap-1.5 rounded-full bg-zinc-900 px-4 py-2 text-sm text-white uppercase md:flex"
             >
               <IconFileInvoice stroke={2} size={16} />
               Resume

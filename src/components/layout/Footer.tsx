@@ -34,7 +34,7 @@ export default function Footer() {
 
   return (
     <footer className="min-h-screen bg-zinc-950 pb-20">
-      <div className='className="container lg:px-24" mx-auto px-6 pt-24 pb-8 md:px-12'>
+      <div className="container mx-auto pt-24 pb-8 max-lg:px-8">
         <section className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end lg:gap-12">
           <div className="max-w-3xl">
             <motion.p
@@ -51,7 +51,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="font-heading text-4xl leading-[1.1] font-semibold tracking-tight text-white md:text-5xl lg:text-6xl"
+              className="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-white md:text-4xl md:text-5xl lg:text-6xl"
             >
               Have a project in mind?
               <br />
@@ -71,7 +71,7 @@ export default function Footer() {
           >
             <Link
               href="mailto:perdochjakub@gmail.com"
-              className="font-heading flex h-full w-full items-center gap-1 px-10 py-4 text-lg text-zinc-900"
+              className="font-heading flex h-full w-full items-center gap-1 px-6 py-3 text-base text-zinc-900 md:px-10 md:py-4 md:text-lg"
             >
               Get in touch
               <IconArrowUpRight
@@ -84,7 +84,7 @@ export default function Footer() {
 
         <Separator className="my-16 bg-zinc-600" />
 
-        <section className="grid grid-cols-2 gap-8 md:grid-cols-3">
+        <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <h3 className="font-heading mb-4 text-sm font-medium tracking-wider text-white uppercase">
               Navigation
@@ -162,7 +162,7 @@ export default function Footer() {
             whileInView={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
-            className="font-heading to-muted-foreground w-fit bg-linear-to-br from-white/70 bg-clip-text text-8xl font-semibold tracking-tight text-transparent"
+            className="font-heading to-muted-foreground w-fit bg-linear-to-br from-white/70 bg-clip-text text-5xl font-semibold tracking-tight text-transparent md:text-6xl lg:text-8xl"
           >
             Jakub Perďoch
           </motion.h1>

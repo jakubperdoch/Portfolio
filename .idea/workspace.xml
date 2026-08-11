@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure">
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/CaseStudiesScroll.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/Hero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/TagsRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/TagsRow.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +60,21 @@
   <component name="ProjectId" id="3BrpGg1HdJOuRi4ijXCI0Ny2wiR" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectSessionTemplates">
+    <option name="inlineTemplate">
+      <template>
+        <option name="modeId" value="InlineAgent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -354,14 +376,21 @@
       <option name="project" value="LOCAL" />
       <updated>1786402688786</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure">
+      <option name="closed" value="true" />
+      <created>1786403872130</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1786403872130</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: remove obsolete route, revamp styles with new layout, and integrate TailwindCSS" />
     <MESSAGE value="feat: add responsive navigation component, integrate global styles, and configure TailwindCSS" />
     <MESSAGE value="feat: integrate Footer component, add animations library, and update background geometry" />
     <MESSAGE value="feat: add interactive TiltCard component with motion effects, enhance Nav with framer-motion, and revamp homepage hero layout" />
@@ -386,7 +415,8 @@
     <MESSAGE value="Update `HomeClient` text animations: refine word sequence and improve layout styling" />
     <MESSAGE value="Refine `client.tsx` styling: update `overflow-hidden` to `overflow-visible` for improved layout rendering" />
     <MESSAGE value="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration" />
+    <MESSAGE value="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

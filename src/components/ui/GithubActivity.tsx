@@ -2,13 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { IconBrandGithub } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
 
 interface ActivityData {
   lastActive: string | null;
   commitsToday: number;
 }
 
-export default function GithubActivity() {
+interface ActivityProps {
+  className?: string;
+}
+
+export default function GithubActivity({ className }: ActivityProps) {
   const [data, setData] = useState<ActivityData | null>(null);
 
   useEffect(() => {
@@ -21,7 +26,7 @@ export default function GithubActivity() {
   if (!data || !data.lastActive) return null;
 
   return (
-    <div className="text-muted-foreground flex items-center gap-1.5 text-sm">
+    <div className={cn("text-muted-foreground flex items-center gap-1.5 text-sm", className)}>
       <div className="relative inline-flex h-4 w-4">
         <IconBrandGithub size={16} className="absolute inline-flex animate-ping text-green-500" />
         <IconBrandGithub size={16} className="absolute inline-flex" />

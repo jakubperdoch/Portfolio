@@ -1,18 +1,16 @@
-import HomeClient from "@/app/(marketing)/client";
+import HomeClient from "@/app/(apps)/client";
 import JsonLd from "@/lib/JsonLd";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "Jakub Perďoch - Software Developer",
-  description: "Explore the creative portfolio of Jakub Perďoch, a software developer building unique digital experiences.",
+  description:
+    "Explore the creative portfolio of Jakub Perďoch, a software developer building unique digital experiences.",
 };
 
 export const revalidate = 3600;
 
-
 export default async function Page() {
-
   const profileSchema = {
     "@context": "https://schema.org",
     "@type": "Person",

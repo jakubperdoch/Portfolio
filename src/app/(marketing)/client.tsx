@@ -1,5 +1,5 @@
-import Hero from "@/components/homePage/Hero";
-import CaseStudiesScroll, { CaseStudy } from "@/components/homePage/CaseStudiesScroll";
+import Hero from "@/components/Home/Hero";
+import CaseStudiesScroll, { CaseStudy } from "@/components/Home/CaseStudiesScroll";
 
 const caseStudies: CaseStudy[] = [
   {

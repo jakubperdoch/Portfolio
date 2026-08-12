@@ -13,12 +13,14 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
+      "@payload-config": ["./src/payload.config.ts"],
       "@/*": ["./src/*"]
     }
   },

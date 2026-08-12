@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { IconFileInvoice } from "@tabler/icons-react";
 import GithubActivity from "@/components/ui/GithubActivity";
 import { useEffect, useState } from "react";
-import DockMenu from "@/components/layout/DockMenu";
+import DockMenu from "@/components/Layout/DockMenu";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

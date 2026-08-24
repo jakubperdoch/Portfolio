@@ -4,12 +4,31 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { IconFileInvoice } from "@tabler/icons-react";
 import GithubActivity from "@/components/ui/GithubActivity";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DockMenu from "@/components/Layout/DockMenu";
+import { FileText, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
+
+const navigationLinks: { label: string; href: string }[] = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "My Setup", href: "/my-setup" },
+  { label: "Contact", href: "/contact" },
+];
+
+const profileLinks: { label: string; href: string; icon?: React.ReactNode }[] = [
+  { label: "Github", href: "https://github.com/jakubperdoch" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/jakub-perďoch/" },
+  { label: "Resume", href: "/resume.pdf", icon: <FileText size={15} /> },
+];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [fullMenuOpen, setFullMenuOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const currentPath = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -137,7 +156,82 @@ export default function Header() {
               ease: [0.76, 0, 0.24, 1],
             }}
             className="fixed inset-0 z-100 flex flex-col overflow-hidden bg-neutral-900"
-          ></motion.div>
+          >
+            <div className="font-heading flex w-full items-center justify-between p-8 text-white lg:px-24">
+              <p className="uppercase opacity-80">Navigation</p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex cursor-pointer items-center gap-1"
+                onClick={() => setFullMenuOpen((state) => !state)}
+              >
+                Close
+                <X size={24} />
+              </motion.button>
+            </div>
+            <div className="flex flex-1 items-center">
+              <nav
+                className="grid gap-x-24 gap-y-6 p-8 md:grid-cols-2 lg:px-24"
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {navigationLinks.map((link, idx) => {
+                  const isActive = currentPath === link.href;
+                  const isAnyHovered = hoveredIndex !== null;
+                  const isTarget = hoveredIndex === idx || (isActive && !isAnyHovered);
+                  return (
+                    <Link
+                      key={idx}
+                      href={link.href}
+                      onMouseEnter={() => setHoveredIndex(idx)}
+                      className={cn(
+                        isTarget
+                          ? "translate-x-2 text-white md:translate-x-4"
+                          : "scale-95 text-white/20",
+                        "font-heading h-fit w-full text-7xl transition-all duration-500 ease-out"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+            <Separator className="w-full bg-white/20" />
+            <div className="flex items-end justify-between px-8 py-12 lg:px-24">
+              <div className="font-heading space-y-2">
+                <p className="text-white/20 uppercase">Contact</p>
+                <motion.a
+                  whileHover={"contactLinkHover"}
+                  href="mailto:jakub.perdoch@gmail.com"
+                  className="text-white transition-all duration-300 ease-in-out"
+                >
+                  perdochjakub@gmail.com
+                  <motion.div
+                    variants={{
+                      contactLinkHover: {
+                        width: "100%",
+                      },
+                    }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="h-0.5 w-0 bg-white"
+                  />
+                </motion.a>
+              </div>
+
+              <div className="font-heading flex gap-8">
+                {profileLinks.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.href}
+                    className="flex items-center gap-1 text-white/40 transition-colors duration-300 ease-in-out hover:text-white"
+                  >
+                    {link.label}
+                    {link.icon && link.icon}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

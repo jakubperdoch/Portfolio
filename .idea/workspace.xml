@@ -4,98 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Refactor `HomeClient` by modularizing hero and case study sections, enhance `Footer` and `Header` responsiveness, and update project assets configuration">
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/anyone.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/authenticated.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/authenticatedOrPublished.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/isAdmin.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/isAdminOrSelf.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/isEditorOrAdmin.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/admin/[[...segments]]/not-found.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/admin/[[...segments]]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/api/[...slug]/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/api/graphql-playground/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/api/graphql/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(payload)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/Code/Component.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/Code/Component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/Code/CopyButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/Code/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Categories.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Faqs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Media.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Users/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/AfterLogin/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/BeforeLogin/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/Icon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/Logo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/WelcomeBanner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RichText/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RichText/textConverter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SafeSVG/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cssVariables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/defaultLexical.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/defaultStyleFeature/feature.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/defaultStyleFeature/feature.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontColorFeature/feature.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontColorFeature/feature.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontColorFeature/utils/variables.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontSizeFeature/feature.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontSizeFeature/feature.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontSizeFeature/utils/variables.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontStyleFeature/feature.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontStyleFeature/feature.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontStyleFeature/utils/variables.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontWeightFeature/feature.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontWeightFeature/feature.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/fontWeightFeature/utils/variables.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/styleFeatureFactory.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/textAlignFeature/feature.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/textAlignFeature/feature.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/textAlignFeature/utils/variables.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/textGlowFeature/feature.client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/textGlowFeature/feature.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/features/textGlowFeature/utils/variables.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/link.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/linkGroup.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/nodes/StyledTextNode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/nodes/nodes.client.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/nodes/nodes.server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/slug/SlugComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/slug/formatSlug.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/slug/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fields/slug/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/populatePublishedAt.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/revalidateRedirects.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/richText.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/theme/colors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/theme/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/payload.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/plugins/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/canUseDOM.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/deepMerge.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/getURL.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/hasRichTextContent.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/useDebounce.ts" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="Restructure app directories: move `(marketing)` into `(apps)` for improved organization.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(marketing)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(marketing)/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/BackToTop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BackToTop.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/DockMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/DockMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +19,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="47" />
+    <option name="cachedIndexableFilesCount" value="152" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FormatOnSaveOptions">
@@ -188,7 +99,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/jakubperdoch/Developer/portfolio/node_modules/prettier",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "ml.llm.LLMAIWorkflowsConfigurable",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Users/jakubperdoch/Developer/portfolio/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -210,8 +121,8 @@
       <recent name="$PROJECT_DIR$/src/utilities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/app/(marketing)" />
       <recent name="$PROJECT_DIR$/src/app/(apps)" />
+      <recent name="$PROJECT_DIR$/src/app/(marketing)" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -251,6 +162,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
+      <workItem from="1787594425800" duration="4679000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: update `id` and `defaultIDType` types in `src/payload-types.ts` to `number` and update dependencies in `pnpm-lock.yaml`.">
       <option name="closed" value="true" />
@@ -476,16 +388,37 @@
       <option name="project" value="LOCAL" />
       <updated>1786489794408</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Add rich text features: font style, color, size, and text glow styling with utilities and components. Integrate slug field, object merging, and plugins for improved functionality and modularity.">
+      <option name="closed" value="true" />
+      <created>1786495813807</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1786495813807</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add new UI components: Spinner, Collapsible, Textarea, Input, ScrollArea, HoverCard, Badge, ButtonGroup, Card, Dialog, Command, InputGroup, Select, and DropdownMenu with respective functionalities and styles.">
+      <option name="closed" value="true" />
+      <created>1786495825870</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1786495825870</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Restructure app directories: move `(marketing)` into `(apps)` for improved organization.">
+      <option name="closed" value="true" />
+      <created>1786495946991</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1786495946991</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: integrate Footer component, add animations library, and update background geometry" />
-    <MESSAGE value="feat: add interactive TiltCard component with motion effects, enhance Nav with framer-motion, and revamp homepage hero layout" />
-    <MESSAGE value="Add new dependencies to support PayloadCMS, AWS S3 storage, and various UI enhancements" />
     <MESSAGE value="Add marketing and case studies pages with corresponding client-side components" />
     <MESSAGE value="Remove default Next.js homepage and restructure layout, adding placeholders for marketing components" />
     <MESSAGE value="Add Prettier with TailwindCSS plugin and integrate with ESLint" />
@@ -508,7 +441,10 @@
     <MESSAGE value="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration" />
     <MESSAGE value="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure" />
     <MESSAGE value="Refactor `HomeClient` by modularizing hero and case study sections, enhance `Footer` and `Header` responsiveness, and update project assets configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor `HomeClient` by modularizing hero and case study sections, enhance `Footer` and `Header` responsiveness, and update project assets configuration" />
+    <MESSAGE value="Add rich text features: font style, color, size, and text glow styling with utilities and components. Integrate slug field, object merging, and plugins for improved functionality and modularity." />
+    <MESSAGE value="Add new UI components: Spinner, Collapsible, Textarea, Input, ScrollArea, HoverCard, Badge, ButtonGroup, Card, Dialog, Command, InputGroup, Select, and DropdownMenu with respective functionalities and styles." />
+    <MESSAGE value="Restructure app directories: move `(marketing)` into `(apps)` for improved organization." />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructure app directories: move `(marketing)` into `(apps)` for improved organization." />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

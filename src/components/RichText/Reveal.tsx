@@ -23,11 +23,6 @@ const itemVariants = {
   },
 };
 
-/**
- * Client shell for the fade-in. Keeping it separate lets `RichText` stay a
- * server component, which is what allows the code block to highlight on the
- * server instead of shipping shiki to the browser.
- */
 export function Reveal({ children }: { children: ReactNode }) {
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants}>

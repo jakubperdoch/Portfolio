@@ -48,6 +48,7 @@ import { SearchButton as SearchButton_3bf5d3e334c5eaf4f0d216451590d3c2 } from '@
 import { default as default_b4e1566edff8ad3724457776d078b319 } from '@/components/Admin/AfterLogin'
 import { default as default_23a0a9742246f32d637663befd64a498 } from '@/components/Admin/WelcomeBanner.tsx'
 import { default as default_c952b30f87c526e75f64597baba73c3e } from '@/components/Admin/BeforeLogin'
+import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 import { ImportExportProvider as ImportExportProvider_cdf7e044479f899a31f804427d568b36 } from '@payloadcms/plugin-import-export/rsc'
 import { CommandMenuProvider as CommandMenuProvider_3bf5d3e334c5eaf4f0d216451590d3c2 } from '@veiag/payload-cmdk/client'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
@@ -104,6 +105,7 @@ export const importMap = {
   "@/components/Admin/AfterLogin#default": default_b4e1566edff8ad3724457776d078b319,
   "@/components/Admin/WelcomeBanner.tsx#default": default_23a0a9742246f32d637663befd64a498,
   "@/components/Admin/BeforeLogin#default": default_c952b30f87c526e75f64597baba73c3e,
+  "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24,
   "@payloadcms/plugin-import-export/rsc#ImportExportProvider": ImportExportProvider_cdf7e044479f899a31f804427d568b36,
   "@veiag/payload-cmdk/client#CommandMenuProvider": CommandMenuProvider_3bf5d3e334c5eaf4f0d216451590d3c2,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1

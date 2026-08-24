@@ -98,19 +98,27 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: "imageUrl",
-      type: "text",
+      name: "image",
+      type: "upload",
+      relationTo: "media",
       required: false,
+      filterOptions: {
+        mimeType: { contains: "image" },
+      },
       admin: {
-        description: "URL obrázka (R2/Cloudinary)",
+        description: "Náhľadový obrázok — nahráva sa priamo do R2.",
       },
     },
     {
-      name: "videoUrl",
-      type: "text",
+      name: "video",
+      type: "upload",
+      relationTo: "media",
       required: false,
+      filterOptions: {
+        mimeType: { contains: "video" },
+      },
       admin: {
-        description: "URL videa (Cloudinary)",
+        description: "Voliteľné video — nahráva sa priamo do R2.",
       },
     },
   ],

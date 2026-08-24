@@ -55,11 +55,6 @@
 }
 
 :root {
-  /* --------------------------------------------------------------------- */
-  /* Brand palette — mirrors `colorReference` in src/lib/theme/colors.ts.   */
-  /* The lexical style features write these exact values as inline styles,  */
-  /* so the two files must stay in sync.                                    */
-  /* --------------------------------------------------------------------- */
   --brand-primary: #00c29e;
   --brand-primary-soft: #00c29e66;
   --brand-secondary: #114c4b;
@@ -150,12 +145,8 @@
     @apply font-serif;
   }
 }
-/* -------------------------------------------------------------------------- */
-/* Rich text (lexical output)                                                  */
-/* -------------------------------------------------------------------------- */
 
 .payload-richtext {
-  /* Vertical rhythm — the block converters only carry typography classes. */
   > * + * {
     margin-top: 1.25rem;
   }
@@ -165,7 +156,6 @@
     padding-left: 1.5rem;
   }
 
-  /* Nested lists tighten up and cycle their markers. */
   li > ul,
   li > ol {
     margin-top: 0.5rem;
@@ -216,7 +206,6 @@
     text-decoration-thickness: 2px;
   }
 
-  /* Inline code (the IS_CODE text format), not the code block. */
   :not(pre) > code {
     background-color: var(--muted);
     border: 1px solid var(--border);
@@ -226,12 +215,6 @@
     padding: 0.1em 0.35em;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Shiki code blocks                                                           */
-/* -------------------------------------------------------------------------- */
-/* Rendered with `defaultColor: false`, so every token carries both a
-   `--shiki-light` and a `--shiki-dark` custom property and we pick per theme. */
 
 .shiki {
   color: var(--shiki-light);
@@ -269,7 +252,6 @@
   padding-inline: 1rem;
 }
 
-/* Line numbers, opt-in via the wrapper. */
 .code-block--numbered .shiki .line::before {
   counter-increment: shiki-line;
   content: counter(shiki-line);

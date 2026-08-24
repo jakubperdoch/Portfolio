@@ -18,10 +18,6 @@ type Props = CodeBlockProps & {
   className?: string;
 };
 
-/**
- * Server component — shiki runs at render time, so the highlighted markup is in
- * the HTML and no highlighting code is shipped to the browser.
- */
 export const CodeBlock: React.FC<Props> = async ({
   className,
   code,

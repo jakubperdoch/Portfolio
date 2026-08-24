@@ -31,8 +31,6 @@ import { Code } from "@/blocks/Code/config";
 
 export const defaultLexical = lexicalEditor({
   features: [
-    // Listing `features` replaces Payload's defaults outright, so the toolbars
-    // have to be opted back in — without them none of the groups below render.
     FixedToolbarFeature(),
     InlineToolbarFeature(),
 

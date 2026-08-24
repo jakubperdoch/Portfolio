@@ -12,9 +12,6 @@ const defaultStyleFeature = createStyleFeature({
   variables: {
     default: {
       label: "Default",
-      // Everything resets to `inherit`/`none` rather than to a literal color:
-      // a hardcoded value here would fight the theme (the old `#fff` made text
-      // invisible on the light background).
       css: {
         color: "inherit",
         background: "none",

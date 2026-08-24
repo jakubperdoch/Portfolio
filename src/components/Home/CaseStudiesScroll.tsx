@@ -60,21 +60,25 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
 
         {/* Scrollable Content */}
         <motion.div style={{ x: xCord }} className="mt-32 flex gap-10 md:gap-14">
-          {caseStudies.map((caseStudy) => (
-            <div
-              key={caseStudy.id}
-              className="group block w-[85vw] shrink-0 cursor-pointer md:w-[45vw] lg:w-[40vw]"
-            >
-              {caseStudy.imageUrl && (
-                <Image
-                  width={400}
-                  height={400}
-                  src={caseStudy.imageUrl}
-                  alt={`Case Study ${caseStudy.id}`}
-                />
-              )}
-            </div>
-          ))}
+          {caseStudies.map((caseStudy) => {
+            const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
+
+            return (
+              <div
+                key={caseStudy.id}
+                className="group block w-[85vw] shrink-0 cursor-pointer md:w-[45vw] lg:w-[40vw]"
+              >
+                {image?.url && (
+                  <Image
+                    width={image.width ?? 400}
+                    height={image.height ?? 400}
+                    src={image.url}
+                    alt={image.alt || caseStudy.title}
+                  />
+                )}
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

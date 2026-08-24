@@ -71,8 +71,6 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
 
     return (
       <ListTag
-        // `list-outside` (the default) is what keeps wrapped lines and nested
-        // levels aligned — `list-inside` reflows them under the marker.
         className={cn(
           "font-body text-foreground/80 space-y-2 pl-6",
           isBullet ? "list-disc" : "list-decimal"
@@ -88,7 +86,6 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   },
 
   listitem: ({ node, nodesToJSX }) => {
-    // A list item that only wraps a deeper list should not draw its own marker.
     const hasNestedList = node.children.some((child) => child.type === "list");
 
     return (
@@ -139,12 +136,8 @@ export default function RichText(props: Props) {
   const content = (
     <ConvertRichText
       converters={jsxConverters}
-      // Nested lists already indent through their own padding — letting the
-      // node `indent` add another 40px on top double-indents every sub-level.
       disableIndent={["list", "listitem"]}
       className={cn(
-        // `payload-richtext` carries the element-level typography that the
-        // converters don't set (nested markers, blockquote rule, inline code).
         "payload-richtext",
         {
           container: enableGutter,

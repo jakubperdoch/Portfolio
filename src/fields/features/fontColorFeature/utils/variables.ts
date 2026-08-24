@@ -1,9 +1,5 @@
 import { alpha, colorReference } from "@/lib/theme";
 
-// Every value here also exists as a CSS custom property in
-// `src/app/(apps)/globals.css` — "Primary" in the editor and `--primary`/
-// `--brand-primary` on the site must resolve to the same hex.
-
 const gradient = (from: string, to: string) => ({
   background: `linear-gradient(104deg, ${from} 0%, ${to} 100%)`,
   "-webkit-background-clip": "text",

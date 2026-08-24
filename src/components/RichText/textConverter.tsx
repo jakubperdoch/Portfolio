@@ -91,8 +91,6 @@ const renderTextLike = ({ node }: { node: TextLike }) => {
   if ((node as any).format & IS_SUBSCRIPT) content = <sub>{content}</sub>;
   if ((node as any).format & IS_SUPERSCRIPT) content = <sup>{content}</sup>;
 
-  // Only wrap in a span when there is something to carry — otherwise every
-  // plain word ends up inside an empty <span class="">.
   if (!fontSizeClass && Object.keys(styles).length === 0) {
     return <>{content}</>;
   }

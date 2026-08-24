@@ -1,5 +1,3 @@
-// Languages offered in the admin, shared with the highlighter so the select
-// can never hand shiki a grammar it does not know.
 export const codeLanguages = [
   { label: "TypeScript", value: "typescript" },
   { label: "TSX", value: "tsx" },

@@ -28,8 +28,6 @@ export class StyledTextNode extends TextNode {
 
   static override clone(node: StyledTextNode): StyledTextNode {
     const clone = new StyledTextNode(node.__text, node.__key);
-    // TextNode carries its formatting on the instance, so a clone that only
-    // copies the text loses styles whenever lexical splits or reconciles a node.
     clone.__style = node.__style;
     clone.__format = node.__format;
     clone.__detail = node.__detail;
@@ -57,8 +55,6 @@ export class StyledTextNode extends TextNode {
 
   override createDOM(config: EditorConfig): HTMLElement {
     const dom = super.createDOM(config);
-    // `inherit` keeps unstyled nodes readable in both admin themes — a literal
-    // color here would hardcode one theme into the editor.
     dom.style.color = getStyleValue(this.getStyle(), "color") ?? "inherit";
     return dom;
   }

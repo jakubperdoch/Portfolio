@@ -1,8 +1,5 @@
 import { colorReference, rgba } from "@/lib/theme";
 
-// Glow colors are derived from the same palette as the font colors, so a
-// "Primary" glow matches "Primary" text instead of drifting to some other hue.
-
 const glow = (hex: string, intensity = 1) => ({
   "text-shadow": [
     `0 0 4px ${rgba(hex, 0.6 * intensity)}`,

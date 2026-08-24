@@ -72,6 +72,7 @@ export interface Config {
     users: User;
     faqs: Faq;
     projects: Project;
+    experience: Experience;
     'email-templates': EmailTemplate;
     exports: Export;
     imports: Import;
@@ -88,6 +89,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     faqs: FaqsSelect<false> | FaqsSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    experience: ExperienceSelect<false> | ExperienceSelect<true>;
     'email-templates': EmailTemplatesSelect<false> | EmailTemplatesSelect<true>;
     exports: ExportsSelect<false> | ExportsSelect<true>;
     imports: ImportsSelect<false> | ImportsSelect<true>;
@@ -344,13 +346,59 @@ export interface Project {
   githubLink?: string | null;
   liveLink?: string | null;
   /**
-   * URL obrázka (R2/Cloudinary)
+   * Náhľadový obrázok — nahráva sa priamo do R2.
    */
-  imageUrl?: string | null;
+  image?: (string | null) | Media;
   /**
-   * URL videa (Cloudinary)
+   * Voliteľné video — nahráva sa priamo do R2.
    */
-  videoUrl?: string | null;
+  video?: (string | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "experience".
+ */
+export interface Experience {
+  id: string;
+  /**
+   * Nižšie číslo = vyššie na stránke (drag&drop reorder vyžaduje plugin, toto je manuálny fallback)
+   */
+  order?: number | null;
+  startDate: string;
+  endDate?: string | null;
+  isCurrent?: boolean | null;
+  /**
+   * Voliteľné prebitie zobrazeného textu, napr. "2023 — Present". Ak prázdne, generuje sa zo startDate/endDate.
+   */
+  customLabel?: string | null;
+  company: string;
+  role: string;
+  employmentType: 'full-time' | 'part-time' | 'freelance' | 'contract' | 'internship';
+  /**
+   * napr. Remote, Turzovka / Bratislava, Hybrid
+   */
+  location?: string | null;
+  companyLink?: string | null;
+  /**
+   * Logo firmy — nahráva sa priamo do R2.
+   */
+  companyLogo?: (string | null) | Media;
+  description: string;
+  responsibilities: {
+    item: string;
+    id?: string | null;
+  }[];
+  /**
+   * Prevažne používané technológie na tejto pozícii
+   */
+  techStack?:
+    | {
+        tech: string;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1002,6 +1050,10 @@ export interface PayloadLockedDocument {
         value: string | Project;
       } | null)
     | ({
+        relationTo: 'experience';
+        value: string | Experience;
+      } | null)
+    | ({
         relationTo: 'email-templates';
         value: string | EmailTemplate;
       } | null);
@@ -1215,8 +1267,40 @@ export interface ProjectsSelect<T extends boolean = true> {
   visibility?: T;
   githubLink?: T;
   liveLink?: T;
-  imageUrl?: T;
-  videoUrl?: T;
+  image?: T;
+  video?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "experience_select".
+ */
+export interface ExperienceSelect<T extends boolean = true> {
+  order?: T;
+  startDate?: T;
+  endDate?: T;
+  isCurrent?: T;
+  customLabel?: T;
+  company?: T;
+  role?: T;
+  employmentType?: T;
+  location?: T;
+  companyLink?: T;
+  companyLogo?: T;
+  description?: T;
+  responsibilities?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  techStack?:
+    | T
+    | {
+        tech?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1643,7 +1727,8 @@ export interface TaskCreateCollectionExport {
     id: string;
     name: string;
     batchSize?: number | null;
-    collectionSlug: 'media' | 'categories' | 'users' | 'faqs' | 'projects' | 'email-templates' | 'exports' | 'imports';
+    collectionSlug:
+      'media' | 'categories' | 'users' | 'faqs' | 'projects' | 'experience' | 'email-templates' | 'exports' | 'imports';
     drafts?: ('yes' | 'no') | null;
     exportCollection: string;
     fields?: string[] | null;

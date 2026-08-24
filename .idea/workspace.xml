@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="refactor: standardize quotation marks and remove unused page component">
-      <change afterPath="$PROJECT_DIR$/src/app/actions/case-study.ts" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props">
+      <change afterPath="$PROJECT_DIR$/src/app/actions/experience.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/experience/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/collections/Experience.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/Experience.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(apps)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/client.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(apps)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/projects/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/case-studies/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Projects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plugins/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +174,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="7670000" />
+      <workItem from="1787594425800" duration="12766000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: update `id` and `defaultIDType` types in `src/payload-types.ts` to `number` and update dependencies in `pnpm-lock.yaml`.">
       <option name="closed" value="true" />
@@ -456,14 +464,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787601334462</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props">
+      <option name="closed" value="true" />
+      <created>1787602392730</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1787602392730</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update `Header` component styles: add hover effect with smooth transition" />
     <MESSAGE value="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval" />
     <MESSAGE value="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging" />
     <MESSAGE value="Remove commitsToday logic from GitHub activity API, simplify UI in `GithubActivity` component, and add debug logging" />
@@ -488,7 +503,8 @@
     <MESSAGE value="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links" />
     <MESSAGE value="feat: implement Projects collection with fields for title, slug, tech stack, description, visibility, and links; enhance code block component with syntax highlighting and line number options" />
     <MESSAGE value="refactor: standardize quotation marks and remove unused page component" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: standardize quotation marks and remove unused page component" />
+    <MESSAGE value="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

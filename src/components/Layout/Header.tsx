@@ -15,7 +15,6 @@ const navigationLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "My Setup", href: "/my-setup" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const profileLinks: { label: string; href: string; icon?: React.ReactNode }[] = [

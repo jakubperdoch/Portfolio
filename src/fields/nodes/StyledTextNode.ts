@@ -27,13 +27,22 @@ export class StyledTextNode extends TextNode {
   }
 
   static override clone(node: StyledTextNode): StyledTextNode {
-    return new StyledTextNode(node.__text, node.__key)
+    const clone = new StyledTextNode(node.__text, node.__key)
+    // TextNode carries its formatting on the instance, so a clone that only
+    // copies the text loses styles whenever lexical splits or reconciles a node.
+    clone.__style = node.__style
+    clone.__format = node.__format
+    clone.__detail = node.__detail
+    clone.__mode = node.__mode
+    return clone
   }
 
   static override importJSON(serializedNode: SerializedStyledTextNode): StyledTextNode {
     const node = new StyledTextNode(serializedNode.text)
     node.setStyle(serializedNode.style ?? '')
     node.setFormat(serializedNode.format)
+    node.setDetail(serializedNode.detail)
+    node.setMode(serializedNode.mode)
     return node
   }
 
@@ -48,14 +57,15 @@ export class StyledTextNode extends TextNode {
 
   override createDOM(config: EditorConfig): HTMLElement {
     const dom = super.createDOM(config)
-    const color = getStyleValue(this.getStyle(), 'color') ?? 'white'
-    dom.style.color = color
+    // `inherit` keeps unstyled nodes readable in both admin themes — a literal
+    // color here would hardcode one theme into the editor.
+    dom.style.color = getStyleValue(this.getStyle(), 'color') ?? 'inherit'
     return dom
   }
 
   override updateDOM(prevNode: this, dom: HTMLElement, config: EditorConfig): boolean {
     const replaced = super.updateDOM(prevNode, dom, config)
-    const color = getStyleValue(this.getStyle(), 'color') ?? 'white'
+    const color = getStyleValue(this.getStyle(), 'color') ?? 'inherit'
     if (dom.style.color !== color) dom.style.color = color
     return replaced
   }

@@ -57,6 +57,15 @@ export const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: "content",
+      type: "richText",
+      localized: true,
+      label: "Case study",
+      admin: {
+        description: "Long-form body rendered on the case study detail page.",
+      },
+    },
+    {
       name: "visibility",
       type: "select",
       required: true,

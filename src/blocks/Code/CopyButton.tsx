@@ -1,33 +1,41 @@
 'use client'
-import { Button } from '@/components/ui/button'
-import { CopyIcon } from '@payloadcms/ui/icons/Copy'
-import { useState } from 'react'
 
-export function CopyButton({ code }: { code: string }) {
-  const [text, setText] = useState('Copy')
+import { Check, Copy } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
-  function updateCopyStatus() {
-    if (text === 'Copy') {
-      setText(() => 'Copied!')
-      setTimeout(() => {
-        setText(() => 'Copy')
-      }, 1000)
+import { cn } from '@/lib/utils'
+
+export function CopyButton({ code, className }: { code: string; className?: string }) {
+  const [copied, setCopied] = useState(false)
+  const timeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => () => {
+    if (timeout.current) clearTimeout(timeout.current)
+  }, [])
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(code)
+    } catch {
+      return
     }
+    setCopied(true)
+    if (timeout.current) clearTimeout(timeout.current)
+    timeout.current = setTimeout(() => setCopied(false), 1500)
   }
 
   return (
-    <div className="flex justify-end align-middle">
-      <Button
-        className="flex gap-1"
-        variant={'secondary'}
-        onClick={async () => {
-          await navigator.clipboard.writeText(code)
-          updateCopyStatus()
-        }}
-      >
-        <p>{text}</p>
-        <CopyIcon />
-      </Button>
-    </div>
+    <button
+      type="button"
+      onClick={copy}
+      aria-label={copied ? 'Copied to clipboard' : 'Copy code to clipboard'}
+      className={cn(
+        'text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex shrink-0 items-center gap-1.5 rounded px-2 py-1 font-mono text-xs transition-colors focus-visible:ring-2 focus-visible:outline-none',
+        className
+      )}
+    >
+      {copied ? <Check className="size-3.5" aria-hidden /> : <Copy className="size-3.5" aria-hidden />}
+      <span>{copied ? 'Copied' : 'Copy'}</span>
+    </button>
   )
 }

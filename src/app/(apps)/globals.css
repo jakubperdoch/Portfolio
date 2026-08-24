@@ -7,6 +7,10 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
+    --color-brand-primary: var(--brand-primary);
+    --color-brand-secondary: var(--brand-secondary);
+    --color-brand-accent: var(--brand-accent);
+    --color-brand-gold: var(--brand-gold);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
     --font-serif: var(--font-serif);
@@ -51,72 +55,86 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0.008 326);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0.008 326);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0.008 326);
-    --primary: oklch(0.212 0.019 322.12);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.96 0.003 325.6);
-    --secondary-foreground: oklch(0.212 0.019 322.12);
-    --muted: oklch(0.96 0.003 325.6);
-    --muted-foreground: oklch(0.542 0.034 322.5);
-    --accent: oklch(0.212 0.019 322.12);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0.005 325.62);
-    --input: oklch(0.922 0.005 325.62);
-    --ring: oklch(0.711 0.019 323.02);
-    --chart-1: oklch(0.833 0.145 321.434);
-    --chart-2: oklch(0.667 0.295 322.15);
-    --chart-3: oklch(0.591 0.293 322.896);
-    --chart-4: oklch(0.518 0.253 323.949);
-    --chart-5: oklch(0.452 0.211 324.591);
+    /* --------------------------------------------------------------------- */
+    /* Brand palette — mirrors `colorReference` in src/lib/theme/colors.ts.   */
+    /* The lexical style features write these exact values as inline styles,  */
+    /* so the two files must stay in sync.                                    */
+    /* --------------------------------------------------------------------- */
+    --brand-primary: #00C29E;
+    --brand-primary-soft: #00C29E66;
+    --brand-secondary: #114C4B;
+    --brand-secondary-soft: #114C4B66;
+    --brand-accent: #FF5733;
+    --brand-gold: #FBBF24;
+    --brand-gold-dark: #AD7D00;
+    --brand-gradient: linear-gradient(104deg, #114C4B 0%, #00C29E 100%);
+
+    --background: #FFFFFF;
+    --foreground: #001A1A;
+    --card: #FFFFFF;
+    --card-foreground: #001A1A;
+    --popover: #FFFFFF;
+    --popover-foreground: #001A1A;
+    --primary: #00C29E;
+    --primary-foreground: #00332A;
+    --secondary: #114C4B;
+    --secondary-foreground: #FFFFFF;
+    --muted: #F0F0F0;
+    --muted-foreground: #656571;
+    --accent: #F0F0F0;
+    --accent-foreground: #001A1A;
+    --destructive: #EF4444;
+    --border: #DBDBDB;
+    --input: #DBDBDB;
+    --ring: #00C29E;
+    --chart-1: #42FAD8;
+    --chart-2: #00D6AE;
+    --chart-3: #00C29E;
+    --chart-4: #00AD8D;
+    --chart-5: #00856C;
     --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0.008 326);
-    --sidebar-primary: oklch(0.212 0.019 322.12);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.96 0.003 325.6);
-    --sidebar-accent-foreground: oklch(0.212 0.019 322.12);
-    --sidebar-border: oklch(0.922 0.005 325.62);
-    --sidebar-ring: oklch(0.711 0.019 323.02);
+    --sidebar: #F7F7F7;
+    --sidebar-foreground: #001A1A;
+    --sidebar-primary: #00C29E;
+    --sidebar-primary-foreground: #00332A;
+    --sidebar-accent: #F0F0F0;
+    --sidebar-accent-foreground: #001A1A;
+    --sidebar-border: #DBDBDB;
+    --sidebar-ring: #00C29E;
 }
 
 .dark {
-    --background: oklch(0.145 0.008 326);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.212 0.019 322.12);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.212 0.019 322.12);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0.005 325.62);
-    --primary-foreground: oklch(0.212 0.019 322.12);
-    --secondary: oklch(0.263 0.024 320.12);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.263 0.024 320.12);
-    --muted-foreground: oklch(0.711 0.019 323.02);
-    --accent: oklch(0.922 0.005 325.62);
-    --accent-foreground: oklch(0.212 0.019 322.12);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.542 0.034 322.5);
-    --chart-1: oklch(0.833 0.145 321.434);
-    --chart-2: oklch(0.667 0.295 322.15);
-    --chart-3: oklch(0.591 0.293 322.896);
-    --chart-4: oklch(0.518 0.253 323.949);
-    --chart-5: oklch(0.452 0.211 324.591);
-    --sidebar: oklch(0.212 0.019 322.12);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.263 0.024 320.12);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.542 0.034 322.5);
+    --background: #001A1A;
+    --foreground: #F7F7F7;
+    --card: #072C2B;
+    --card-foreground: #F7F7F7;
+    --popover: #072C2B;
+    --popover-foreground: #F7F7F7;
+    --primary: #00C29E;
+    --primary-foreground: #00332A;
+    --secondary: #14706F;
+    --secondary-foreground: #FFFFFF;
+    --muted: #072C2B;
+    --muted-foreground: #BDBDBD;
+    --accent: #14706F;
+    --accent-foreground: #F7F7F7;
+    --destructive: #EB5151;
+    --border: #14706F;
+    --input: #14706F;
+    --ring: #00C29E;
+    --chart-1: #81F8E2;
+    --chart-2: #42FAD8;
+    --chart-3: #00D6AE;
+    --chart-4: #00C29E;
+    --chart-5: #00AD8D;
+    --sidebar: #072C2B;
+    --sidebar-foreground: #F7F7F7;
+    --sidebar-primary: #00C29E;
+    --sidebar-primary-foreground: #00332A;
+    --sidebar-accent: #14706F;
+    --sidebar-accent-foreground: #F7F7F7;
+    --sidebar-border: #14706F;
+    --sidebar-ring: #00C29E;
 }
 
 @layer base {
@@ -130,5 +148,147 @@
 
     html {
         @apply font-serif;
+    }
+}
+/* -------------------------------------------------------------------------- */
+/* Rich text (lexical output)                                                  */
+/* -------------------------------------------------------------------------- */
+
+.payload-richtext {
+    /* Vertical rhythm — the block converters only carry typography classes. */
+    > * + * {
+        margin-top: 1.25rem;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5rem;
+    }
+
+    /* Nested lists tighten up and cycle their markers. */
+    li > ul,
+    li > ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    ul ul {
+        list-style-type: circle;
+    }
+
+    ul ul ul {
+        list-style-type: square;
+    }
+
+    ol ol {
+        list-style-type: lower-alpha;
+    }
+
+    ol ol ol {
+        list-style-type: lower-roman;
+    }
+
+    li::marker {
+        color: var(--brand-primary);
+    }
+
+    blockquote {
+        border-left: 3px solid var(--brand-primary);
+        padding-left: 1rem;
+        font-style: italic;
+        color: color-mix(in oklab, var(--foreground) 75%, transparent);
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid var(--border);
+        margin-block: 2.5rem;
+    }
+
+    a {
+        color: var(--brand-primary);
+        text-underline-offset: 3px;
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;
+    }
+
+    a:hover {
+        text-decoration-thickness: 2px;
+    }
+
+    /* Inline code (the IS_CODE text format), not the code block. */
+    :not(pre) > code {
+        background-color: var(--muted);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-family: var(--font-mono);
+        font-size: 0.875em;
+        padding: 0.1em 0.35em;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Shiki code blocks                                                           */
+/* -------------------------------------------------------------------------- */
+/* Rendered with `defaultColor: false`, so every token carries both a
+   `--shiki-light` and a `--shiki-dark` custom property and we pick per theme. */
+
+.shiki {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+}
+
+.shiki span {
+    color: var(--shiki-light);
+}
+
+.dark .shiki {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
+}
+
+.dark .shiki span {
+    color: var(--shiki-dark);
+}
+
+.shiki {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.shiki code {
+    display: grid;
+    counter-reset: shiki-line;
+}
+
+.shiki .line {
+    padding-inline: 1rem;
+}
+
+/* Line numbers, opt-in via the wrapper. */
+.code-block--numbered .shiki .line::before {
+    counter-increment: shiki-line;
+    content: counter(shiki-line);
+    display: inline-block;
+    min-width: 2ch;
+    margin-right: 1.25rem;
+    text-align: right;
+    color: color-mix(in oklab, currentColor 35%, transparent);
+    user-select: none;
+}
+
+.shiki .highlighted {
+    background-color: color-mix(in oklab, var(--brand-primary) 12%, transparent) !important;
+    box-shadow: inset 2px 0 0 var(--brand-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .payload-richtext * {
+        animation: none !important;
+        transition: none !important;
     }
 }

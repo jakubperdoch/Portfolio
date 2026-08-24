@@ -4,13 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="refactor: remove 'Contact' link from Header component for streamlined navigation">
-      <change afterPath="$PROJECT_DIR$/src/app/api/projects/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/collections/Projects.ts" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/projects/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/projects/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/Code/Component.client.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/Code/Component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/Code/Component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/Code/CopyButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/Code/CopyButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/Code/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/Code/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Projects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RichText/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RichText/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fields/defaultLexical.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/fields/defaultLexical.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fields/features/defaultStyleFeature/feature.client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/fields/features/defaultStyleFeature/feature.client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fields/features/fontColorFeature/utils/variables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/fields/features/fontColorFeature/utils/variables.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fields/features/textGlowFeature/utils/variables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/fields/features/textGlowFeature/utils/variables.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fields/nodes/StyledTextNode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/fields/nodes/StyledTextNode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/theme/colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/theme/colors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +177,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="5706000" />
+      <workItem from="1787594425800" duration="6518000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: update `id` and `defaultIDType` types in `src/payload-types.ts` to `number` and update dependencies in `pnpm-lock.yaml`.">
       <option name="closed" value="true" />
@@ -432,14 +443,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787599307085</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links">
+      <option name="closed" value="true" />
+      <created>1787600315401</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1787600315401</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Prettier with TailwindCSS plugin and integrate with ESLint" />
     <MESSAGE value="Integrate SEO metadata and structured data (JSON-LD) for marketing pages; update `.gitignore` to include `.idea/` patterns." />
     <MESSAGE value="Add layout components (Header, Footer, BackToTop), update global styles, and adjust layout.tsx structure" />
     <MESSAGE value="Update `Header` component styles: add hover effect with smooth transition" />
@@ -464,7 +482,8 @@
     <MESSAGE value="Restructure app directories: move `(marketing)` into `(apps)` for improved organization." />
     <MESSAGE value="feat: enhance Header component with navigation and profile links, add hover effects and animations" />
     <MESSAGE value="refactor: remove 'Contact' link from Header component for streamlined navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove 'Contact' link from Header component for streamlined navigation" />
+    <MESSAGE value="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

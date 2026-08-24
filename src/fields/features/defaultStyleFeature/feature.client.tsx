@@ -12,10 +12,16 @@ const defaultStyleFeature = createStyleFeature({
   variables: {
     default: {
       label: 'Default',
+      // Everything resets to `inherit`/`none` rather than to a literal color:
+      // a hardcoded value here would fight the theme (the old `#fff` made text
+      // invisible on the light background).
       css: {
-        color: '#fff',
-        'font-weight': 'normal',
-        'font-size': '1rem',
+        color: 'inherit',
+        background: 'none',
+        'background-clip': 'border-box',
+        '-webkit-background-clip': 'border-box',
+        'font-weight': 'inherit',
+        'font-size': 'inherit',
         'text-decoration': 'none',
         'text-shadow': 'none',
         'font-family': 'inherit',
@@ -31,5 +37,5 @@ const defaultStyleFeature = createStyleFeature({
   isButtonVariant: true,
 })
 
-export const SET_FONT_COLOR_COMMAND = defaultStyleFeature.COMMAND
+export const RESET_STYLE_COMMAND = defaultStyleFeature.COMMAND
 export const DefaultStyleFeatureClient = defaultStyleFeature.Feature

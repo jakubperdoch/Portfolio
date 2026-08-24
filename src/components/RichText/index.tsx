@@ -1,6 +1,4 @@
 // components/RichText/index.tsx
-"use client";
-
 import {
   DefaultNodeTypes,
   type DefaultTypedEditorState,
@@ -18,30 +16,10 @@ import type { SerializedStyledTextNode } from "@/fields/nodes/StyledTextNode";
 import { CodeBlock, CodeBlockProps } from "@/blocks/Code/Component";
 
 import { textConverter } from "@/components/RichText/textConverter";
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/RichText/Reveal";
 import { cn } from "@/lib/utils";
 
 type NodeTypes = SerializedStyledTextNode | DefaultNodeTypes | SerializedBlockNode<CodeBlockProps>;
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
   const { value, relationTo } = linkNode.fields.doc!;
@@ -61,7 +39,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     const HeadingTag = node.tag as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     return (
       <HeadingTag
-        className={cn("font-heading leading-tight font-bold", {
+        className={cn("font-heading scroll-mt-24 leading-tight font-bold", {
           "text-5xl md:text-6xl": HeadingTag === "h1",
           "text-4xl md:text-5xl": HeadingTag === "h2",
           "text-3xl md:text-4xl": HeadingTag === "h3",
@@ -87,15 +65,19 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     </p>
   ),
 
-  // Custom list converters
   list: ({ node, nodesToJSX }) => {
-    const ListTag = node.listType === "bullet" ? "ul" : "ol";
+    const isBullet = node.listType === "bullet";
+    const ListTag = isBullet ? "ul" : "ol";
+
     return (
       <ListTag
+        // `list-outside` (the default) is what keeps wrapped lines and nested
+        // levels aligned — `list-inside` reflows them under the marker.
         className={cn(
-          "font-body mb-4 space-y-2",
-          node.listType === "bullet" ? "list-inside list-disc" : "list-inside list-decimal"
+          "font-body text-foreground/80 space-y-2 pl-6",
+          isBullet ? "list-disc" : "list-decimal"
         )}
+        start={!isBullet && node.start && node.start !== 1 ? node.start : undefined}
       >
         {nodesToJSX({
           nodes: node.children,
@@ -105,17 +87,36 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     );
   },
 
-  listitem: ({ node, nodesToJSX }) => (
-    <li className="text-base leading-relaxed md:text-lg">
+  listitem: ({ node, nodesToJSX }) => {
+    // A list item that only wraps a deeper list should not draw its own marker.
+    const hasNestedList = node.children.some((child) => child.type === "list");
+
+    return (
+      <li
+        value={node.value}
+        className={cn("text-base leading-relaxed md:text-lg", hasNestedList && "list-none")}
+      >
+        {nodesToJSX({
+          nodes: node.children,
+          parent: node,
+        })}
+      </li>
+    );
+  },
+
+  quote: ({ node, nodesToJSX }) => (
+    <blockquote className="font-body text-foreground/75 text-base leading-relaxed md:text-lg">
       {nodesToJSX({
         nodes: node.children,
         parent: node,
       })}
-    </li>
+    </blockquote>
   ),
 
+  horizontalrule: () => <hr />,
+
   blocks: {
-    code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
+    code: ({ node }) => <CodeBlock {...node.fields} />,
   },
 });
 
@@ -139,11 +140,13 @@ export default function RichText(props: Props) {
     <ConvertRichText
       converters={jsxConverters}
       className={cn(
+        // `payload-richtext` carries the element-level typography that the
+        // converters don't set (nested markers, blockquote rule, inline code).
         "payload-richtext",
         {
           container: enableGutter,
           "max-w-none": !enableGutter,
-          "prose md:prose-md mx-auto": enableProse,
+          "mx-auto max-w-[70ch]": enableProse,
         },
         className
       )}
@@ -155,9 +158,5 @@ export default function RichText(props: Props) {
     return content;
   }
 
-  return (
-    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-      <motion.div variants={itemVariants}>{content}</motion.div>
-    </motion.div>
-  );
+  return <Reveal>{content}</Reveal>;
 }

@@ -1,13 +1,24 @@
 import type { TextFieldSingleValidation } from "payload";
 import {
   AlignFeature,
+  BlockquoteFeature,
+  BlocksFeature,
   BoldFeature,
+  FixedToolbarFeature,
+  HeadingFeature,
+  HorizontalRuleFeature,
+  IndentFeature,
+  InlineCodeFeature,
+  InlineToolbarFeature,
   ItalicFeature,
   lexicalEditor,
   LinkFeature,
   type LinkFields,
+  OrderedListFeature,
   ParagraphFeature,
+  StrikethroughFeature,
   UnderlineFeature,
+  UnorderedListFeature,
 } from "@payloadcms/richtext-lexical";
 import { FontWeightFeature } from "@/fields/features/fontWeightFeature/feature.server";
 import { FontColorFeature } from "@/fields/features/fontColorFeature/feature.server";
@@ -16,21 +27,42 @@ import { FontSizeFeature } from "@/fields/features/fontSizeFeature/feature.serve
 import { DefaultStyleFeature } from "@/fields/features/defaultStyleFeature/feature.server";
 import { TextGlowFeature } from "@/fields/features/textGlowFeature/feature.server";
 import { FontStyleFeature } from "@/fields/features/fontStyleFeature/feature.server";
+import { Code } from "@/blocks/Code/config";
 
 export const defaultLexical = lexicalEditor({
   features: [
+    // Listing `features` replaces Payload's defaults outright, so the toolbars
+    // have to be opted back in — without them none of the groups below render.
+    FixedToolbarFeature(),
+    InlineToolbarFeature(),
+
     RegisterNodesFeature(),
+
+    ParagraphFeature(),
+    HeadingFeature({ enabledHeadingSizes: ["h2", "h3", "h4"] }),
+
+    BoldFeature(),
+    ItalicFeature(),
+    UnderlineFeature(),
+    StrikethroughFeature(),
+    InlineCodeFeature(),
+
     FontSizeFeature(),
     FontColorFeature(),
     FontWeightFeature(),
+    FontStyleFeature(),
     TextGlowFeature(),
     DefaultStyleFeature(),
+
+    UnorderedListFeature(),
+    OrderedListFeature(),
+    IndentFeature(),
     AlignFeature(),
-    FontStyleFeature(),
-    ParagraphFeature(),
-    UnderlineFeature(),
-    BoldFeature(),
-    ItalicFeature(),
+
+    BlockquoteFeature(),
+    HorizontalRuleFeature(),
+    BlocksFeature({ blocks: [Code] }),
+
     LinkFeature({
       fields: ({ defaultFields }) => {
         const defaultFieldsWithoutUrl = defaultFields.filter((field) => {

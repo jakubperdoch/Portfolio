@@ -71,6 +71,7 @@ export interface Config {
     categories: Category;
     users: User;
     faqs: Faq;
+    projects: Project;
     'email-templates': EmailTemplate;
     exports: Export;
     imports: Import;
@@ -86,6 +87,7 @@ export interface Config {
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     faqs: FaqsSelect<false> | FaqsSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     'email-templates': EmailTemplatesSelect<false> | EmailTemplatesSelect<true>;
     exports: ExportsSelect<false> | ExportsSelect<true>;
     imports: ImportsSelect<false> | ImportsSelect<true>;
@@ -304,6 +306,51 @@ export interface Faq {
   sortOrder?: number | null;
   slug?: string | null;
   slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: string;
+  title: string;
+  slug: string;
+  techStack: {
+    tech: string;
+    id?: string | null;
+  }[];
+  description: string;
+  /**
+   * Long-form body rendered on the case study detail page.
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  visibility: 'public' | 'private' | 'draft';
+  githubLink?: string | null;
+  liveLink?: string | null;
+  /**
+   * URL obrázka (R2/Cloudinary)
+   */
+  imageUrl?: string | null;
+  /**
+   * URL videa (Cloudinary)
+   */
+  videoUrl?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -951,6 +998,10 @@ export interface PayloadLockedDocument {
         value: string | Faq;
       } | null)
     | ({
+        relationTo: 'projects';
+        value: string | Project;
+      } | null)
+    | ({
         relationTo: 'email-templates';
         value: string | EmailTemplate;
       } | null);
@@ -1143,6 +1194,29 @@ export interface FaqsSelect<T extends boolean = true> {
   sortOrder?: T;
   slug?: T;
   slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  techStack?:
+    | T
+    | {
+        tech?: T;
+        id?: T;
+      };
+  description?: T;
+  content?: T;
+  visibility?: T;
+  githubLink?: T;
+  liveLink?: T;
+  imageUrl?: T;
+  videoUrl?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1569,7 +1643,7 @@ export interface TaskCreateCollectionExport {
     id: string;
     name: string;
     batchSize?: number | null;
-    collectionSlug: 'media' | 'categories' | 'users' | 'faqs' | 'email-templates' | 'exports' | 'imports';
+    collectionSlug: 'media' | 'categories' | 'users' | 'faqs' | 'projects' | 'email-templates' | 'exports' | 'imports';
     drafts?: ('yes' | 'no') | null;
     exportCollection: string;
     fields?: string[] | null;
@@ -1609,6 +1683,44 @@ export interface TaskCreateCollectionImport {
     maxLimit?: number | null;
   };
   output?: unknown;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CodeBlock".
+ */
+export interface CodeBlock {
+  language?:
+    | (
+        | 'typescript'
+        | 'tsx'
+        | 'javascript'
+        | 'jsx'
+        | 'json'
+        | 'html'
+        | 'css'
+        | 'scss'
+        | 'bash'
+        | 'sql'
+        | 'python'
+        | 'go'
+        | 'rust'
+        | 'php'
+        | 'yaml'
+        | 'markdown'
+        | 'graphql'
+        | 'diff'
+        | 'text'
+      )
+    | null;
+  /**
+   * Optional — shown in the header, e.g. `src/app/page.tsx`.
+   */
+  filename?: string | null;
+  showLineNumbers?: boolean | null;
+  code: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'code';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

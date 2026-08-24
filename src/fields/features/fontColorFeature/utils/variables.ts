@@ -1,50 +1,50 @@
-import { colorReference } from '@/lib/theme'
+import { alpha, colorReference } from '@/lib/theme'
+
+// Every value here also exists as a CSS custom property in
+// `src/app/(apps)/globals.css` — "Primary" in the editor and `--primary`/
+// `--brand-primary` on the site must resolve to the same hex.
+
+const gradient = (from: string, to: string) => ({
+  background: `linear-gradient(104deg, ${from} 0%, ${to} 100%)`,
+  '-webkit-background-clip': 'text',
+  'background-clip': 'text',
+  color: 'transparent',
+})
 
 export const FontColorVariables = {
+  foreground: { label: 'Foreground', css: { color: colorReference.foreground } },
+  'foreground-soft': {
+    label: 'Foreground Soft',
+    css: { color: alpha(colorReference.foreground, 0.8) },
+  },
+  muted: { label: 'Muted', css: { color: colorReference.neutral[600] } },
+
   primary: { label: 'Primary', css: { color: colorReference.primary.DEFAULT } },
-  'primary-light': {
-    label: 'Primary Light',
-    css: { color: colorReference.primary.DEFAULT + '66' },
+  'primary-soft': {
+    label: 'Primary Soft',
+    css: { color: alpha(colorReference.primary.DEFAULT, 0.4) },
   },
   secondary: { label: 'Secondary', css: { color: colorReference.secondary.DEFAULT } },
-  'secondary-light': {
-    label: 'Secondary Light',
-    css: { color: colorReference.secondary.DEFAULT + '66' },
+  'secondary-soft': {
+    label: 'Secondary Soft',
+    css: { color: alpha(colorReference.secondary.DEFAULT, 0.4) },
   },
+  accent: { label: 'Accent', css: { color: colorReference.accent.DEFAULT } },
+
   white: { label: 'White', css: { color: colorReference.white } },
-  'white-light': { label: 'White Light', css: { color: colorReference.white + 'cc' } },
-  foreground: { label: 'Foreground', css: { color: colorReference.foreground } },
-  'foreground-light': {
-    label: 'Foreground Light',
-    css: { color: colorReference.foreground + 'CC' },
-  },
+  'white-soft': { label: 'White Soft', css: { color: alpha(colorReference.white, 0.8) } },
 
   gradient: {
     label: 'Gradient',
-    css: {
-      background: `linear-gradient(104deg, ${colorReference.secondary.DEFAULT} 0%, ${colorReference.primary.DEFAULT} 100%)`,
-      WebkitBackgroundClip: 'text',
-      backgroundClip: 'text',
-      color: 'transparent',
-    },
+    css: gradient(colorReference.secondary.DEFAULT, colorReference.primary.DEFAULT),
   },
   'gradient-dark': {
     label: 'Gradient Dark',
-    css: {
-      background: `linear-gradient(104deg, color-mix(in oklab, ${colorReference.secondary.DEFAULT}, black 10%) 0%, color-mix(in oklab, ${colorReference.primary.DEFAULT}, black 10%) 100%)`,
-      WebkitBackgroundClip: 'text',
-      backgroundClip: 'text',
-      color: 'transparent',
-    },
+    css: gradient(colorReference.secondary[900], colorReference.primary[700]),
   },
   'gradient-light': {
     label: 'Gradient Light',
-    css: {
-      background: `linear-gradient(104deg, color-mix(in oklab, ${colorReference.secondary.DEFAULT}, white 35%) 0%, color-mix(in oklab, ${colorReference.primary.DEFAULT}, white 35%) 100%)`,
-      WebkitBackgroundClip: 'text',
-      backgroundClip: 'text',
-      color: 'transparent',
-    },
+    css: gradient(colorReference.secondary[400], colorReference.primary[300]),
   },
 
   gold: { label: 'Gold', css: { color: colorReference.warning.DEFAULT } },

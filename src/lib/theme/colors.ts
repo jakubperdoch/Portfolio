@@ -130,3 +130,66 @@ export const colorReference = {
 
 export type ThemeColors = typeof colorReference
 export type ColorScale = typeof colorReference.primary
+
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
+
+/** Appends an alpha channel to a 6-digit hex color, e.g. alpha('#00C29E', 0.4) -> '#00C29E66'. */
+export const alpha = (hex: string, a: number): string =>
+  hex +
+  Math.round(Math.min(1, Math.max(0, a)) * 255)
+    .toString(16)
+    .padStart(2, '0')
+    .toUpperCase()
+
+/** Converts a 6-digit hex color to `rgba(r, g, b, a)` — needed for text-shadow / drop-shadow. */
+export const rgba = (hex: string, a: number): string => {
+  const int = parseInt(hex.replace('#', ''), 16)
+  return `rgba(${(int >> 16) & 255}, ${(int >> 8) & 255}, ${int & 255}, ${a})`
+}
+
+// -----------------------------------------------------------------------------
+// Semantic tokens
+// -----------------------------------------------------------------------------
+// These mirror 1:1 the CSS custom properties declared in
+// `src/app/(apps)/globals.css`. Editing one side means editing the other —
+// the lexical style features read from here, the site reads from the CSS vars,
+// so both must resolve to the same value.
+
+export const semanticColors = {
+  light: {
+    background: colorReference.white,
+    foreground: colorReference.foreground,
+    card: colorReference.white,
+    cardForeground: colorReference.foreground,
+    primary: colorReference.primary.DEFAULT,
+    primaryForeground: colorReference.primary[950],
+    secondary: colorReference.secondary.DEFAULT,
+    secondaryForeground: colorReference.white,
+    muted: colorReference.neutral[100],
+    mutedForeground: colorReference.neutral[600],
+    // `accent` is the neutral hover surface used by the shadcn primitives —
+    // the loud brand accent lives on `--brand-accent` instead.
+    accent: colorReference.neutral[100],
+    accentForeground: colorReference.foreground,
+    border: colorReference.neutral[200],
+    ring: colorReference.primary.DEFAULT,
+  },
+  dark: {
+    background: colorReference.foreground,
+    foreground: colorReference.neutral[50],
+    card: colorReference.secondary[950],
+    cardForeground: colorReference.neutral[50],
+    primary: colorReference.primary.DEFAULT,
+    primaryForeground: colorReference.primary[950],
+    secondary: colorReference.secondary[800],
+    secondaryForeground: colorReference.white,
+    muted: colorReference.secondary[950],
+    mutedForeground: colorReference.neutral[300],
+    accent: colorReference.secondary[800],
+    accentForeground: colorReference.neutral[50],
+    border: colorReference.secondary[800],
+    ring: colorReference.primary.DEFAULT,
+  },
+} as const

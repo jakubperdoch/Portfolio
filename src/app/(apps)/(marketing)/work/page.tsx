@@ -1,17 +1,27 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Work — Jakub Perďoch",
-  description: "Work and experience of Jakub Perďoch.",
-};
+import JsonLd from "@/lib/JsonLd";
+import { constructMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/schema";
+
+import WorkClient from "./client";
+
+export const metadata: Metadata = constructMetadata({
+  title: "Work",
+  description: "Work experience and background of Jakub Perďoch, software developer.",
+  path: "/work",
+});
 
 export default function WorkPage() {
   return (
-    <div className="container mx-auto px-4 py-24 md:py-32">
-      <h1 className="font-heading text-4xl leading-tight font-bold md:text-6xl">Work</h1>
-      <p className="font-body text-foreground/80 mt-6 max-w-[60ch] text-base leading-relaxed md:text-lg">
-        This page is not written yet.
-      </p>
-    </div>
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Work", path: "/work" },
+        ])}
+      />
+      <WorkClient />
+    </>
   );
 }

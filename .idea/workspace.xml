@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add Experience collection with fields for role, company, start date, end date, and responsibilities; implement API route to fetch experiences and integrate into HomeClient">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with metadata and initial content">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/my-gear/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/(marketing)/my-gear/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/privacy-policy/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/(marketing)/privacy-policy/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/terms-of-service/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/(marketing)/terms-of-service/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/work/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/(marketing)/work/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/case-studies/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/case-studies/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/case-studies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/case-studies/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Experience.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +170,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="14078000" />
+      <workItem from="1787594425800" duration="15111000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: update `id` and `defaultIDType` types in `src/payload-types.ts` to `number` and update dependencies in `pnpm-lock.yaml`.">
       <option name="closed" value="true" />
@@ -469,14 +476,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787611309766</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with metadata and initial content">
+      <option name="closed" value="true" />
+      <created>1787613468632</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1787613468632</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging" />
     <MESSAGE value="Remove commitsToday logic from GitHub activity API, simplify UI in `GithubActivity` component, and add debug logging" />
     <MESSAGE value="Add Dock component with icons for LinkedIn, GitHub, and email; update `Header` to include new `DockMenu` and improve scroll behavior" />
     <MESSAGE value="Add `menuOpenHandler` prop to `DockMenu`, connect to `Header` menu logic, and implement full-screen menu animation" />
@@ -501,7 +515,8 @@
     <MESSAGE value="refactor: standardize quotation marks and remove unused page component" />
     <MESSAGE value="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props" />
     <MESSAGE value="feat: add Experience collection with fields for role, company, start date, end date, and responsibilities; implement API route to fetch experiences and integrate into HomeClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add Experience collection with fields for role, company, start date, end date, and responsibilities; implement API route to fetch experiences and integrate into HomeClient" />
+    <MESSAGE value="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with metadata and initial content" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with metadata and initial content" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

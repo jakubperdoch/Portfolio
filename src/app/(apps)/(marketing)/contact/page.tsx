@@ -4,24 +4,25 @@ import JsonLd from "@/lib/JsonLd";
 import { constructMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
 
-import MyGearClient from "./client";
+import ContactClient from "./client";
 
 export const metadata: Metadata = constructMetadata({
-  title: "My Gear",
-  description: "The hardware and software Jakub Perďoch uses for software development.",
-  path: "/my-gear",
+  title: "Contact",
+  description:
+    "Get in touch with Jakub Perďoch about software development projects, collaborations, or opportunities.",
+  path: "/contact",
 });
 
-export default function MyGearPage() {
+export default function ContactPage() {
   return (
     <>
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "My Gear", path: "/my-gear" },
+          { name: "Contact", path: "/contact" },
         ])}
       />
-      <MyGearClient />
+      <ContactClient />
     </>
   );
 }

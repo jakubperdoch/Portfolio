@@ -1,6 +1,7 @@
 import HomeClient from "@/app/(apps)/client";
 import JsonLd from "@/lib/JsonLd";
 import { Metadata } from "next";
+import { getCaseStudies } from "@/app/actions/case-study";
 
 export const metadata: Metadata = {
   title: "Jakub Perďoch - Software Developer",
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function Page() {
+  const result = await getCaseStudies();
+  const caseStudies = result.success && result.caseStudies ? result.caseStudies : [];
+
   const profileSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -81,7 +85,7 @@ export default async function Page() {
       <JsonLd data={profileSchema} />
       <JsonLd data={websiteSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <HomeClient />
+      <HomeClient caseStudies={caseStudies} />
     </>
   );
 }

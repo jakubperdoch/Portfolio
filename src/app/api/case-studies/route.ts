@@ -8,7 +8,7 @@ export async function GET() {
   const projects = await payload.find({
     collection: "projects",
     limit: 10,
-    sort: "-publishedAt",
+    sort: "-createdAt",
   });
 
   if (!projects) {

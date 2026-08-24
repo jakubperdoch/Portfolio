@@ -6,21 +6,9 @@ import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { TextAnimate } from "@/components/ui/text-animate";
+import type { Project } from "@/payload-types";
 
-export type CaseStudy = {
-  id: number;
-  title: string;
-  slug: string;
-  techStack: string[];
-  description: string;
-  visibility: string;
-  githubLink: string | null;
-  liveLink: string | null;
-  imageUrl: string | null;
-  videoUrl: string | null;
-  createdAt: Date;
-  updatedAt: Date;
-};
+export type CaseStudy = Project;
 
 interface CaseStudiesScrollProps {
   className?: string;

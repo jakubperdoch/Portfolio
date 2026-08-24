@@ -1,8 +1,8 @@
-import { createServerFeature } from '@payloadcms/richtext-lexical'
+import { createServerFeature } from "@payloadcms/richtext-lexical";
 
 export const FontWeightFeature = createServerFeature({
   feature: () => ({
-    ClientFeature: '@/fields/features/fontWeightFeature/feature.client#FontWeightFeatureClient',
+    ClientFeature: "@/fields/features/fontWeightFeature/feature.client#FontWeightFeatureClient",
   }),
-  key: 'font-weight',
-})
+  key: "font-weight",
+});

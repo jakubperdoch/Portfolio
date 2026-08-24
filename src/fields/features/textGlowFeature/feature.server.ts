@@ -1,8 +1,8 @@
-import { createServerFeature } from '@payloadcms/richtext-lexical'
+import { createServerFeature } from "@payloadcms/richtext-lexical";
 
 export const TextGlowFeature = createServerFeature({
   feature: () => ({
-    ClientFeature: '@/fields/features/textGlowFeature/feature.client#TextGlowFeatureClient',
+    ClientFeature: "@/fields/features/textGlowFeature/feature.client#TextGlowFeatureClient",
   }),
-  key: 'text-glow',
-})
+  key: "text-glow",
+});

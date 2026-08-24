@@ -1,9 +1,8 @@
-import { createServerFeature } from '@payloadcms/richtext-lexical'
+import { createServerFeature } from "@payloadcms/richtext-lexical";
 
 export const TextAlignFeature = createServerFeature({
   feature: () => ({
-    ClientFeature:
-      '@/fields/features/textAlignFeature/feature.client#TextAlignFeatureClient',
+    ClientFeature: "@/fields/features/textAlignFeature/feature.client#TextAlignFeatureClient",
   }),
-  key: 'text-align',
-})
+  key: "text-align",
+});

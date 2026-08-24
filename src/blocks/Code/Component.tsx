@@ -1,22 +1,22 @@
-import React from 'react'
+import React from "react";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
-import { CopyButton } from './CopyButton'
-import { highlightCode } from './highlighter'
-import { codeLanguageLabel } from './languages'
+import { CopyButton } from "./CopyButton";
+import { highlightCode } from "./highlighter";
+import { codeLanguageLabel } from "./languages";
 
 export type CodeBlockProps = {
-  code: string
-  language?: string | null
-  filename?: string | null
-  showLineNumbers?: boolean | null
-  blockType: 'code'
-}
+  code: string;
+  language?: string | null;
+  filename?: string | null;
+  showLineNumbers?: boolean | null;
+  blockType: "code";
+};
 
 type Props = CodeBlockProps & {
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * Server component — shiki runs at render time, so the highlighted markup is in
@@ -29,15 +29,15 @@ export const CodeBlock: React.FC<Props> = async ({
   filename,
   showLineNumbers = true,
 }) => {
-  if (!code) return null
+  if (!code) return null;
 
-  const html = await highlightCode(code, language)
+  const html = await highlightCode(code, language);
 
   return (
     <figure
       className={cn(
-        'not-prose border-border bg-card overflow-hidden rounded-lg border',
-        showLineNumbers && 'code-block--numbered',
+        "not-prose border-border bg-card overflow-hidden rounded-lg border",
+        showLineNumbers && "code-block--numbered",
         className
       )}
     >
@@ -50,5 +50,5 @@ export const CodeBlock: React.FC<Props> = async ({
 
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </figure>
-  )
-}
+  );
+};

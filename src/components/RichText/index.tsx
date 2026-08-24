@@ -139,6 +139,9 @@ export default function RichText(props: Props) {
   const content = (
     <ConvertRichText
       converters={jsxConverters}
+      // Nested lists already indent through their own padding — letting the
+      // node `indent` add another 40px on top double-indents every sub-level.
+      disableIndent={["list", "listitem"]}
       className={cn(
         // `payload-richtext` carries the element-level typography that the
         // converters don't set (nested markers, blockquote rule, inline code).

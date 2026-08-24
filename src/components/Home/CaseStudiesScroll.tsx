@@ -9,17 +9,17 @@ import { TextAnimate } from "@/components/ui/text-animate";
 
 export type CaseStudy = {
   id: number;
-  // title: string;
-  // slug: string;
-  // techStack: string[];
-  // description: string;
-  // visibility: string;
-  // githubLink: string | null;
-  // liveLink: string | null;
+  title: string;
+  slug: string;
+  techStack: string[];
+  description: string;
+  visibility: string;
+  githubLink: string | null;
+  liveLink: string | null;
   imageUrl: string | null;
-  // videoUrl: string | null;
-  // createdAt: Date;
-  // updatedAt: Date;
+  videoUrl: string | null;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
 interface CaseStudiesScrollProps {

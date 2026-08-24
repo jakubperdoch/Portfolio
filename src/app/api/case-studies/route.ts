@@ -9,6 +9,9 @@ export async function GET() {
     collection: "projects",
     limit: 10,
     sort: "-createdAt",
+    where: {
+      visibility: { equals: "public" },
+    },
   });
 
   if (!projects) {

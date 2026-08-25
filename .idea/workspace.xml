@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: refactor case studies fetching to use Payload API and remove deprecated route">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: consolidate imports in CaseStudiesScroll component for improved readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
     </list>
@@ -162,15 +162,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="27641000" />
-    </task>
-    <task id="LOCAL-00007" summary="Add marketing and case studies pages with corresponding client-side components">
-      <option name="closed" value="true" />
-      <created>1786236323866</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1786236323866</updated>
+      <workItem from="1787594425800" duration="28526000" />
     </task>
     <task id="LOCAL-00008" summary="Remove default Next.js homepage and restructure layout, adding placeholders for marketing components">
       <option name="closed" value="true" />
@@ -556,14 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787674803432</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="fix: consolidate imports in CaseStudiesScroll component for improved readability">
+      <option name="closed" value="true" />
+      <created>1787675341041</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1787675341041</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add new UI components: Spinner, Collapsible, Textarea, Input, ScrollArea, HoverCard, Badge, ButtonGroup, Card, Dialog, Command, InputGroup, Select, and DropdownMenu with respective functionalities and styles." />
     <MESSAGE value="Restructure app directories: move `(marketing)` into `(apps)` for improved organization." />
     <MESSAGE value="feat: enhance Header component with navigation and profile links, add hover effects and animations" />
     <MESSAGE value="refactor: remove 'Contact' link from Header component for streamlined navigation" />
@@ -588,7 +587,8 @@
     <MESSAGE value="feat: update favicon and enhance OpenGraph image layout for improved aesthetics" />
     <MESSAGE value="fix: update letterSpacing values in opengraph-image.tsx for consistency" />
     <MESSAGE value="feat: refactor case studies fetching to use Payload API and remove deprecated route" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor case studies fetching to use Payload API and remove deprecated route" />
+    <MESSAGE value="fix: consolidate imports in CaseStudiesScroll component for improved readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: consolidate imports in CaseStudiesScroll component for improved readability" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

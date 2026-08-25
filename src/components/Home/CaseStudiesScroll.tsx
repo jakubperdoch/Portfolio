@@ -33,6 +33,7 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
     if (!viewport || !content) return;
 
     const measure = () => {
+      if (viewport.clientWidth === 0 || content.scrollWidth === 0) return;
       const distance = Math.max(0, content.scrollWidth - viewport.clientWidth);
       scrollDistanceRef.current = distance;
       setScrollDistance(distance);
@@ -44,8 +45,15 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
     resizeObserver.observe(viewport);
     resizeObserver.observe(content);
 
-    return () => resizeObserver.disconnect();
+    document.fonts?.ready.then(measure);
+    window.addEventListener("load", measure);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("load", measure);
+    };
   }, [caseStudies.length]);
+
   const xCord = useTransform(scrollYProgress, (progress) => -progress * scrollDistanceRef.current);
   const sectionHeight = scrollDistance > 0 ? `calc(100vh + ${scrollDistance}px)` : "100vh";
 

@@ -51,7 +51,7 @@ export default async function Image() {
               color: "#fafafa",
               fontSize: 16,
               fontWeight: 700,
-              letterSpacing: -0.5,
+              letterSpacing: "-0.5px",
             }}
           >
             JP
@@ -60,7 +60,7 @@ export default async function Image() {
             style={{
               display: "flex",
               fontSize: 18,
-              letterSpacing: 3,
+              letterSpacing: "3px",
               textTransform: "uppercase",
               color: "#71717a",
             }}
@@ -76,7 +76,7 @@ export default async function Image() {
             fontWeight: 700,
             color: "#09090b",
             lineHeight: 1.05,
-            letterSpacing: -2,
+            letterSpacing: "-2px",
           }}
         >
           Jakub Perďoch

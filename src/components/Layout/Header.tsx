@@ -15,6 +15,7 @@ const navigationLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "My Setup", href: "/my-setup" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const profileLinks: { label: string; href: string; icon?: React.ReactNode }[] = [
@@ -156,7 +157,7 @@ export default function Header() {
             }}
             className="fixed inset-0 z-100 flex flex-col overflow-hidden bg-neutral-900"
           >
-            <div className="font-heading flex w-full items-center justify-between p-8 text-white lg:px-24">
+            <div className="font-heading flex w-full flex-wrap items-center justify-between gap-x-8 gap-y-4 p-8 text-white lg:px-24">
               <p className="uppercase opacity-80">Navigation</p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -170,7 +171,7 @@ export default function Header() {
             </div>
             <div className="flex flex-1 items-center">
               <nav
-                className="grid gap-x-24 gap-y-6 p-8 md:grid-cols-2 lg:px-24"
+                className="grid gap-x-24 gap-y-3 p-8 md:grid-cols-2 md:gap-y-6 lg:px-24"
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 {navigationLinks.map((link, idx) => {
@@ -186,7 +187,7 @@ export default function Header() {
                         isTarget
                           ? "translate-x-2 text-white md:translate-x-4"
                           : "scale-95 text-white/20",
-                        "font-heading h-fit w-full text-7xl transition-all duration-500 ease-out"
+                        "font-heading h-fit w-full text-5xl transition-all duration-500 ease-out md:text-7xl"
                       )}
                     >
                       {link.label}
@@ -196,13 +197,13 @@ export default function Header() {
               </nav>
             </div>
             <Separator className="w-full bg-white/20" />
-            <div className="flex items-end justify-between px-8 py-12 lg:px-24">
+            <div className="flex flex-col px-8 py-12 md:flex-row md:items-end md:justify-between lg:px-24">
               <div className="font-heading space-y-2">
                 <p className="text-white/20 uppercase">Contact</p>
                 <motion.a
                   whileHover={"contactLinkHover"}
                   href="mailto:jakub.perdoch@gmail.com"
-                  className="text-white transition-all duration-300 ease-in-out"
+                  className="text-white transition-all duration-300 ease-in-out sm:text-lg"
                 >
                   perdochjakub@gmail.com
                   <motion.div
@@ -217,7 +218,7 @@ export default function Header() {
                 </motion.a>
               </div>
 
-              <div className="font-heading flex gap-8">
+              <div className="font-heading flex flex-wrap gap-x-2.5 gap-y-1 md:gap-8">
                 {profileLinks.map((link, idx) => (
                   <Link
                     key={idx}

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add viewport configuration to layout for improved responsiveness">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add Contact link to navigation and improve layout responsiveness">
+      <change beforePath="$PROJECT_DIR$/public/favicon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,15 +161,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="21708000" />
-    </task>
-    <task id="LOCAL-00002" summary="refactor: remove obsolete route, revamp styles with new layout, and integrate TailwindCSS">
-      <option name="closed" value="true" />
-      <created>1775259209033</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1775259209033</updated>
+      <workItem from="1787594425800" duration="22092000" />
     </task>
     <task id="LOCAL-00003" summary="feat: add responsive navigation component, integrate global styles, and configure TailwindCSS">
       <option name="closed" value="true" />
@@ -556,14 +547,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787619813303</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="feat: add Contact link to navigation and improve layout responsiveness">
+      <option name="closed" value="true" />
+      <created>1787665418806</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1787665418806</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration" />
     <MESSAGE value="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure" />
     <MESSAGE value="Refactor `HomeClient` by modularizing hero and case study sections, enhance `Footer` and `Header` responsiveness, and update project assets configuration" />
     <MESSAGE value="Add rich text features: font style, color, size, and text glow styling with utilities and components. Integrate slug field, object merging, and plugins for improved functionality and modularity." />
@@ -588,7 +586,8 @@
     <MESSAGE value="fix: update visibility of BackToTop component and adjust workspace configuration" />
     <MESSAGE value="fix: standardize indentation and formatting in globals.css and update workspace configuration" />
     <MESSAGE value="feat: add viewport configuration to layout for improved responsiveness" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add viewport configuration to layout for improved responsiveness" />
+    <MESSAGE value="feat: add Contact link to navigation and improve layout responsiveness" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add Contact link to navigation and improve layout responsiveness" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

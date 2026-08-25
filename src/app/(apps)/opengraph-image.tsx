@@ -7,7 +7,7 @@ export const alt = "Jakub Perďoch — Software Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const AVATAR_SIZE = 320;
+const AVATAR_SIZE = 360;
 
 export default async function Image() {
   const source = await readFile(join(process.cwd(), "public/images/profile-picture.png"));
@@ -25,45 +25,84 @@ export default async function Image() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "80px",
-        background: "linear-gradient(115deg, #072C2B 0%, #114C4B 55%, #00856C 100%)",
+        padding: "96px",
+        background: "#ffffff",
         fontFamily: "sans-serif",
       }}
     >
-      <div style={{ display: "flex", flexDirection: "column", maxWidth: 680 }}>
+      <div style={{ display: "flex", flexDirection: "column", maxWidth: 640 }}>
         <div
           style={{
             display: "flex",
-            fontSize: 26,
-            letterSpacing: 4,
-            textTransform: "uppercase",
-            color: "#81F8E2",
-            marginBottom: 24,
+            alignItems: "center",
+            gap: 12,
+            marginBottom: 32,
           }}
         >
-          Software Developer
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 40,
+              height: 40,
+              borderRadius: 10,
+              background: "#09090b",
+              color: "#fafafa",
+              fontSize: 16,
+              fontWeight: 700,
+              letterSpacing: -0.5,
+            }}
+          >
+            JP
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 18,
+              letterSpacing: 3,
+              textTransform: "uppercase",
+              color: "#71717a",
+            }}
+          >
+            Software Developer
+          </div>
         </div>
+
         <div
           style={{
             display: "flex",
-            fontSize: 76,
+            fontSize: 80,
             fontWeight: 700,
-            color: "#FFFFFF",
-            lineHeight: 1.1,
+            color: "#09090b",
+            lineHeight: 1.05,
+            letterSpacing: -2,
           }}
         >
           Jakub Perďoch
         </div>
+
         <div
           style={{
             display: "flex",
-            fontSize: 28,
-            color: "#E3FCF7",
+            fontSize: 26,
+            color: "#71717a",
             marginTop: 28,
-            lineHeight: 1.4,
+            lineHeight: 1.5,
           }}
         >
           Building fast, well-crafted web experiences with React, Next.js and TypeScript.
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            fontSize: 20,
+            color: "#a1a1aa",
+            marginTop: 44,
+          }}
+        >
+          perdochjakub.com
         </div>
       </div>
 
@@ -73,9 +112,9 @@ export default async function Image() {
         width={AVATAR_SIZE}
         height={AVATAR_SIZE}
         style={{
-          borderRadius: "50%",
+          borderRadius: 48,
           objectFit: "cover",
-          border: "6px solid #00C29E",
+          border: "1px solid #e4e4e7",
         }}
       />
     </div>,

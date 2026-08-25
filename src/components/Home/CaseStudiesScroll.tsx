@@ -1,8 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, useTransform } from "motion/react";
-import { useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { TextAnimate } from "@/components/ui/text-animate";
 import type { Project } from "@/payload-types";
@@ -47,11 +46,6 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
 
     return () => resizeObserver.disconnect();
   }, [caseStudies.length]);
-
-  // A plain [0,1] -> [0,-scrollDistance] range would freeze at whatever
-  // scrollDistance was when this render created the transform. Reading it
-  // from a ref inside the mapper instead means every scroll tick picks up
-  // the latest measured value, even after ResizeObserver updates it later.
   const xCord = useTransform(scrollYProgress, (progress) => -progress * scrollDistanceRef.current);
   const sectionHeight = scrollDistance > 0 ? `calc(100vh + ${scrollDistance}px)` : "100vh";
 

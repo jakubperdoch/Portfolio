@@ -1,72 +1,144 @@
-import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { IconChevronDown, IconChevronUp } from "@tabler/icons-react"
+import * as React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
-  return (
-    <AccordionPrimitive.Root
-      data-slot="accordion"
-      className={cn("flex w-full flex-col", className)}
-      {...props}
-    />
-  )
+interface AccordionItemProps {
+  value: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
-function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
-  return (
-    <AccordionPrimitive.Item
-      data-slot="accordion-item"
-      className={cn("not-last:border-b", className)}
-      {...props}
-    />
-  )
+interface AccordionTriggerProps {
+  children: React.ReactNode;
+  className?: string;
 }
 
-function AccordionTrigger({
-  className,
-  children,
-  ...props
-}: AccordionPrimitive.Trigger.Props) {
-  return (
-    <AccordionPrimitive.Header className="flex">
-      <AccordionPrimitive.Trigger
-        data-slot="accordion-trigger"
-        className={cn(
-          "group/accordion-trigger relative flex flex-1 items-start justify-between rounded-md border border-transparent py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring aria-disabled:pointer-events-none aria-disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-muted-foreground",
-          className
-        )}
-        {...props}
-      >
-        {children}
-        <IconChevronDown data-slot="accordion-trigger-icon" className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden" />
-        <IconChevronUp data-slot="accordion-trigger-icon" className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline" />
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
-  )
+interface AccordionContentProps {
+  children: React.ReactNode;
+  className?: string;
 }
 
-function AccordionContent({
-  className,
-  children,
-  ...props
-}: AccordionPrimitive.Panel.Props) {
+interface AccordionContextType {
+  openItems: string[];
+  toggleItem: (value: string) => void;
+  type: "single" | "multiple";
+}
+
+interface AccordionItemContextType {
+  value: string;
+  isOpen: boolean;
+}
+
+const AccordionContext = React.createContext<AccordionContextType | undefined>(undefined);
+const AccordionItemContext = React.createContext<AccordionItemContextType | undefined>(undefined);
+
+interface AccordionProps {
+  type?: "single" | "multiple";
+  defaultValue?: string | string[];
+  className?: string;
+  children: React.ReactNode;
+}
+
+export function Accordion({ type = "single", defaultValue, className, children }: AccordionProps) {
+  const [openItems, setOpenItems] = React.useState<string[]>(() => {
+    if (defaultValue) {
+      return Array.isArray(defaultValue) ? defaultValue : [defaultValue];
+    }
+    return [];
+  });
+
+  const toggleItem = React.useCallback(
+    (value: string) => {
+      setOpenItems((prev) => {
+        if (type === "single") {
+          return prev.includes(value) ? [] : [value];
+        }
+        return prev.includes(value) ? prev.filter((item) => item !== value) : [...prev, value];
+      });
+    },
+    [type]
+  );
+
   return (
-    <AccordionPrimitive.Panel
-      data-slot="accordion-content"
-      className="overflow-hidden text-sm data-open:animate-accordion-down data-closed:animate-accordion-up"
-      {...props}
+    <AccordionContext.Provider value={{ openItems, toggleItem, type }}>
+      <div className={cn("flex flex-col", className)}>{children}</div>
+    </AccordionContext.Provider>
+  );
+}
+
+export function AccordionItem({ value, children, className }: AccordionItemProps) {
+  const context = React.useContext(AccordionContext);
+  if (!context) throw new Error("AccordionItem must be used within Accordion");
+
+  const isOpen = context.openItems.includes(value);
+
+  return (
+    <AccordionItemContext.Provider value={{ value, isOpen }}>
+      <div className={cn("border-b border-white/5", className)}>{children}</div>
+    </AccordionItemContext.Provider>
+  );
+}
+
+export function AccordionTrigger({ children, className }: AccordionTriggerProps) {
+  const accordionContext = React.useContext(AccordionContext);
+  const itemContext = React.useContext(AccordionItemContext);
+
+  if (!accordionContext || !itemContext) {
+    throw new Error("AccordionTrigger must be used within AccordionItem");
+  }
+
+  const { toggleItem } = accordionContext;
+  const { value, isOpen } = itemContext;
+
+  return (
+    <button
+      onClick={() => toggleItem(value)}
+      className={cn(
+        "flex w-full items-center justify-between py-6 text-left transition-all",
+        "focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20",
+        className
+      )}
     >
-      <div
-        className={cn(
-          "h-(--accordion-panel-height) pt-0 pb-4 data-ending-style:h-0 data-starting-style:h-0 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
-          className
-        )}
+      {children}
+      <motion.div
+        animate={{ rotate: isOpen ? 180 : 0 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="ml-4 shrink-0"
       >
-        {children}
-      </div>
-    </AccordionPrimitive.Panel>
-  )
+        <ChevronDown className="h-4 w-4 text-neutral-500" />
+      </motion.div>
+    </button>
+  );
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export function AccordionContent({ children, className }: AccordionContentProps) {
+  const itemContext = React.useContext(AccordionItemContext);
+
+  if (!itemContext) {
+    throw new Error("AccordionContent must be used within AccordionItem");
+  }
+
+  const { isOpen } = itemContext;
+
+  return (
+    <AnimatePresence initial={false}>
+      {isOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{
+            height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+            opacity: { duration: 0.25, ease: "easeOut" },
+          }}
+          className="overflow-hidden"
+        >
+          <div className={cn("pb-6", className)}>{children}</div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}

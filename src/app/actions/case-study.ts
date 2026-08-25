@@ -1,20 +1,24 @@
 import type { Project } from "@/payload-types";
-import { getServerSideURL } from "@/utilities/getURL";
+import config from "@payload-config";
+import { getPayload } from "payload";
 
 export type CaseStudiesResult =
   { success: true; caseStudies: Project[] } | { success: false; error: string };
 
 export async function getCaseStudies(): Promise<CaseStudiesResult> {
   try {
-    const res = await fetch(`${getServerSideURL()}/api/case-studies`);
+    const payload = await getPayload({ config });
 
-    if (!res.ok) {
-      return { success: false, error: `Request failed with status ${res.status}` };
-    }
+    const result = await payload.find({
+      collection: "projects",
+      limit: 10,
+      sort: "-createdAt",
+      where: {
+        visibility: { equals: "public" },
+      },
+    });
 
-    const data = (await res.json()) as { docs?: Project[] };
-
-    return { success: true, caseStudies: data.docs ?? [] };
+    return { success: true, caseStudies: result.docs };
   } catch (error) {
     console.error("Error fetching case studies:", error);
     return { success: false, error: "Failed to fetch case studies" };

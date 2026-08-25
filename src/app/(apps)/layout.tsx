@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { BackToTop } from "@/components/Layout/BackToTop";
+import { Analytics } from "@vercel/analytics/next";
 
 import { Geist, Geist_Mono, Lora, Outfit } from "next/font/google";
 import "./globals.css";
@@ -63,6 +64,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             outfitHeading.variable
           )}
         >
+          <Analytics />
           <Header />
           {children}
           <Footer />

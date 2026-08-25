@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: update BackToTop component visibility and adjust workspace configuration">
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/BackToTop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BackToTop.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: update visibility of BackToTop component and adjust workspace configuration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +162,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="19526000" />
+      <workItem from="1787594425800" duration="19764000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: update `id` and `defaultIDType` types in `src/payload-types.ts` to `number` and update dependencies in `pnpm-lock.yaml`.">
       <option name="closed" value="true" />
@@ -539,14 +540,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787618637111</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="fix: update visibility of BackToTop component and adjust workspace configuration">
+      <option name="closed" value="true" />
+      <created>1787618680838</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1787618680838</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects" />
     <MESSAGE value="Update `HomeClient` text animations: refine word sequence and improve layout styling" />
     <MESSAGE value="Refine `client.tsx` styling: update `overflow-hidden` to `overflow-visible` for improved layout rendering" />
     <MESSAGE value="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration" />
@@ -571,7 +579,8 @@
     <MESSAGE value="fix: adjust layout and typography in Experience component for better responsiveness" />
     <MESSAGE value="feat: add SpeedInsights component to layout for performance monitoring" />
     <MESSAGE value="fix: update BackToTop component visibility and adjust workspace configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: update BackToTop component visibility and adjust workspace configuration" />
+    <MESSAGE value="fix: update visibility of BackToTop component and adjust workspace configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: update visibility of BackToTop component and adjust workspace configuration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

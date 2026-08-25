@@ -1,5 +1,5 @@
 import React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { BackToTop } from "@/components/Layout/BackToTop";
@@ -37,6 +37,13 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#09090b",
 };
 
 const outfitHeading = Outfit({ subsets: ["latin"], variable: "--font-heading" });

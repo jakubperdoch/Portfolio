@@ -1,15 +1,21 @@
 import Image from "next/image";
 import type { CaseStudy } from "@/components/Home/CaseStudiesScroll";
+import { shimmerBlurDataURL } from "@/lib/utils";
 
 export default function CaseStudiesCard({ caseStudy }: { caseStudy: CaseStudy }) {
   const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
+  const width = image?.width ?? 400;
+  const height = image?.height ?? 400;
 
   return (
     <div className="group flex w-[85vw] shrink-0 cursor-pointer flex-col gap-1.5 md:w-[45vw] lg:w-[40vw]">
       {image?.url && (
         <Image
-          width={image.width ?? 400}
-          height={image.height ?? 400}
+          width={width}
+          height={height}
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL={shimmerBlurDataURL(width, height)}
           src={image.url}
           alt={image.alt || caseStudy.title}
           className="rounded-sm"

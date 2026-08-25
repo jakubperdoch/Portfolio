@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: consolidate imports in CaseStudiesScroll component for improved readability">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,15 +162,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="28526000" />
-    </task>
-    <task id="LOCAL-00008" summary="Remove default Next.js homepage and restructure layout, adding placeholders for marketing components">
-      <option name="closed" value="true" />
-      <created>1786311034714</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1786311034714</updated>
+      <workItem from="1787594425800" duration="28702000" />
     </task>
     <task id="LOCAL-00009" summary="Add Prettier with TailwindCSS plugin and integrate with ESLint">
       <option name="closed" value="true" />
@@ -556,14 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787675341041</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness">
+      <option name="closed" value="true" />
+      <created>1787692728173</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1787692728173</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Restructure app directories: move `(marketing)` into `(apps)` for improved organization." />
     <MESSAGE value="feat: enhance Header component with navigation and profile links, add hover effects and animations" />
     <MESSAGE value="refactor: remove 'Contact' link from Header component for streamlined navigation" />
     <MESSAGE value="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links" />
@@ -588,7 +587,8 @@
     <MESSAGE value="fix: update letterSpacing values in opengraph-image.tsx for consistency" />
     <MESSAGE value="feat: refactor case studies fetching to use Payload API and remove deprecated route" />
     <MESSAGE value="fix: consolidate imports in CaseStudiesScroll component for improved readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: consolidate imports in CaseStudiesScroll component for improved readability" />
+    <MESSAGE value="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

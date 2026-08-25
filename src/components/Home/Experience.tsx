@@ -95,17 +95,17 @@ export default function Experience({ className, experiences }: ExperienceProps) 
               >
                 <AccordionItem value={`item-${experience.id}`}>
                   <AccordionTrigger className="group hover:pl-4">
-                    <div className="flex w-full items-center justify-between">
+                    <div className="flex w-full flex-col md:flex-row md:items-center md:justify-between">
                       <div className="flex flex-col transition-colors duration-300 ease-in-out group-hover:opacity-80">
-                        <span className="font-heading text-xl text-white">
+                        <span className="font-heading text-lg text-white md:text-xl">
                           {experience.company}
                         </span>
-                        <span className="font-heading font-light text-white/50">
+                        <span className="font-heading text-base font-light text-white/50 md:text-lg">
                           {experience.role}
                         </span>
                       </div>
 
-                      <span className="font-heading text-sm font-extralight text-white/50 uppercase transition-colors duration-300 ease-in-out group-hover:text-white">
+                      <span className="font-heading text-xs font-extralight text-white/50 uppercase transition-colors duration-300 ease-in-out group-hover:text-white md:text-sm">
                         {formatDateRange(experience)}
                       </span>
                     </div>

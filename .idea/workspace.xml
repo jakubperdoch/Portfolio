@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: implement Accordion component with context for managing open items and enhance Experience section with formatted date range and responsibilities">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: adjust margin for tech stack badges in Experience component and update workspace configuration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Experience.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +162,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="18850000" />
+      <workItem from="1787594425800" duration="19116000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: update `id` and `defaultIDType` types in `src/payload-types.ts` to `number` and update dependencies in `pnpm-lock.yaml`.">
       <option name="closed" value="true" />
@@ -507,14 +508,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787617954099</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="fix: adjust margin for tech stack badges in Experience component and update workspace configuration">
+      <option name="closed" value="true" />
+      <created>1787618104671</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1787618104671</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove debug logging from GitHub activity API and update workspace configuration" />
     <MESSAGE value="Add `Footer` component with navigation and social links; update `layout.tsx` to include `Footer`." />
     <MESSAGE value="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links" />
     <MESSAGE value="Add `BackToTop` component to improve navigation and update `layout.tsx` for integration." />
@@ -539,7 +547,8 @@
     <MESSAGE value="refactor: reorganize imports in Experience component and rename robots file for clarity" />
     <MESSAGE value="feat: update experience fetching logic to use Payload API and remove deprecated route" />
     <MESSAGE value="feat: implement Accordion component with context for managing open items and enhance Experience section with formatted date range and responsibilities" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement Accordion component with context for managing open items and enhance Experience section with formatted date range and responsibilities" />
+    <MESSAGE value="fix: adjust margin for tech stack badges in Experience component and update workspace configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: adjust margin for tech stack badges in Experience component and update workspace configuration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

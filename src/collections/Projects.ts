@@ -80,6 +80,17 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: "featured",
+      type: "checkbox",
+      label: "Featured on home page",
+      defaultValue: false,
+      index: true,
+      admin: {
+        position: "sidebar",
+        description: "Zobrazí projekt v sekcii „Selected Work“ na domovskej stránke.",
+      },
+    },
+    {
       name: "githubLink",
       type: "text",
       required: false,

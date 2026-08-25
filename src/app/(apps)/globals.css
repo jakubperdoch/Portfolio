@@ -142,8 +142,20 @@
     }
 
     html {
-        background-color: var(--color-zinc-950);
+        /* Literal value on purpose: this colour is propagated to the canvas and
+           is what iOS Safari paints in the rubber-band area past the footer and
+           inside the safe-area inset. A var()/oklch() here fails silently on
+           older WebKit and the canvas falls back to the white <body>. */
+        background-color: #09090b;
+        /* Guards the document against any horizontally overflowing child.
+           `clip` (unlike `hidden`) does not create a scroll container, so
+           position: sticky keeps working. */
+        overflow-x: clip;
         @apply font-serif;
+    }
+
+    body {
+        min-height: 100svh;
     }
 }
 

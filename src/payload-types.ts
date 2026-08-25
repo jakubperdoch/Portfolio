@@ -346,6 +346,10 @@ export interface Project {
     [k: string]: unknown;
   } | null;
   visibility: 'public' | 'private' | 'draft';
+  /**
+   * Zobrazí projekt v sekcii „Selected Work“ na domovskej stránke.
+   */
+  featured?: boolean | null;
   githubLink?: string | null;
   liveLink?: string | null;
   /**
@@ -1295,6 +1299,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   description?: T;
   content?: T;
   visibility?: T;
+  featured?: T;
   githubLink?: T;
   liveLink?: T;
   image?: T;

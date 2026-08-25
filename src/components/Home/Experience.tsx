@@ -3,12 +3,7 @@
 import { TextAnimate } from "@/components/ui/text-animate";
 import { motion } from "motion/react";
 import { Experience as ExperienceType } from "@/payload-types";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 
 const containerVariants = {
@@ -59,7 +54,7 @@ interface ExperienceProps {
   experiences: ExperienceType[];
 }
 
-export default function Experience({ className, experiences }: ExperienceProps) {
+export default function Experience({ experiences }: ExperienceProps) {
   return (
     <section className="bg-zinc-950">
       <div className="container mx-auto grid grid-cols-1 gap-12 pt-14 pb-8 max-lg:px-8 md:grid-cols-3 md:gap-24">

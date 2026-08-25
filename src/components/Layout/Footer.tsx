@@ -33,7 +33,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="min-h-screen bg-zinc-950 pb-20">
+    <footer className="min-h-svh bg-zinc-950 pb-[calc(5rem+env(safe-area-inset-bottom))]">
       <div className="container mx-auto pt-24 pb-8 max-lg:px-8">
         <section className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end lg:gap-12">
           <div className="max-w-3xl">

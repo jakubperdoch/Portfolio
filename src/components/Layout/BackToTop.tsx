@@ -49,7 +49,7 @@ export const BackToTop = () => {
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="group right-12 bottom-8 z-60 flex hidden h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-zinc-900 text-white shadow-2xl md:fixed"
+          className="group fixed right-12 bottom-8 z-60 hidden h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white bg-zinc-900 text-white shadow-2xl md:flex"
         >
           <svg
             className="pointer-events-none absolute inset-0 h-full w-full -rotate-90"

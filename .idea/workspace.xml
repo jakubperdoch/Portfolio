@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: enhance CaseStudiesCard component with lazy loading and blur placeholder for images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,15 +164,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="28702000" />
-    </task>
-    <task id="LOCAL-00009" summary="Add Prettier with TailwindCSS plugin and integrate with ESLint">
-      <option name="closed" value="true" />
-      <created>1786311504530</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1786311504530</updated>
+      <workItem from="1787594425800" duration="31275000" />
     </task>
     <task id="LOCAL-00010" summary="Integrate SEO metadata and structured data (JSON-LD) for marketing pages; update `.gitignore` to include `.idea/` patterns.">
       <option name="closed" value="true" />
@@ -556,14 +550,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787692728173</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="feat: enhance CaseStudiesCard component with lazy loading and blur placeholder for images">
+      <option name="closed" value="true" />
+      <created>1787693062225</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1787693062225</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: enhance Header component with navigation and profile links, add hover effects and animations" />
     <MESSAGE value="refactor: remove 'Contact' link from Header component for streamlined navigation" />
     <MESSAGE value="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links" />
     <MESSAGE value="feat: implement Projects collection with fields for title, slug, tech stack, description, visibility, and links; enhance code block component with syntax highlighting and line number options" />
@@ -588,7 +589,8 @@
     <MESSAGE value="feat: refactor case studies fetching to use Payload API and remove deprecated route" />
     <MESSAGE value="fix: consolidate imports in CaseStudiesScroll component for improved readability" />
     <MESSAGE value="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness" />
+    <MESSAGE value="feat: enhance CaseStudiesCard component with lazy loading and blur placeholder for images" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance CaseStudiesCard component with lazy loading and blur placeholder for images" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

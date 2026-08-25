@@ -16,6 +16,7 @@ import { sk } from "@payloadcms/translations/languages/sk";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { Projects } from "@/collections/Projects";
 import { Experience } from "@/collections/Experience";
+import { Skills } from "@/collections/Skills";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -51,7 +52,7 @@ export default buildConfig({
     supportedLanguages: { sk, en },
     fallbackLanguage: "cs",
   },
-  collections: [Media, Categories, Users, Faqs, Projects, Experience],
+  collections: [Media, Categories, Users, Faqs, Projects, Experience, Skills],
   cors: [getServerSideURL()].filter(Boolean),
   plugins: [...plugins],
   secret: process.env.PAYLOAD_SECRET || "secret",

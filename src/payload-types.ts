@@ -73,6 +73,7 @@ export interface Config {
     faqs: Faq;
     projects: Project;
     experience: Experience;
+    skills: Skill;
     'email-templates': EmailTemplate;
     exports: Export;
     imports: Import;
@@ -90,6 +91,7 @@ export interface Config {
     faqs: FaqsSelect<false> | FaqsSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     experience: ExperienceSelect<false> | ExperienceSelect<true>;
+    skills: SkillsSelect<false> | SkillsSelect<true>;
     'email-templates': EmailTemplatesSelect<false> | EmailTemplatesSelect<true>;
     exports: ExportsSelect<false> | ExportsSelect<true>;
     imports: ImportsSelect<false> | ImportsSelect<true>;
@@ -400,6 +402,28 @@ export interface Experience {
         id?: string | null;
       }[]
     | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills".
+ */
+export interface Skill {
+  id: string;
+  /**
+   * Nižšie číslo = vyššie na stránke (drag&drop reorder vyžaduje plugin, toto je manuálny fallback)
+   */
+  order?: number | null;
+  category: 'frontend-frameworks' | 'backend-databases';
+  items: {
+    /**
+     * Raw SVG markup (napr. <svg>...</svg>), vykresľuje sa inline.
+     */
+    icon: string;
+    name: string;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -1055,6 +1079,10 @@ export interface PayloadLockedDocument {
         value: string | Experience;
       } | null)
     | ({
+        relationTo: 'skills';
+        value: string | Skill;
+      } | null)
+    | ({
         relationTo: 'email-templates';
         value: string | EmailTemplate;
       } | null);
@@ -1301,6 +1329,23 @@ export interface ExperienceSelect<T extends boolean = true> {
     | T
     | {
         tech?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills_select".
+ */
+export interface SkillsSelect<T extends boolean = true> {
+  order?: T;
+  category?: T;
+  items?:
+    | T
+    | {
+        icon?: T;
+        name?: T;
         id?: T;
       };
   updatedAt?: T;
@@ -1730,7 +1775,16 @@ export interface TaskCreateCollectionExport {
     name: string;
     batchSize?: number | null;
     collectionSlug:
-      'media' | 'categories' | 'users' | 'faqs' | 'projects' | 'experience' | 'email-templates' | 'exports' | 'imports';
+      | 'media'
+      | 'categories'
+      | 'users'
+      | 'faqs'
+      | 'projects'
+      | 'experience'
+      | 'skills'
+      | 'email-templates'
+      | 'exports'
+      | 'imports';
     drafts?: ('yes' | 'no') | null;
     exportCollection: string;
     fields?: string[] | null;

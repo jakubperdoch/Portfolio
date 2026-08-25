@@ -144,7 +144,7 @@ export default function Experience({ className, experiences }: ExperienceProps) 
                       )}
 
                       {experience.techStack && experience.techStack.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
+                        <div className="mt-2 flex flex-wrap gap-2">
                           {experience.techStack.map((tech) => (
                             <Badge
                               key={tech.id ?? tech.tech}

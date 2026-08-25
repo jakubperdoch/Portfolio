@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: adjust layout and typography in Experience component for better responsiveness">
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/layout.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add SpeedInsights component to layout for performance monitoring">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/BackToTop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BackToTop.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +162,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="19278000" />
+      <workItem from="1787594425800" duration="19476000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: update `id` and `defaultIDType` types in `src/payload-types.ts` to `number` and update dependencies in `pnpm-lock.yaml`.">
       <option name="closed" value="true" />
@@ -523,14 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787618373291</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="feat: add SpeedInsights component to layout for performance monitoring">
+      <option name="closed" value="true" />
+      <created>1787618433474</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1787618433474</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links" />
     <MESSAGE value="Add `BackToTop` component to improve navigation and update `layout.tsx` for integration." />
     <MESSAGE value="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects" />
     <MESSAGE value="Update `HomeClient` text animations: refine word sequence and improve layout styling" />
@@ -555,7 +563,8 @@
     <MESSAGE value="feat: implement Accordion component with context for managing open items and enhance Experience section with formatted date range and responsibilities" />
     <MESSAGE value="fix: adjust margin for tech stack badges in Experience component and update workspace configuration" />
     <MESSAGE value="fix: adjust layout and typography in Experience component for better responsiveness" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: adjust layout and typography in Experience component for better responsiveness" />
+    <MESSAGE value="feat: add SpeedInsights component to layout for performance monitoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add SpeedInsights component to layout for performance monitoring" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

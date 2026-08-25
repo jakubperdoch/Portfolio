@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 import { motion, useTransform } from "motion/react";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { TextAnimate } from "@/components/ui/text-animate";
 import type { Project } from "@/payload-types";
+import CaseStudiesCard from "@/components/Home/CaseStudiesCard";
 
 export type CaseStudy = Project;
 
@@ -17,30 +17,54 @@ interface CaseStudiesScrollProps {
 
 export default function CaseStudiesScroll({ className, caseStudies }: CaseStudiesScrollProps) {
   const targetRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end end"],
   });
-  const [windowWidth, setWindowWidth] = useState(0);
+
+  const scrollDistanceRef = useRef(0);
+  const [scrollDistance, setScrollDistance] = useState(0);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-      };
-      window.addEventListener("resize", handleResize);
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, []);
+    const viewport = viewportRef.current;
+    const content = contentRef.current;
+    if (!viewport || !content) return;
 
-  const isMobile = windowWidth <= 768;
-  const xCord = useTransform(scrollYProgress, [0, 1], ["0%", isMobile ? "-76%" : "-60%"]);
+    const measure = () => {
+      const distance = Math.max(0, content.scrollWidth - viewport.clientWidth);
+      scrollDistanceRef.current = distance;
+      setScrollDistance(distance);
+    };
+
+    measure();
+
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(viewport);
+    resizeObserver.observe(content);
+
+    return () => resizeObserver.disconnect();
+  }, [caseStudies.length]);
+
+  // A plain [0,1] -> [0,-scrollDistance] range would freeze at whatever
+  // scrollDistance was when this render created the transform. Reading it
+  // from a ref inside the mapper instead means every scroll tick picks up
+  // the latest measured value, even after ResizeObserver updates it later.
+  const xCord = useTransform(scrollYProgress, (progress) => -progress * scrollDistanceRef.current);
+  const sectionHeight = scrollDistance > 0 ? `calc(100vh + ${scrollDistance}px)` : "100vh";
 
   return (
-    <section ref={targetRef} className={cn("relative h-[400vh]", className)}>
-      <div className="sticky top-0 container mx-auto flex h-screen items-center overflow-visible max-lg:px-8">
+    <section
+      ref={targetRef}
+      className={cn("relative", className)}
+      style={{ height: sectionHeight }}
+    >
+      <div
+        ref={viewportRef}
+        className="sticky top-0 container mx-auto flex h-screen items-center overflow-visible max-lg:px-8"
+      >
         {/* Header */}
         <div className="absolute top-24 left-0 w-full max-lg:px-8">
           <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -59,26 +83,10 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
         </div>
 
         {/* Scrollable Content */}
-        <motion.div style={{ x: xCord }} className="mt-32 flex gap-10 md:gap-14">
-          {caseStudies.map((caseStudy) => {
-            const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
-
-            return (
-              <div
-                key={caseStudy.id}
-                className="group block w-[85vw] shrink-0 cursor-pointer md:w-[45vw] lg:w-[40vw]"
-              >
-                {image?.url && (
-                  <Image
-                    width={image.width ?? 400}
-                    height={image.height ?? 400}
-                    src={image.url}
-                    alt={image.alt || caseStudy.title}
-                  />
-                )}
-              </div>
-            );
-          })}
+        <motion.div ref={contentRef} style={{ x: xCord }} className="flex gap-10 md:gap-14">
+          {caseStudies.map((caseStudy) => (
+            <CaseStudiesCard key={caseStudy.id} caseStudy={caseStudy} />
+          ))}
         </motion.div>
       </div>
     </section>

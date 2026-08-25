@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="fix: update letterSpacing values in opengraph-image.tsx for consistency">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: refactor case studies fetching to use Payload API and remove deprecated route">
+      <change afterPath="$PROJECT_DIR$/seed-projects.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/actions/case-study.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/case-study.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/case-studies/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,7 @@
     "js.debugger.nextJs.config.created.server": "true",
     "js.linters.configure.manually.selectedeslint": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/jakubperdoch/Developer/portfolio/public",
+    "last_opened_file_path": "/Users/jakubperdoch/Developer/portfolio",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -115,11 +116,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/app/(payload)" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/lib" />
-      <recent name="$PROJECT_DIR$/src/utilities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/(apps)" />
@@ -163,15 +164,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="24325000" />
-    </task>
-    <task id="LOCAL-00005" summary="feat: add interactive TiltCard component with motion effects, enhance Nav with framer-motion, and revamp homepage hero layout">
-      <option name="closed" value="true" />
-      <created>1775598592279</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1775598592279</updated>
+      <workItem from="1787594425800" duration="27103000" />
     </task>
     <task id="LOCAL-00006" summary="Add new dependencies to support PayloadCMS, AWS S3 storage, and various UI enhancements">
       <option name="closed" value="true" />
@@ -557,14 +550,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787665872214</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="feat: refactor case studies fetching to use Payload API and remove deprecated route">
+      <option name="closed" value="true" />
+      <created>1787671847961</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1787671847961</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add rich text features: font style, color, size, and text glow styling with utilities and components. Integrate slug field, object merging, and plugins for improved functionality and modularity." />
     <MESSAGE value="Add new UI components: Spinner, Collapsible, Textarea, Input, ScrollArea, HoverCard, Badge, ButtonGroup, Card, Dialog, Command, InputGroup, Select, and DropdownMenu with respective functionalities and styles." />
     <MESSAGE value="Restructure app directories: move `(marketing)` into `(apps)` for improved organization." />
     <MESSAGE value="feat: enhance Header component with navigation and profile links, add hover effects and animations" />
@@ -589,7 +589,8 @@
     <MESSAGE value="feat: add Contact link to navigation and improve layout responsiveness" />
     <MESSAGE value="feat: update favicon and enhance OpenGraph image layout for improved aesthetics" />
     <MESSAGE value="fix: update letterSpacing values in opengraph-image.tsx for consistency" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: update letterSpacing values in opengraph-image.tsx for consistency" />
+    <MESSAGE value="feat: refactor case studies fetching to use Payload API and remove deprecated route" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor case studies fetching to use Payload API and remove deprecated route" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

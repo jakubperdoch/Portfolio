@@ -29,6 +29,14 @@ export const Skills: CollectionConfig = {
       options: [
         { label: "Frontend & Frameworks", value: "frontend-frameworks" },
         { label: "Backend & Databases", value: "backend-databases" },
+        { label: "Tools & Platforms", value: "tools-platforms" },
+        { label: "Other", value: "other" },
+        { label: "Languages", value: "languages" },
+        { label: "Version Control", value: "version-control" },
+        { label: "DevOps", value: "devops" },
+        { label: "Cloud", value: "cloud" },
+        { label: "Testing & QA", value: "testing-qa" },
+        { label: "Design", value: "design" },
       ],
     },
     {

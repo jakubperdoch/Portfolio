@@ -419,7 +419,17 @@ export interface Skill {
    * Nižšie číslo = vyššie na stránke (drag&drop reorder vyžaduje plugin, toto je manuálny fallback)
    */
   order?: number | null;
-  category: 'frontend-frameworks' | 'backend-databases';
+  category:
+    | 'frontend-frameworks'
+    | 'backend-databases'
+    | 'tools-platforms'
+    | 'other'
+    | 'languages'
+    | 'version-control'
+    | 'devops'
+    | 'cloud'
+    | 'testing-qa'
+    | 'design';
   items: {
     /**
      * Raw SVG markup (napr. <svg>...</svg>), vykresľuje sa inline.

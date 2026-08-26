@@ -68,7 +68,7 @@ export default function Experience({ experiences }: ExperienceProps) {
           >
             Commercial History.
           </TextAnimate>
-          <p className="font-heading text-sm text-white/40">
+          <p className="font-heading max-w-sm font-light text-white/40 md:text-lg">
             Click on each role to explore responsibilities and achievements.
           </p>
         </div>

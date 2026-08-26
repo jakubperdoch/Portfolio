@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add Skills collection with fields for category, order, and items">
-      <change afterPath="$PROJECT_DIR$/src/app/actions/skill.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Home/Skills.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add Skills collection and integrate into HomeClient component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/actions/case-study.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/case-study.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collections/Projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Projects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Skills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Skills.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Experience.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SafeSVG/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SafeSVG/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Skills.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,15 +167,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="32982000" />
-    </task>
-    <task id="LOCAL-00011" summary="Add layout components (Header, Footer, BackToTop), update global styles, and adjust layout.tsx structure">
-      <option name="closed" value="true" />
-      <created>1786313859523</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1786313859523</updated>
+      <workItem from="1787594425800" duration="34522000" />
     </task>
     <task id="LOCAL-00012" summary="Update `Header` component styles: add hover effect with smooth transition">
       <option name="closed" value="true" />
@@ -570,14 +553,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787700145902</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="feat: add Skills collection and integrate into HomeClient component">
+      <option name="closed" value="true" />
+      <created>1787701732488</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1787701732488</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add Projects collection with fields for title, slug, tech stack, description, visibility, and links" />
     <MESSAGE value="feat: implement Projects collection with fields for title, slug, tech stack, description, visibility, and links; enhance code block component with syntax highlighting and line number options" />
     <MESSAGE value="refactor: standardize quotation marks and remove unused page component" />
     <MESSAGE value="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props" />
@@ -602,7 +592,8 @@
     <MESSAGE value="fix: improve measurement logic in CaseStudiesScroll component for better responsiveness" />
     <MESSAGE value="feat: enhance CaseStudiesCard component with lazy loading and blur placeholder for images" />
     <MESSAGE value="feat: add Skills collection with fields for category, order, and items" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add Skills collection with fields for category, order, and items" />
+    <MESSAGE value="feat: add Skills collection and integrate into HomeClient component" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add Skills collection and integrate into HomeClient component" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

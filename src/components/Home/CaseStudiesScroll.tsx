@@ -14,15 +14,7 @@ import "swiper/css";
 
 export type CaseStudy = Project;
 
-/**
- * Above this width the section pins and the row is dragged by vertical scroll.
- * Below it, Swiper takes over: pinning the section and translating a
- * multi-thousand-pixel layer on every scroll frame is what made this crawl on
- * phones, and it also widened the document past the viewport.
- */
 const PINNED_QUERY = "(min-width: 1024px)";
-
-/** Matches the container's `px-8` so slides line up with the heading. */
 const EDGE_OFFSET = 32;
 
 function subscribeToPinned(onChange: () => void) {
@@ -31,11 +23,6 @@ function subscribeToPinned(onChange: () => void) {
   return () => query.removeEventListener("change", onChange);
 }
 
-/**
- * Reports `false` on the server, so phones get the Swiper markup straight out
- * of SSR and desktop swaps to the pinned track on hydration — which is where
- * the pinned height has always been measured anyway.
- */
 function useIsPinned() {
   return useSyncExternalStore(
     subscribeToPinned,
@@ -56,8 +43,6 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
 
   const isPinned = useIsPinned();
 
-  // useId() contains characters that are illegal in a selector, and Swiper
-  // resolves these by querying the document.
   const navId = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const prevClass = `case-studies-prev-${navId}`;
   const nextClass = `case-studies-next-${navId}`;
@@ -67,7 +52,6 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
     offset: ["start start", "end end"],
   });
 
-  // Horizontal distance the row travels while the section is pinned.
   const [scrollDistance, setScrollDistance] = useState(0);
 
   useEffect(() => {
@@ -77,11 +61,6 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
     const content = contentRef.current;
     if (!track || !content) return;
 
-    // Runs synchronously from the ResizeObserver (which already fires after
-    // layout, so these reads are free). Deliberately not deferred to rAF: a
-    // backgrounded tab never runs those, which would leave the section stuck at
-    // a stale height. Re-measuring cannot loop, because the only thing this
-    // changes — the section's height — does not affect either width below.
     const measure = () => {
       const visible = track.clientWidth;
       const total = content.scrollWidth;
@@ -99,8 +78,6 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
     return () => resizeObserver.disconnect();
   }, [caseStudies.length, isPinned]);
 
-  // A stale measurement must never leak into the Swiper layout; it is re-taken
-  // by the effect whenever the section pins again.
   const pinnedDistance = isPinned ? scrollDistance : 0;
   const xCord = useTransform(scrollYProgress, [0, 1], [0, -pinnedDistance]);
 
@@ -111,29 +88,27 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
     <section
       ref={targetRef}
       className={cn("relative", className)}
-      style={
-        pinnedDistance > 0 ? { height: `calc(100svh + ${pinnedDistance}px)` } : undefined
-      }
+      style={pinnedDistance > 0 ? { height: `calc(100svh + ${pinnedDistance}px)` } : undefined}
     >
       <div
         className={cn(
           "flex flex-col",
-          // `overflow-x: clip` keeps the row from widening the document — an
-          // element's own overflow does not affect its stickiness.
           isPinned ? "sticky top-0 h-svh justify-center overflow-x-clip" : "gap-10 py-24"
         )}
       >
         {/* Header */}
-        <div className={cn("container mx-auto max-lg:px-8", isPinned && "absolute inset-x-0 top-24")}>
-          <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div
+          className={cn("container mx-auto max-lg:px-8", isPinned && "absolute inset-x-0 top-24")}
+        >
+          <div className="mx-auto flex max-w-screen-2xl flex-col justify-between gap-4 md:flex-row md:items-end md:gap-8">
             <TextAnimate
               animation="blurInUp"
               by="word"
-              className="font-heading text-4xl tracking-tight text-zinc-900 md:text-6xl"
+              className="font-heading text-4xl font-medium tracking-tight text-zinc-900 md:text-6xl"
             >
               Selected Work
             </TextAnimate>
-            <p className="max-w-sm text-sm font-light text-zinc-600 md:text-base">
+            <p className="font-heading max-w-sm font-light text-zinc-600 md:text-base">
               A collection of projects exploring the boundary between digital precision and human
               experience.
             </p>
@@ -141,7 +116,6 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
         </div>
 
         {isPinned ? (
-          /* Dragged by the pinned vertical scroll. */
           <div ref={trackRef} className="container mx-auto">
             <motion.div
               ref={contentRef}
@@ -173,10 +147,18 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
             </Swiper>
 
             <div className="mt-8 flex justify-end gap-3 px-8">
-              <button type="button" aria-label="Previous project" className={cn(prevClass, navButtonClass)}>
+              <button
+                type="button"
+                aria-label="Previous project"
+                className={cn(prevClass, navButtonClass)}
+              >
                 <IconArrowLeft stroke={1.5} size={20} />
               </button>
-              <button type="button" aria-label="Next project" className={cn(nextClass, navButtonClass)}>
+              <button
+                type="button"
+                aria-label="Next project"
+                className={cn(nextClass, navButtonClass)}
+              >
                 <IconArrowRight stroke={1.5} size={20} />
               </button>
             </div>

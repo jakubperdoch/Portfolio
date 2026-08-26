@@ -32,8 +32,10 @@ export default function CaseStudiesCard({
 
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <span className="font-heading text-2xl font-medium text-zinc-900">{caseStudy.title}</span>
-          <div className="font-heading flex flex-wrap gap-x-2 gap-y-0.5 font-extralight text-zinc-500">
+          <span className="font-heading text-xl font-medium text-zinc-900 md:text-2xl">
+            {caseStudy.title}
+          </span>
+          <div className="font-heading flex flex-wrap gap-x-2 gap-y-0.5 text-sm font-extralight text-zinc-500 md:text-base">
             {caseStudy.techStack.slice(0, 3).map((tech, idx) => (
               <span key={idx}>{tech.tech}</span>
             ))}

@@ -30,13 +30,13 @@ export default function Skills({ skills }: SkillProps) {
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-between gap-2">
+      <div className="flex flex-wrap justify-between gap-8">
         {skills.map((skill, idx) => {
           const skillCategory = SkillCategories.find(
             (category) => category.value == skill.category
           )?.label;
           return (
-            <div key={idx} className="flex flex-col gap-8 md:gap-5">
+            <div key={idx} className="flex flex-col gap-5">
               <span className="font-heading upload text-sm font-medium text-zinc-400">
                 {skillCategory}
               </span>

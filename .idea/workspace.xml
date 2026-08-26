@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add SkillCategories array and update Skills component for improved skill categorization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collections/Skills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Skills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Experience.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Skills.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +19,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="152" />
+    <option name="cachedIndexableFilesCount" value="170" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FormatOnSaveOptions">
@@ -75,38 +73,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "code.cleanup.on.save": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/jakubperdoch/Developer/portfolio",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "/Users/jakubperdoch/Developer/portfolio/node_modules/eslint",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/jakubperdoch/Developer/portfolio/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "ml.llm.LLMAIWorkflowsConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Users/jakubperdoch/Developer/portfolio/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jakubperdoch/Developer/portfolio&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;/Users/jakubperdoch/Developer/portfolio/node_modules/eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/jakubperdoch/Developer/portfolio/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMAIWorkflowsConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/jakubperdoch/Developer/portfolio/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1783897216955" />
     <option name="spentUsd" value="0.00354055" />
@@ -164,15 +162,8 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="35841000" />
-    </task>
-    <task id="LOCAL-00013" summary="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval">
-      <option name="closed" value="true" />
-      <created>1786318422371</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1786318422371</updated>
+      <workItem from="1787594425800" duration="35991000" />
+      <workItem from="1787705357883" duration="86000" />
     </task>
     <task id="LOCAL-00014" summary="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging">
       <option name="closed" value="true" />
@@ -558,14 +549,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787703531042</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="feat: add SkillCategories array and update Skills component for improved skill categorization">
+      <option name="closed" value="true" />
+      <created>1787704841698</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1787704841699</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: standardize quotation marks and remove unused page component" />
     <MESSAGE value="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props" />
     <MESSAGE value="feat: add Experience collection with fields for role, company, start date, end date, and responsibilities; implement API route to fetch experiences and integrate into HomeClient" />
     <MESSAGE value="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with metadata and initial content" />
@@ -590,7 +588,8 @@
     <MESSAGE value="feat: add Skills collection with fields for category, order, and items" />
     <MESSAGE value="feat: add Skills collection and integrate into HomeClient component" />
     <MESSAGE value="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness" />
+    <MESSAGE value="feat: add SkillCategories array and update Skills component for improved skill categorization" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add SkillCategories array and update Skills component for improved skill categorization" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

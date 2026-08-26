@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add Skills collection and integrate into HomeClient component">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/collections/Skills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Skills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Experience.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Skills.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,15 +164,7 @@
       <workItem from="1775593290013" duration="4272000" />
       <workItem from="1783117012786" duration="898000" />
       <workItem from="1786233041063" duration="811000" />
-      <workItem from="1787594425800" duration="34522000" />
-    </task>
-    <task id="LOCAL-00012" summary="Update `Header` component styles: add hover effect with smooth transition">
-      <option name="closed" value="true" />
-      <created>1786317550872</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1786317550872</updated>
+      <workItem from="1787594425800" duration="35841000" />
     </task>
     <task id="LOCAL-00013" summary="Integrate GitHub activity widget in `Header` and implement API route for activity data retrieval">
       <option name="closed" value="true" />
@@ -561,14 +550,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787701732488</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness">
+      <option name="closed" value="true" />
+      <created>1787703531042</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1787703531042</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: implement Projects collection with fields for title, slug, tech stack, description, visibility, and links; enhance code block component with syntax highlighting and line number options" />
     <MESSAGE value="refactor: standardize quotation marks and remove unused page component" />
     <MESSAGE value="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props" />
     <MESSAGE value="feat: add Experience collection with fields for role, company, start date, end date, and responsibilities; implement API route to fetch experiences and integrate into HomeClient" />
@@ -593,7 +589,8 @@
     <MESSAGE value="feat: enhance CaseStudiesCard component with lazy loading and blur placeholder for images" />
     <MESSAGE value="feat: add Skills collection with fields for category, order, and items" />
     <MESSAGE value="feat: add Skills collection and integrate into HomeClient component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add Skills collection and integrate into HomeClient component" />
+    <MESSAGE value="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

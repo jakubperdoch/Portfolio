@@ -3,7 +3,12 @@
 import { TextAnimate } from "@/components/ui/text-animate";
 import { motion } from "motion/react";
 import { Experience as ExperienceType } from "@/payload-types";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 
 const containerVariants = {

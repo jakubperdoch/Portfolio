@@ -56,9 +56,19 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
 
       <div className="flex flex-col justify-between gap-8 lg:flex-row">
         <div className="flex flex-col gap-2">
-          <h3 className="font-heading text-xl font-medium text-zinc-900 md:text-2xl">
+          <motion.h3
+            variants={{
+              cardHover: {
+                x: 10,
+              },
+              cardTap: {
+                x: 0,
+              },
+            }}
+            className="font-heading text-xl font-medium text-zinc-900 md:text-2xl"
+          >
             {caseStudy.title}
-          </h3>
+          </motion.h3>
           <div className="flex max-w-lg flex-wrap gap-2">
             {caseStudy.techStack.map((tech, idx) => (
               <div

@@ -15,7 +15,7 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default async function WorkPage() {
-  const resultCaseStudies = await getCaseStudies({ featuredOnly: true });
+  const resultCaseStudies = await getCaseStudies({ featuredOnly: false });
   const caseStudies =
     resultCaseStudies.success && resultCaseStudies.caseStudies ? resultCaseStudies.caseStudies : [];
 

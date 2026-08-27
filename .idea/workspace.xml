@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: enhance Card and DockMenu components with improved link accessibility and layout adjustments">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: enhance Card component with motion effects and update layout in ProjectsGridSection for improved responsiveness">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Projects/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Projects/ProjectsGridSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/ProjectsGridSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/(marketing)/projects/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,15 +166,7 @@
       <workItem from="1787594425800" duration="35991000" />
       <workItem from="1787705357883" duration="86000" />
       <workItem from="1787707678127" duration="277000" />
-      <workItem from="1787867740193" duration="4805000" />
-    </task>
-    <task id="LOCAL-00017" summary="Add `menuOpenHandler` prop to `DockMenu`, connect to `Header` menu logic, and implement full-screen menu animation">
-      <option name="closed" value="true" />
-      <created>1786322423352</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1786322423352</updated>
+      <workItem from="1787867740193" duration="5645000" />
     </task>
     <task id="LOCAL-00018" summary="Update `Header` to improve menu logic and animations, add comments for better structure clarification">
       <option name="closed" value="true" />
@@ -562,14 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787871803181</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="feat: enhance Card component with motion effects and update layout in ProjectsGridSection for improved responsiveness">
+      <option name="closed" value="true" />
+      <created>1787872654974</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1787872654974</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with structured metadata and initial content" />
     <MESSAGE value="refactor: reorganize imports in Experience component and rename robots file for clarity" />
     <MESSAGE value="feat: update experience fetching logic to use Payload API and remove deprecated route" />
     <MESSAGE value="feat: implement Accordion component with context for managing open items and enhance Experience section with formatted date range and responsibilities" />
@@ -594,7 +591,8 @@
     <MESSAGE value="feat: update Skills component layout for improved spacing and responsiveness" />
     <MESSAGE value="feat: refactor CaseStudies components and update layout for improved organization and responsiveness" />
     <MESSAGE value="feat: enhance Card and DockMenu components with improved link accessibility and layout adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance Card and DockMenu components with improved link accessibility and layout adjustments" />
+    <MESSAGE value="feat: enhance Card component with motion effects and update layout in ProjectsGridSection for improved responsiveness" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance Card component with motion effects and update layout in ProjectsGridSection for improved responsiveness" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

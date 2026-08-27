@@ -3,6 +3,7 @@
 import { Project } from "@/payload-types";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { shimmerBlurDataURL } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import { IconBrandGithub } from "@tabler/icons-react";
@@ -13,16 +14,21 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
   const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
 
   return (
-    <motion.a
-      href={"/projects/" + caseStudy.slug + "/"}
+    <motion.article
       whileHover={"cardHover"}
       whileTap={"cardTap"}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="flex cursor-pointer flex-col gap-4"
+      className="relative flex cursor-pointer flex-col gap-4"
     >
+      <Link
+        href={"/projects/" + caseStudy.slug + "/"}
+        aria-label={caseStudy.title}
+        className="absolute inset-0 z-0"
+      />
+
       <motion.div
         variants={{
           cardHover: {
@@ -57,7 +63,7 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
             {caseStudy.techStack.map((tech, idx) => (
               <div
                 key={idx}
-                className="font-heading flex cursor-default gap-1 rounded-full bg-zinc-100 px-2.5 py-1.5 text-[10px] font-medium tracking-widest text-zinc-600 uppercase hover:text-zinc-900"
+                className="font-heading relative z-10 flex cursor-default gap-1 rounded-full bg-zinc-100 px-2.5 py-1.5 text-[10px] font-medium tracking-widest text-zinc-600 uppercase hover:text-zinc-900"
               >
                 {tech.tech}
               </div>
@@ -71,7 +77,7 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
               href={caseStudy.liveLink}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="h-fit rounded-full bg-zinc-100 p-2 transition-colors duration-300 hover:bg-zinc-200"
+              className="relative z-10 h-fit rounded-full bg-zinc-100 p-2 transition-colors duration-300 hover:bg-zinc-200"
             >
               <ExternalLink size={22} />
             </motion.a>
@@ -82,13 +88,13 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={caseStudy.githubLink}
-              className="h-fit rounded-full bg-zinc-100 p-2 transition-colors duration-300 hover:bg-zinc-200"
+              className="relative z-10 h-fit rounded-full bg-zinc-100 p-2 transition-colors duration-300 hover:bg-zinc-200"
             >
               <IconBrandGithub size={22} />
             </motion.a>
           )}
         </div>
       </div>
-    </motion.a>
+    </motion.article>
   );
 }

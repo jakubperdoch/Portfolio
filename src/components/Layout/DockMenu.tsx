@@ -6,6 +6,7 @@ import { Dock, DockIcon } from "@/components/ui/dock";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 interface DockMenuProps {
   menuOpenHandler: () => void;
@@ -26,13 +27,19 @@ export default function DockMenu({ menuOpenHandler }: DockMenuProps) {
         </DockIcon>
         <Separator orientation="vertical" className="h-full rounded-full! bg-zinc-500" />
         <DockIcon>
-          <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+          <Link href="https://www.linkedin.com/in/jakub-perďoch" target="_blank" rel="noreferrer">
+            <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+          </Link>
         </DockIcon>
         <DockIcon>
-          <Image src="/icons/github.svg" alt="GitHub" width={24} height={24} />
+          <Link href="https://github.com/jakubperdoch" target="_blank" rel="noreferrer">
+            <Image src="/icons/github.svg" alt="GitHub" width={24} height={24} />
+          </Link>
         </DockIcon>
         <DockIcon>
-          <Image src="/icons/gmail.svg" alt="Email" width={24} height={24} />
+          <Link href="mailto:perdochjakub@gmail.com" target="_blank" rel="noreferrer">
+            <Image src="/icons/gmail.svg" alt="Email" width={24} height={24} />
+          </Link>
         </DockIcon>
       </Dock>
     </div>

@@ -183,6 +183,7 @@ export default function Header() {
                       key={idx}
                       href={link.href}
                       onMouseEnter={() => setHoveredIndex(idx)}
+                      onClick={() => setFullMenuOpen(false)}
                       className={cn(
                         isTarget
                           ? "translate-x-2 text-white md:translate-x-4"

@@ -1,16 +1,10 @@
 import Image from "next/image";
-import type { CaseStudy } from "@/components/Home/CaseStudiesScroll";
+import type { CaseStudy } from "@/components/Home/CaseStudiesSection";
 import { shimmerBlurDataURL } from "@/lib/utils";
 
 const IMAGE_SIZES = "(min-width: 1024px) 40vw, (min-width: 768px) 45vw, 85vw";
 
-export default function CaseStudiesCard({
-  caseStudy,
-  index = 0,
-}: {
-  caseStudy: CaseStudy;
-  index?: number;
-}) {
+export default function Card({ caseStudy, index = 0 }: { caseStudy: CaseStudy; index?: number }) {
   const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
 
   return (

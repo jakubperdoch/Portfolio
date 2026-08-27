@@ -59,7 +59,7 @@ interface ExperienceProps {
   experiences: ExperienceType[];
 }
 
-export default function Experience({ experiences }: ExperienceProps) {
+export default function ExperienceSection({ experiences }: ExperienceProps) {
   return (
     <section className="bg-zinc-950">
       <div className="container mx-auto grid grid-cols-1 gap-12 pt-14 pb-8 max-lg:px-8 md:grid-cols-3 md:gap-24">

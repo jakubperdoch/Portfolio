@@ -11,7 +11,7 @@ interface SkillProps {
   skills: Skill[];
 }
 
-export default function Skills({ skills }: SkillProps) {
+export default function SkillsSection({ skills }: SkillProps) {
   return (
     <section className="container mx-auto space-y-8 pt-14 pb-8 max-lg:px-8 md:space-y-12">
       <div className="space-y-1.5">

@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { TextAnimate } from "@/components/ui/text-animate";
 import type { Project } from "@/payload-types";
-import CaseStudiesCard from "@/components/Home/CaseStudiesCard";
+import Card from "@/components/CaseStudies/Card";
 
 import "swiper/css";
 
@@ -36,7 +36,7 @@ interface CaseStudiesScrollProps {
   caseStudies: CaseStudy[];
 }
 
-export default function CaseStudiesScroll({ className, caseStudies }: CaseStudiesScrollProps) {
+export default function CaseStudiesSection({ className, caseStudies }: CaseStudiesScrollProps) {
   const targetRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -123,7 +123,7 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
               className="flex gap-14 will-change-transform"
             >
               {caseStudies.map((caseStudy, index) => (
-                <CaseStudiesCard key={caseStudy.id} caseStudy={caseStudy} index={index} />
+                <Card key={caseStudy.id} caseStudy={caseStudy} index={index} />
               ))}
             </motion.div>
           </div>
@@ -141,7 +141,7 @@ export default function CaseStudiesScroll({ className, caseStudies }: CaseStudie
             >
               {caseStudies.map((caseStudy, index) => (
                 <SwiperSlide key={caseStudy.id} className="w-auto!">
-                  <CaseStudiesCard caseStudy={caseStudy} index={index} />
+                  <Card caseStudy={caseStudy} index={index} />
                 </SwiperSlide>
               ))}
             </Swiper>

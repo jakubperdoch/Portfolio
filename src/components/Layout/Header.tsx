@@ -14,7 +14,7 @@ import { Separator } from "@/components/ui/separator";
 const navigationLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
-  { label: "My Setup", href: "/my-setup" },
+  // { label: "My Setup", href: "/my-setup" },
   { label: "Contact", href: "/contact" },
 ];
 

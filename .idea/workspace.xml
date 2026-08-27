@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add SkillCategories array and update Skills component for improved skill categorization">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update Skills component layout for improved spacing and responsiveness">
+      <change afterPath="$PROJECT_DIR$/src/components/Projects/Hero.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Projects/ProjectsGridSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Skills.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/my-gear/client.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/my-gear/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/work/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/(marketing)/projects/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/work/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/(marketing)/projects/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/case-studies/[slug]/client.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/case-studies/[slug]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/case-studies/client.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/case-studies/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CaseStudies/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesScroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/ExperienceSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/SkillsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +138,7 @@
       <recent name="$PROJECT_DIR$/src/lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/CaseStudies" />
       <recent name="$PROJECT_DIR$/src/app/(apps)" />
       <recent name="$PROJECT_DIR$/src/app/(marketing)" />
       <recent name="$PROJECT_DIR$/src/app" />
@@ -164,14 +182,8 @@
       <workItem from="1786233041063" duration="811000" />
       <workItem from="1787594425800" duration="35991000" />
       <workItem from="1787705357883" duration="86000" />
-    </task>
-    <task id="LOCAL-00014" summary="Replace activity indicator in `GithubActivity` component with GitHub icon, improve UI styling, and add debug logging">
-      <option name="closed" value="true" />
-      <created>1786319045394</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1786319045394</updated>
+      <workItem from="1787707678127" duration="277000" />
+      <workItem from="1787867740193" duration="3608000" />
     </task>
     <task id="LOCAL-00015" summary="Remove commitsToday logic from GitHub activity API, simplify UI in `GithubActivity` component, and add debug logging">
       <option name="closed" value="true" />
@@ -557,14 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787704841699</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="feat: update Skills component layout for improved spacing and responsiveness">
+      <option name="closed" value="true" />
+      <created>1787707684355</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1787707684355</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: implement getCaseStudies function to fetch case studies from API; update CaseStudy type to use Project type and modify HomeClient to accept case studies as props" />
     <MESSAGE value="feat: add Experience collection with fields for role, company, start date, end date, and responsibilities; implement API route to fetch experiences and integrate into HomeClient" />
     <MESSAGE value="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with metadata and initial content" />
     <MESSAGE value="feat: add My Gear, Privacy Policy, Terms of Service, and Work pages with structured metadata and initial content" />
@@ -589,7 +608,8 @@
     <MESSAGE value="feat: add Skills collection and integrate into HomeClient component" />
     <MESSAGE value="feat: update CaseStudiesCard and CaseStudiesScroll components for improved styling and responsiveness" />
     <MESSAGE value="feat: add SkillCategories array and update Skills component for improved skill categorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add SkillCategories array and update Skills component for improved skill categorization" />
+    <MESSAGE value="feat: update Skills component layout for improved spacing and responsiveness" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update Skills component layout for improved spacing and responsiveness" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

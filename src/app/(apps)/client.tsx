@@ -1,8 +1,8 @@
 import Hero from "@/components/Home/Hero";
-import CaseStudiesScroll, { CaseStudy } from "@/components/Home/CaseStudiesScroll";
-import Experience from "@/components/Home/Experience";
+import CaseStudiesSection, { CaseStudy } from "@/components/Home/CaseStudiesSection";
+import ExperienceSection from "@/components/Home/ExperienceSection";
 import { Experience as ExperienceType, Skill } from "@/payload-types";
-import Skills from "@/components/Home/Skills";
+import SkillsSection from "@/components/Home/SkillsSection";
 
 export default function HomeClient({
   caseStudies,
@@ -16,9 +16,9 @@ export default function HomeClient({
   return (
     <>
       <Hero />
-      {caseStudies.length > 0 && <CaseStudiesScroll caseStudies={caseStudies} />}
-      {experiences.length > 0 && <Experience experiences={experiences} />}
-      {skills.length > 0 && <Skills skills={skills} />}
+      {caseStudies.length > 0 && <CaseStudiesSection caseStudies={caseStudies} />}
+      {experiences.length > 0 && <ExperienceSection experiences={experiences} />}
+      {skills.length > 0 && <SkillsSection skills={skills} />}
     </>
   );
 }

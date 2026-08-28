@@ -2,7 +2,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 
 export default function Hero() {
   return (
-    <div className="container mx-auto flex flex-col items-center gap-5 px-4 pt-36 max-lg:px-8 md:justify-between lg:flex-row">
+    <div className="container mx-auto flex flex-col gap-5 px-4 pt-36 max-lg:px-8 md:items-center md:justify-between lg:flex-row">
       <div>
         <p className="font-heading text-sm tracking-widest text-zinc-600 uppercase">
           Selected Projects

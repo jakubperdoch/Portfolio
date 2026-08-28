@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update WorkPage to fetch all case studies instead of only featured ones">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update Card component z-index for improved layering and accessibility">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Projects/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/Hero.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,15 +166,7 @@
       <workItem from="1787594425800" duration="35991000" />
       <workItem from="1787705357883" duration="86000" />
       <workItem from="1787707678127" duration="277000" />
-      <workItem from="1787867740193" duration="6134000" />
-    </task>
-    <task id="LOCAL-00019" summary="Remove debug logging from GitHub activity API and update workspace configuration">
-      <option name="closed" value="true" />
-      <created>1786386375628</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1786386375628</updated>
+      <workItem from="1787867740193" duration="6473000" />
     </task>
     <task id="LOCAL-00020" summary="Add `Footer` component with navigation and social links; update `layout.tsx` to include `Footer`.">
       <option name="closed" value="true" />
@@ -560,14 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787875065963</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="feat: update Card component z-index for improved layering and accessibility">
+      <option name="closed" value="true" />
+      <created>1787875631960</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1787875631960</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: update experience fetching logic to use Payload API and remove deprecated route" />
     <MESSAGE value="feat: implement Accordion component with context for managing open items and enhance Experience section with formatted date range and responsibilities" />
     <MESSAGE value="fix: adjust margin for tech stack badges in Experience component and update workspace configuration" />
     <MESSAGE value="fix: adjust layout and typography in Experience component for better responsiveness" />
@@ -592,7 +591,8 @@
     <MESSAGE value="feat: enhance Card and DockMenu components with improved link accessibility and layout adjustments" />
     <MESSAGE value="feat: enhance Card component with motion effects and update layout in ProjectsGridSection for improved responsiveness" />
     <MESSAGE value="feat: update WorkPage to fetch all case studies instead of only featured ones" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update WorkPage to fetch all case studies instead of only featured ones" />
+    <MESSAGE value="feat: update Card component z-index for improved layering and accessibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update Card component z-index for improved layering and accessibility" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

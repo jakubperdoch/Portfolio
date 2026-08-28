@@ -26,7 +26,7 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
       <Link
         href={"/projects/" + caseStudy.slug + "/"}
         aria-label={caseStudy.title}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-2"
       />
 
       <motion.div
@@ -38,7 +38,7 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
             scale: 0.98,
           },
         }}
-        className="relative aspect-video overflow-hidden rounded-sm drop-shadow-lg"
+        className="relative z-1 aspect-video overflow-hidden rounded-sm drop-shadow-lg"
       >
         {image?.url && (
           <Image

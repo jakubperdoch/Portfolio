@@ -7,7 +7,7 @@ import JsonLd from "@/lib/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { constructMetadata } from "@/lib/seo";
 
-import WorkClient from "./client";
+import ProjectsClient from "./client";
 
 type ProjectsPageProps = {
   params: Promise<{ locale: AppLocale }>;
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: ProjectsPageProps): Promise<M
   });
 }
 
-export default async function WorkPage({ params }: ProjectsPageProps) {
+export default async function ProjectPage({ params }: ProjectsPageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
@@ -46,7 +46,7 @@ export default async function WorkPage({ params }: ProjectsPageProps) {
           locale
         )}
       />
-      <WorkClient caseStudies={caseStudies} />
+      <ProjectsClient caseStudies={caseStudies} />
     </>
   );
 }

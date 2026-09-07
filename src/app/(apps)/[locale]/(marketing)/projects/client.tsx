@@ -3,7 +3,7 @@ import Hero from "@/components/Projects/Hero";
 import ProjectsGridSection from "@/components/Projects/ProjectsGridSection";
 import { Separator } from "@/components/ui/separator";
 
-export default function WorkClient({ caseStudies }: { caseStudies: CaseStudy[] }) {
+export default function ProjectsClient({ caseStudies }: { caseStudies: CaseStudy[] }) {
   return (
     <>
       <Hero />

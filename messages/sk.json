@@ -10,6 +10,10 @@
       "title": "Projekty",
       "description": "Výber projektov a prípadových štúdií Jakuba Perďocha — proces, použité technológie a výsledok za každým z nich."
     },
+    "projectDetail": {
+      "title": "Detail projektu",
+      "description": "Detailný pohľad na projekt, vrátane jeho účelu, použitých technológií a výsledku."
+    },
     "contact": {
       "title": "Kontakt",
       "description": "Ozvite sa Jakubovi Perďochovi ohľadom vývoja softvéru, spolupráce alebo pracovných príležitostí."
@@ -35,6 +39,7 @@
   "Breadcrumbs": {
     "home": "Domov",
     "projects": "Projekty",
+    "projectDetail": "Detail projektu",
     "contact": "Kontakt",
     "privacyPolicy": "Ochrana osobných údajov",
     "termsOfService": "Podmienky používania"

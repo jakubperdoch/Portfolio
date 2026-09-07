@@ -10,6 +10,10 @@
       "title": "Projects",
       "description": "A collection of projects and case studies by Jakub Perďoch, covering the process, stack and outcome behind each build."
     },
+    "projectDetail": {
+      "title": "Project Detail",
+      "description": "A detailed view of a project, including its purpose, technologies, and the outcome."
+    },
     "contact": {
       "title": "Contact",
       "description": "Get in touch with Jakub Perďoch about software development projects, collaborations, or opportunities."
@@ -35,6 +39,7 @@
   "Breadcrumbs": {
     "home": "Home",
     "projects": "Projects",
+    "projectDetail": "Project Detail",
     "contact": "Contact",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"

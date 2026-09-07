@@ -7,8 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "migrate:localize": "payload run src/scripts/migrate-localized-fields.ts"
+    "lint": "eslint"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^4.0.38",

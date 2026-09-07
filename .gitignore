@@ -42,3 +42,5 @@ next-env.d.ts
 
 # Ignore all of .idea folder by default
 .idea/*
+# next-intl: regenerated from messages/en.json on every dev/build
+messages/*.d.json.ts

@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { useScroll, useSpring } from "framer-motion";
 import { AnimatePresence, motion } from "motion/react";
 import { IconArrowUpDashed } from "@tabler/icons-react";
+import { useTranslations } from "next-intl";
 
 export const BackToTop = () => {
+  const t = useTranslations("BackToTop");
   const [isVisible, setIsVisible] = useState(false);
   const { scrollYProgress } = useScroll();
 
@@ -40,6 +42,8 @@ export const BackToTop = () => {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
+          aria-label={t("label")}
+          title={t("label")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           initial={{ y: 120 }}

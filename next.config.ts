@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { withPayload } from "@payloadcms/next/withPayload";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const r2PublicHost = process.env.R2_PUBLIC_URL
   ? new URL(process.env.R2_PUBLIC_URL).hostname
@@ -49,4 +50,13 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withPayload(nextConfig, {});
+const withNextIntl = createNextIntlPlugin({
+  requestConfig: "./src/i18n/request.ts",
+  experimental: {
+    // Types `useTranslations`/`getTranslations` keys against the English
+    // catalogue, so a missing or renamed key fails the type check.
+    createMessagesDeclaration: "./messages/en.json",
+  },
+});
+
+export default withNextIntl(withPayload(nextConfig, {}));

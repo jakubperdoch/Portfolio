@@ -1,9 +1,13 @@
+import { useTranslations } from "next-intl";
+
 export default function ContactClient() {
+  const t = useTranslations("ContactPage");
+
   return (
     <div className="container mx-auto px-4 py-24 md:py-32">
-      <h1 className="font-heading text-4xl leading-tight font-bold md:text-6xl">Contact</h1>
+      <h1 className="font-heading text-4xl leading-tight font-bold md:text-6xl">{t("title")}</h1>
       <p className="font-body text-foreground/80 mt-6 max-w-[60ch] text-base leading-relaxed md:text-lg">
-        This page is not written yet.
+        {t("body")}
       </p>
     </div>
   );

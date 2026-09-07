@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { IconBrandGithub } from "@tabler/icons-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 interface ActivityData {
@@ -13,17 +14,45 @@ interface ActivityProps {
   className?: string;
 }
 
+const INTERVALS = [
+  { seconds: 86400, key: "daysAgo" },
+  { seconds: 3600, key: "hoursAgo" },
+  { seconds: 60, key: "minutesAgo" },
+] as const;
+
+type Elapsed = { key: (typeof INTERVALS)[number]["key"]; count: number } | null;
+
+/** Pure: the reference time is passed in rather than read during render. */
+function elapsedSince(lastActive: string, now: number): Elapsed {
+  const seconds = Math.floor((now - new Date(lastActive).getTime()) / 1000);
+
+  for (const { seconds: unit, key } of INTERVALS) {
+    const count = Math.floor(seconds / unit);
+    if (count >= 1) return { key, count };
+  }
+
+  return null;
+}
+
 export default function GithubActivity({ className }: ActivityProps) {
-  const [data, setData] = useState<ActivityData | null>(null);
+  const t = useTranslations("GithubActivity");
+  const [elapsed, setElapsed] = useState<Elapsed | undefined>(undefined);
 
   useEffect(() => {
     fetch("/api/github/activity")
       .then((res) => res.json())
-      .then(setData)
+      .then((data: ActivityData) => {
+        if (!data?.lastActive) return;
+        // Snapshot the clock as the data arrives, so rendering stays pure and
+        // the label does not drift on unrelated re-renders.
+        setElapsed(elapsedSince(data.lastActive, Date.now()));
+      })
       .catch(() => {});
   }, []);
 
-  if (!data || !data.lastActive) return null;
+  if (elapsed === undefined) return null;
+
+  const time = elapsed ? t(elapsed.key, { count: elapsed.count }) : t("justNow");
 
   return (
     <div className={cn("text-muted-foreground flex items-center gap-1.5 text-sm", className)}>
@@ -31,21 +60,7 @@ export default function GithubActivity({ className }: ActivityProps) {
         <IconBrandGithub size={16} className="absolute inline-flex animate-ping text-green-500" />
         <IconBrandGithub size={16} className="absolute inline-flex" />
       </div>
-      <span className="font-heading">Last active {getTimeAgo(new Date(data.lastActive))}</span>
+      <span className="font-heading">{t("lastActive", { time })}</span>
     </div>
   );
-}
-
-function getTimeAgo(date: Date): string {
-  const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
-  const intervals: [number, string][] = [
-    [86400, "d"],
-    [3600, "h"],
-    [60, "m"],
-  ];
-  for (const [secs, label] of intervals) {
-    const count = Math.floor(seconds / secs);
-    if (count >= 1) return `${count}${label} ago`;
-  }
-  return "just now";
 }

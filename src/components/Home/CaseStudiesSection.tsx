@@ -6,6 +6,7 @@ import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { useTranslations } from "next-intl";
 import { TextAnimate } from "@/components/ui/text-animate";
 import type { Project } from "@/payload-types";
 import Card from "@/components/CaseStudies/Card";
@@ -37,6 +38,8 @@ interface CaseStudiesScrollProps {
 }
 
 export default function CaseStudiesSection({ className, caseStudies }: CaseStudiesScrollProps) {
+  const t = useTranslations("CaseStudies");
+
   const targetRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -106,11 +109,10 @@ export default function CaseStudiesSection({ className, caseStudies }: CaseStudi
               by="word"
               className="font-heading text-4xl font-medium tracking-tight text-zinc-900 md:text-6xl"
             >
-              Selected Work
+              {t("title")}
             </TextAnimate>
             <p className="font-heading max-w-sm font-light text-zinc-600 md:text-base">
-              A collection of projects exploring the boundary between digital precision and human
-              experience.
+              {t("description")}
             </p>
           </div>
         </div>
@@ -149,14 +151,14 @@ export default function CaseStudiesSection({ className, caseStudies }: CaseStudi
             <div className="mt-8 flex justify-end gap-3 px-8">
               <button
                 type="button"
-                aria-label="Previous project"
+                aria-label={t("previousProject")}
                 className={cn(prevClass, navButtonClass)}
               >
                 <IconArrowLeft stroke={1.5} size={20} />
               </button>
               <button
                 type="button"
-                aria-label="Next project"
+                aria-label={t("nextProject")}
                 className={cn(nextClass, navButtonClass)}
               >
                 <IconArrowRight stroke={1.5} size={20} />

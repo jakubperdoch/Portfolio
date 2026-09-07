@@ -2,9 +2,9 @@
 
 import { Skill } from "@/payload-types";
 import { TextAnimate } from "@/components/ui/text-animate";
-import { SkillCategories } from "@/collections/Skills";
 import SafeSVG from "@/components/SafeSVG";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 interface SkillProps {
   className?: string;
@@ -12,29 +12,30 @@ interface SkillProps {
 }
 
 export default function SkillsSection({ skills }: SkillProps) {
+  const t = useTranslations("Skills");
+
   return (
     <section className="container mx-auto space-y-8 pt-14 pb-8 max-lg:px-8 md:space-y-12">
       <div className="space-y-1.5">
-        <p className="font-heading text-sm tracking-widest text-zinc-600 uppercase">Knowledge</p>
+        <p className="font-heading text-sm tracking-widest text-zinc-600 uppercase">
+          {t("eyebrow")}
+        </p>
         <TextAnimate
           animation="blurInUp"
           by="word"
           className="font-heading text-4xl font-medium tracking-tight text-zinc-900 md:text-6xl"
         >
-          Technical Stack
+          {t("title")}
         </TextAnimate>
 
         <p className="font-heading max-w-sm font-light text-zinc-600 md:text-lg">
-          A collection of technologies and tools I use to build robust, scalable, and
-          high-performance digital products.
+          {t("description")}
         </p>
       </div>
 
       <div className="flex flex-wrap justify-between gap-8">
         {skills.map((skill, idx) => {
-          const skillCategory = SkillCategories.find(
-            (category) => category.value == skill.category
-          )?.label;
+          const skillCategory = t(`categories.${skill.category}`);
           return (
             <div key={idx} className="flex flex-col gap-5">
               <span className="font-heading upload text-sm font-medium text-zinc-400">

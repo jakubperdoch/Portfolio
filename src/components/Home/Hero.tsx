@@ -5,11 +5,13 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import Image from "next/image";
 import { TagsRow } from "@/components/ui/TagsRow";
 import { IconBrandGithub, IconBrandLinkedin, IconFileInvoice, IconMail } from "@tabler/icons-react";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
-const words = ["Design.", "Code.", "Build.", "Ship.", "Refine.", "Repeat."];
-
 export default function Hero() {
+  const t = useTranslations("Hero");
+  const words = t.raw("words") as string[];
+
   const [wordIndex, setWordIndex] = useState(0);
   const [showImage, setShowImage] = useState(false);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
@@ -19,16 +21,20 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+      setWordIndex((prevIndex) => prevIndex + 1);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  // Wrapping here rather than in the setter keeps the counter valid when a
+  // locale switch swaps in a word list of a different length.
+  const currentWord = words[wordIndex % words.length];
 
   return (
     <section className="container mx-auto flex h-screen flex-col justify-between py-24 max-lg:px-8">
       <div className="relative">
         <h1 className="font-heading text-[12vw] leading-[1.15] font-light tracking-tighter text-zinc-500 md:text-[8vw] md:leading-[1.1] lg:text-[7vw]">
-          Hi, I am{" "}
+          {t("greetingStart")}{" "}
           <span
             className="group relative inline-block cursor-none"
             onMouseEnter={(e) => {
@@ -43,23 +49,25 @@ export default function Hero() {
             onMouseLeave={() => setShowImage(false)}
           >
             <span className="relative z-10 text-zinc-700 transition-colors duration-300 hover:text-zinc-950">
-              Jakub
+              {t("name")}
             </span>
           </span>{" "}
-          and I
+          {t("greetingEnd")}
           <div className="flex flex-nowrap items-center gap-x-3 overflow-visible md:gap-x-6">
-            <span className="font-serif whitespace-nowrap text-zinc-500 italic">love to</span>
+            <span className="font-serif whitespace-nowrap text-zinc-500 italic">{t("loveTo")}</span>
             <div className="relative inline-flex h-[1.2em] items-center overflow-visible">
-              <span className="pointer-events-none whitespace-nowrap opacity-0">Deploy.</span>
+              <span className="pointer-events-none whitespace-nowrap opacity-0">
+                {t("wordPlaceholder")}
+              </span>
               <AnimatePresence mode="wait">
                 <TextAnimate
-                  key={words[wordIndex]}
+                  key={currentWord}
                   animation="blurInUp"
                   by="character"
                   duration={0.6}
                   className="absolute left-0 font-medium whitespace-nowrap text-zinc-900"
                 >
-                  {words[wordIndex]}
+                  {currentWord}
                 </TextAnimate>
               </AnimatePresence>
             </div>
@@ -87,7 +95,7 @@ export default function Hero() {
                   width={200}
                   height={200}
                   src="/images/profile-picture.png"
-                  alt="Profile Picture"
+                  alt={t("profileAlt")}
                   className="relative z-30 h-64 w-52 rounded-4xl object-cover"
                 />
               </motion.div>
@@ -103,22 +111,23 @@ export default function Hero() {
 
           {/* Description */}
           <p className="text-sm leading-relaxed font-light text-zinc-600 md:text-base">
-            Frontend Developer turning ideas into interfaces that move, respond, and feel alive.
-            Based in a town most maps skip past —{" "}
-            <span className="inline-flex items-center gap-1 font-medium text-zinc-900">
-              <svg
-                className="h-3 w-3"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              Turzovka, Slovakia
-            </span>
-            , shipping for a much bigger one.
+            {t.rich("description", {
+              location: (chunks) => (
+                <span className="inline-flex items-center gap-1 font-medium text-zinc-900">
+                  <svg
+                    className="h-3 w-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  {chunks}
+                </span>
+              ),
+            })}
           </p>
 
           {/* Available for projects - Animated Ping */}
@@ -133,7 +142,7 @@ export default function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
             </span>
             <span className="font-heading text-xs font-light text-zinc-600 md:text-sm">
-              Available for projects
+              {t("available")}
             </span>
           </motion.div>
         </div>
@@ -145,6 +154,7 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.4 }}
             href="https://www.linkedin.com/in/jakub-perďoch/"
             target="_blank"
+            aria-label={t("linkedinLabel")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
@@ -157,6 +167,7 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.4 }}
             href="https://github.com/jakubperdoch"
             target="_blank"
+            aria-label={t("githubLabel")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
@@ -168,6 +179,7 @@ export default function Hero() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.4 }}
             href="mailto:jakub.perdoch@gmail.com"
+            aria-label={t("emailLabel")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
@@ -180,6 +192,7 @@ export default function Hero() {
             transition={{ delay: 0.7, duration: 0.4 }}
             href="/resume.pdf"
             download
+            aria-label={t("resumeLabel")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"

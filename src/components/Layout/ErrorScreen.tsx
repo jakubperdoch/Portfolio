@@ -1,8 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { IconArrowUpRight } from "@tabler/icons-react";
+
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 export type ErrorScreenAction = {
@@ -21,11 +23,11 @@ type ErrorScreenProps = {
   footnote?: React.ReactNode;
 };
 
-const suggestedLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
-];
+const suggestedLinks = [
+  { key: "home", href: "/" },
+  { key: "projects", href: "/projects" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 export default function ErrorScreen({
   code,
@@ -35,6 +37,9 @@ export default function ErrorScreen({
   actions,
   footnote,
 }: ErrorScreenProps) {
+  const t = useTranslations("ErrorScreen");
+  const tNav = useTranslations("Nav");
+
   return (
     <section className="container mx-auto flex min-h-screen flex-col justify-center py-32 max-lg:px-8">
       <motion.p
@@ -108,16 +113,16 @@ export default function ErrorScreen({
         className="mt-16 border-t border-zinc-200 pt-6"
       >
         <p className="font-heading text-xs tracking-[0.3em] text-zinc-400 uppercase">
-          Or jump straight to
+          {t("jumpTo")}
         </p>
         <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
           {suggestedLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.key}>
               <Link
                 href={link.href}
                 className="text-sm text-zinc-600 underline-offset-4 transition-colors duration-300 hover:text-zinc-900 hover:underline"
               >
-                {link.label}
+                {tNav(link.key)}
               </Link>
             </li>
           ))}

@@ -1,0 +1,182 @@
+{
+  "Metadata": {
+    "siteTitle": "Jakub Perďoch — Softvérový vývojár",
+    "siteDescription": "Portfólio Jakuba Perďocha, softvérového vývojára, ktorý tvorí rýchle a precízne spracované webové zážitky s Reactom, Next.js a TypeScriptom.",
+    "home": {
+      "title": "Jakub Perďoch — Softvérový vývojár",
+      "description": "Portfólio Jakuba Perďocha, softvérového vývojára, ktorý tvorí rýchle a precízne spracované webové zážitky s Reactom, Next.js a TypeScriptom."
+    },
+    "projects": {
+      "title": "Projekty",
+      "description": "Výber projektov a prípadových štúdií Jakuba Perďocha — proces, použité technológie a výsledok za každým z nich."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Ozvite sa Jakubovi Perďochovi ohľadom vývoja softvéru, spolupráce alebo pracovných príležitostí."
+    },
+    "privacyPolicy": {
+      "title": "Ochrana osobných údajov",
+      "description": "Zásady ochrany osobných údajov pre jakubperdoch.com."
+    },
+    "termsOfService": {
+      "title": "Podmienky používania",
+      "description": "Podmienky používania pre jakubperdoch.com."
+    },
+    "notFound": {
+      "title": "Stránka sa nenašla",
+      "description": "Stránka, ktorú hľadáte, neexistuje alebo bola presunutá."
+    },
+    "ogEyebrow": "Softvérový vývojár",
+    "ogTagline": "Tvorím rýchle a precízne spracované webové zážitky s Reactom, Next.js a TypeScriptom."
+  },
+  "Schema": {
+    "jobTitle": "Softvérový vývojár"
+  },
+  "Breadcrumbs": {
+    "home": "Domov",
+    "projects": "Projekty",
+    "contact": "Kontakt",
+    "privacyPolicy": "Ochrana osobných údajov",
+    "termsOfService": "Podmienky používania"
+  },
+  "Nav": {
+    "home": "Domov",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
+  "Header": {
+    "brand": "Jakub",
+    "resume": "Životopis",
+    "menu": "Menu",
+    "close": "Zavrieť",
+    "navigation": "Navigácia",
+    "contact": "Kontakt",
+    "toggleMenu": "Prepnúť navigačné menu",
+    "github": "Github",
+    "linkedin": "LinkedIn"
+  },
+  "LocaleSwitcher": {
+    "label": "Jazyk",
+    "en": "English",
+    "sk": "Slovenčina"
+  },
+  "GithubActivity": {
+    "lastActive": "Naposledy aktívny {time}",
+    "justNow": "práve teraz",
+    "daysAgo": "pred {count} d",
+    "hoursAgo": "pred {count} h",
+    "minutesAgo": "pred {count} min"
+  },
+  "Hero": {
+    "greetingStart": "Ahoj, som",
+    "name": "Jakub",
+    "greetingEnd": "a",
+    "loveTo": "milujem",
+    "words": ["Navrhovať.", "Kódiť.", "Tvoriť.", "Nasadzovať.", "Ladiť.", "Opakovať."],
+    "wordPlaceholder": "Nasadzovať.",
+    "profileAlt": "Profilová fotografia Jakuba Perďocha",
+    "description": "Frontend vývojár, ktorý mení nápady na rozhrania, čo sa hýbu, reagujú a pôsobia živo. Bývam v mestečku, ktoré väčšina máp preskočí — <location>Turzovka, Slovensko</location>, a tvorím pre oveľa väčšie.",
+    "available": "Voľný pre nové projekty",
+    "linkedinLabel": "Otvoriť profil na LinkedIne",
+    "githubLabel": "Otvoriť profil na GitHube",
+    "emailLabel": "Napísať e-mail",
+    "resumeLabel": "Stiahnuť životopis"
+  },
+  "TagsRow": {
+    "tags": ["Objavovať", "Navrhovať", "Vyvíjať"]
+  },
+  "CaseStudies": {
+    "title": "Vybrané práce",
+    "description": "Výber projektov, ktoré skúmajú hranicu medzi digitálnou presnosťou a ľudským zážitkom.",
+    "previousProject": "Predchádzajúci projekt",
+    "nextProject": "Ďalší projekt",
+    "visibility": {
+      "public": "Verejný",
+      "private": "Súkromný",
+      "draft": "Koncept"
+    }
+  },
+  "Experience": {
+    "eyebrow": "Skúsenosti",
+    "title": "Komerčná história.",
+    "description": "Kliknutím na jednotlivé pozície zobrazíte zodpovednosti a dosiahnuté výsledky.",
+    "present": "Súčasnosť",
+    "employmentType": {
+      "full-time": "Plný úväzok",
+      "part-time": "Čiastočný úväzok",
+      "freelance": "Freelance",
+      "contract": "Kontrakt",
+      "internship": "Stáž"
+    }
+  },
+  "Skills": {
+    "eyebrow": "Znalosti",
+    "title": "Technologický stack",
+    "description": "Prehľad technológií a nástrojov, ktoré používam na tvorbu robustných, škálovateľných a výkonných digitálnych produktov.",
+    "categories": {
+      "frontend-frameworks": "Frontend a frameworky",
+      "backend-databases": "Backend a databázy",
+      "tools-platforms": "Nástroje a platformy",
+      "other": "Ostatné",
+      "languages": "Jazyky",
+      "version-control": "Verziovanie",
+      "devops": "DevOps",
+      "cloud": "Cloud",
+      "testing-qa": "Testovanie a QA",
+      "design": "Dizajn"
+    }
+  },
+  "ProjectsPage": {
+    "eyebrow": "Vybrané projekty",
+    "title": "Moja práca.",
+    "description": "Kurátorský výber prác, ktoré skúmajú priesečník dizajnovej presnosti a technického výkonu.",
+    "openLiveSite": "Otvoriť živú stránku",
+    "openSourceCode": "Otvoriť zdrojový kód"
+  },
+  "ContactPage": {
+    "title": "Kontakt",
+    "body": "Táto stránka zatiaľ nie je napísaná."
+  },
+  "PrivacyPolicyPage": {
+    "title": "Ochrana osobných údajov",
+    "body": "Tieto zásady zatiaľ nie sú spracované. Nemožno ich považovať za vyhlásenie o tom, ako táto stránka nakladá s osobnými údajmi."
+  },
+  "TermsOfServicePage": {
+    "title": "Podmienky používania",
+    "body": "Tieto podmienky zatiaľ nie sú spracované. Nemožno ich považovať za záväzné."
+  },
+  "Footer": {
+    "eyebrow": "Poďme vytvoriť niečo skvelé",
+    "headlineLead": "Máte v hlave projekt?",
+    "headlineTrail": "Premeňme ho na niečo, čo stojí za zapamätanie.",
+    "getInTouch": "Ozvite sa",
+    "navigation": "Navigácia",
+    "contact": "Kontakt",
+    "socials": "Siete",
+    "location": "Žilina, Slovensko",
+    "rights": "© {year} Jakub Perďoch. Všetky práva vyhradené.",
+    "privacyPolicy": "Ochrana osobných údajov",
+    "termsOfService": "Podmienky používania"
+  },
+  "BackToTop": {
+    "label": "Späť hore"
+  },
+  "ErrorScreen": {
+    "jumpTo": "Alebo prejdite rovno na"
+  },
+  "NotFound": {
+    "eyebrow": "Stránka sa nenašla",
+    "title": "Táto stránka niekde <em>odbočila.</em>",
+    "description": "Odkaz môže byť zastaraný, stránka mohla byť premenovaná, alebo nikdy neexistovala. Nič nie je pokazené — len tu jednoducho nič nie je.",
+    "backHome": "Späť domov",
+    "seeProjects": "Pozrieť projekty"
+  },
+  "ErrorPage": {
+    "eyebrow": "Niečo sa pokazilo",
+    "title": "Toto je na mne, nie na <em>vás.</em>",
+    "description": "Neočakávaná chyba prerušila načítavanie tejto stránky. Opakovaný pokus to zvyčajne vyrieši — ak sa to opakuje, naozaj by som sa o tom rád dozvedel.",
+    "tryAgain": "Skúsiť znova",
+    "reportIt": "Nahlásiť",
+    "reference": "Referencia chyby:"
+  }
+}

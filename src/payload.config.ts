@@ -44,13 +44,22 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URL || "",
   }),
+  // Content locales. Must stay in sync with `src/i18n/routing.ts` — the front
+  // end passes its active locale straight into `payload.find`.
   localization: {
-    locales: ["sk", "en"],
-    defaultLocale: "sk",
+    locales: [
+      { code: "en", label: { en: "English", sk: "Angličtina" } },
+      { code: "sk", label: { en: "Slovak", sk: "Slovenčina" } },
+    ],
+    defaultLocale: "en",
+    // Untranslated fields fall back to the default locale instead of
+    // rendering blank on the Slovak site.
+    fallback: true,
   },
+  // Admin UI language, unrelated to the content locales above.
   i18n: {
     supportedLanguages: { sk, en },
-    fallbackLanguage: "cs",
+    fallbackLanguage: "en",
   },
   collections: [Media, Categories, Users, Faqs, Projects, Experience, Skills],
   cors: [getServerSideURL()].filter(Boolean),

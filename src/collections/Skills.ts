@@ -56,9 +56,12 @@ export const Skills: CollectionConfig = {
           },
         },
         {
+          // Most entries are product names that stay identical, but the field
+          // is localized so an occasional translation is possible.
           name: "name",
           type: "text",
           required: true,
+          localized: true,
         },
       ],
     },

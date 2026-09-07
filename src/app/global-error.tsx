@@ -1,8 +1,40 @@
 "use client";
 
 // Rendered when the root layout itself fails, so it replaces the layout
-// entirely: no global stylesheet, no fonts, no Header/Footer. Everything it
-// needs is inlined here on purpose.
+// entirely: no global stylesheet, no fonts, no Header/Footer, and no
+// next-intl provider. The copy is inlined per locale on purpose, and the
+// locale is read straight off the URL because there is no request context
+// left to ask.
+const COPY = {
+  en: {
+    eyebrow: "Something went wrong",
+    title: "The site failed to load.",
+    description:
+      "An unexpected error broke the page before it could render. Trying again usually helps.",
+    tryAgain: "Try again",
+    backHome: "Back home",
+    reference: "Error reference:",
+    documentTitle: "Something went wrong — Jakub Perďoch",
+    home: "/",
+  },
+  sk: {
+    eyebrow: "Niečo sa pokazilo",
+    title: "Stránku sa nepodarilo načítať.",
+    description:
+      "Neočakávaná chyba prerušila vykreslenie stránky. Opakovaný pokus to zvyčajne vyrieši.",
+    tryAgain: "Skúsiť znova",
+    backHome: "Späť domov",
+    reference: "Referencia chyby:",
+    documentTitle: "Niečo sa pokazilo — Jakub Perďoch",
+    home: "/sk",
+  },
+} as const;
+
+function resolveLocale(): keyof typeof COPY {
+  if (typeof window === "undefined") return "en";
+  return window.location.pathname.startsWith("/sk") ? "sk" : "en";
+}
+
 export default function GlobalError({
   error,
   retry,
@@ -10,8 +42,11 @@ export default function GlobalError({
   error: Error & { digest?: string };
   retry: () => void;
 }) {
+  const locale = resolveLocale();
+  const copy = COPY[locale];
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         style={{
           margin: 0,
@@ -26,7 +61,7 @@ export default function GlobalError({
             "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
         }}
       >
-        <title>Something went wrong — Jakub Perďoch</title>
+        <title>{copy.documentTitle}</title>
         <main style={{ maxWidth: "36rem" }}>
           <p
             style={{
@@ -37,7 +72,7 @@ export default function GlobalError({
               color: "#71717a",
             }}
           >
-            Something went wrong
+            {copy.eyebrow}
           </p>
           <p
             aria-hidden
@@ -62,10 +97,10 @@ export default function GlobalError({
               color: "#3f3f46",
             }}
           >
-            The site failed to load.
+            {copy.title}
           </h1>
           <p style={{ margin: "1rem 0 0", lineHeight: 1.7, color: "#52525b" }}>
-            An unexpected error broke the page before it could render. Trying again usually helps.
+            {copy.description}
           </p>
           <div
             style={{
@@ -90,12 +125,12 @@ export default function GlobalError({
                 color: "#ffffff",
               }}
             >
-              Try again
+              {copy.tryAgain}
             </button>
-            {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- the app shell
-                failed to render, so a full document load is the point of this link. */}
+            {/* A plain anchor: the app shell failed to render, so a full
+                document load is the point of this link. */}
             <a
-              href="/"
+              href={copy.home}
               style={{
                 borderRadius: "9999px",
                 border: "1px solid #d4d4d8",
@@ -106,12 +141,12 @@ export default function GlobalError({
                 textDecoration: "none",
               }}
             >
-              Back home
+              {copy.backHome}
             </a>
           </div>
           {error.digest ? (
             <p style={{ marginTop: "3rem", fontSize: "0.75rem", color: "#a1a1aa" }}>
-              Error reference:{" "}
+              {copy.reference}{" "}
               <span style={{ fontFamily: "ui-monospace, monospace" }}>{error.digest}</span>
             </p>
           ) : null}

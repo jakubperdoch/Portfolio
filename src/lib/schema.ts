@@ -1,12 +1,15 @@
+import { type AppLocale } from "@/i18n/routing";
+import { localizedPath, siteConfig } from "@/lib/seo";
 import { getServerSideURL } from "@/utilities/getURL";
-import { siteConfig } from "@/lib/seo";
 
 export type BreadcrumbItem = {
+  /** Already translated label. */
   name: string;
+  /** Locale-agnostic route, e.g. `/projects`. */
   path: string;
 };
 
-export function breadcrumbSchema(items: BreadcrumbItem[]) {
+export function breadcrumbSchema(items: BreadcrumbItem[], locale: AppLocale) {
   const baseUrl = getServerSideURL();
 
   return {
@@ -16,7 +19,7 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${baseUrl}${item.path}`,
+      item: `${baseUrl}${localizedPath(item.path, locale)}`,
     })),
   };
 }
@@ -48,30 +51,37 @@ const knowsAbout = [
 
 const sameAs = ["https://www.linkedin.com/in/jakub-perďoch", "https://github.com/jakubperdoch"];
 
-export function personSchema() {
+type LocalizedSchemaArgs = {
+  locale: AppLocale;
+  description: string;
+  jobTitle: string;
+};
+
+export function personSchema({ locale, description, jobTitle }: LocalizedSchemaArgs) {
   const baseUrl = getServerSideURL();
 
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     name: siteConfig.name,
-    url: baseUrl,
-    description: siteConfig.description,
-    jobTitle: "Software Developer",
+    url: `${baseUrl}${localizedPath("/", locale)}`,
+    description,
+    jobTitle,
     email: "perdochjakub@gmail.com",
     knowsAbout,
     sameAs,
   };
 }
 
-export function websiteSchema() {
+export function websiteSchema({ locale, description }: Omit<LocalizedSchemaArgs, "jobTitle">) {
   const baseUrl = getServerSideURL();
 
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
-    url: baseUrl,
-    description: siteConfig.description,
+    url: `${baseUrl}${localizedPath("/", locale)}`,
+    description,
+    inLanguage: locale,
   };
 }

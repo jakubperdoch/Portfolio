@@ -3,7 +3,9 @@
 import { Project } from "@/payload-types";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import { Link } from "@/i18n/navigation";
 import { shimmerBlurDataURL } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import { IconBrandGithub } from "@tabler/icons-react";
@@ -11,6 +13,7 @@ import { IconBrandGithub } from "@tabler/icons-react";
 const IMAGE_SIZES = "(min-width: 1024px) 40vw, (min-width: 768px) 45vw, 85vw";
 
 export default function Card({ caseStudy, index }: { caseStudy: Project; index: number }) {
+  const t = useTranslations("ProjectsPage");
   const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
 
   return (
@@ -85,6 +88,9 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
           {caseStudy.liveLink && (
             <motion.a
               href={caseStudy.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("openLiveSite")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative z-10 h-fit rounded-full bg-zinc-100 p-2 transition-colors duration-300 hover:bg-zinc-200"
@@ -98,6 +104,9 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={caseStudy.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("openSourceCode")}
               className="relative z-10 h-fit rounded-full bg-zinc-100 p-2 transition-colors duration-300 hover:bg-zinc-200"
             >
               <IconBrandGithub size={22} />

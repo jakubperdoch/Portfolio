@@ -1,7 +1,10 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { getTranslations } from "next-intl/server";
 import sharp from "sharp";
+
+import type { AppLocale } from "@/i18n/routing";
 
 export const alt = "Jakub Perďoch — Software Developer";
 export const size = { width: 1200, height: 630 };
@@ -9,7 +12,10 @@ export const contentType = "image/png";
 
 const AVATAR_SIZE = 360;
 
-export default async function Image() {
+export default async function Image({ params }: { params: Promise<{ locale: AppLocale }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
   const source = await readFile(join(process.cwd(), "public/images/profile-picture.png"));
   const avatar = await sharp(source)
     .resize(AVATAR_SIZE * 2, AVATAR_SIZE * 2, { fit: "cover" })
@@ -65,7 +71,7 @@ export default async function Image() {
               color: "#71717a",
             }}
           >
-            Software Developer
+            {t("ogEyebrow")}
           </div>
         </div>
 
@@ -91,7 +97,7 @@ export default async function Image() {
             lineHeight: 1.5,
           }}
         >
-          Building fast, well-crafted web experiences with React, Next.js and TypeScript.
+          {t("ogTagline")}
         </div>
 
         <div

@@ -1,20 +1,23 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   IconArrowUpRight,
   IconBrandGithubFilled,
   IconBrandLinkedinFilled,
 } from "@tabler/icons-react";
+
+import LocaleSwitcher from "@/components/Layout/LocaleSwitcher";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "@/i18n/navigation";
 
 const navigationLinks = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  // { label: "My Setup", href: "/my-setup" },
-  { label: "Contact", href: "/contact" },
-];
+  { key: "home", href: "/" },
+  { key: "projects", href: "/projects" },
+  // { key: "mySetup", href: "/my-setup" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 const socialLinks = [
   {
@@ -30,6 +33,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+  const tNav = useTranslations("Nav");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -44,7 +49,7 @@ export default function Footer() {
               viewport={{ once: true }}
               className="text-muted-foreground font-heading mb-4 text-sm tracking-[0.3em] uppercase"
             >
-              Let&apos;s build something great
+              {t("eyebrow")}
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -53,11 +58,9 @@ export default function Footer() {
               viewport={{ once: true }}
               className="font-heading text-3xl leading-[1.1] font-semibold tracking-tight text-white md:text-4xl md:text-5xl lg:text-6xl"
             >
-              Have a project in mind?
+              {t("headlineLead")}
               <br />
-              <span className="text-muted-foreground">
-                Let&apos;s turn it into something worth remembering.
-              </span>
+              <span className="text-muted-foreground">{t("headlineTrail")}</span>
             </motion.h2>
           </div>
           <motion.div
@@ -69,16 +72,16 @@ export default function Footer() {
             viewport={{ once: true }}
             className="group w-fit shrink-0 rounded-full bg-white transition-colors duration-300 hover:bg-zinc-200"
           >
-            <Link
+            <a
               href="mailto:perdochjakub@gmail.com"
               className="font-heading flex h-full w-full items-center gap-1 px-6 py-3 text-base text-zinc-900 md:px-10 md:py-4 md:text-lg"
             >
-              Get in touch
+              {t("getInTouch")}
               <IconArrowUpRight
                 stroke={2}
                 className="transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
               />
-            </Link>
+            </a>
           </motion.div>
         </section>
 
@@ -87,38 +90,37 @@ export default function Footer() {
         <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <h3 className="font-heading mb-4 text-sm font-medium tracking-wider text-white uppercase">
-              Navigation
+              {t("navigation")}
             </h3>
             <div className="flex flex-col gap-2">
               {navigationLinks.map((link) => (
-                <motion.a
-                  key={link.label}
-                  whileHover="contactLinkHover"
-                  whileTap="contactLinkTap"
-                  href={link.href}
-                  aria-label={link.label}
-                  className="font-heading flex w-fit items-center gap-1 font-light text-white/70 transition-colors duration-300 hover:text-white"
-                >
-                  <motion.div
-                    className="h-px w-0 bg-white/70"
-                    variants={{
-                      contactLinkHover: {
-                        width: "1rem",
-                        backgroundColor: "white",
-                      },
-                      contactLinkTap: {
-                        width: "1.5rem",
-                      },
-                    }}
-                  />
-                  {link.label}
-                </motion.a>
+                <motion.div key={link.key} whileHover="contactLinkHover" whileTap="contactLinkTap">
+                  <Link
+                    href={link.href}
+                    aria-label={tNav(link.key)}
+                    className="font-heading flex w-fit items-center gap-1 font-light text-white/70 transition-colors duration-300 hover:text-white"
+                  >
+                    <motion.span
+                      className="block h-px w-0 bg-white/70"
+                      variants={{
+                        contactLinkHover: {
+                          width: "1rem",
+                          backgroundColor: "white",
+                        },
+                        contactLinkTap: {
+                          width: "1.5rem",
+                        },
+                      }}
+                    />
+                    {tNav(link.key)}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
           <div>
             <h3 className="font-heading mb-4 text-sm font-medium tracking-wider text-white uppercase">
-              Contact
+              {t("contact")}
             </h3>
             <div className="flex flex-col gap-2">
               <a
@@ -127,12 +129,12 @@ export default function Footer() {
               >
                 perdochjakub@gmail.com
               </a>
-              <p className="font-heading text-sm font-light text-white/50">Žilina, Slovensko</p>
+              <p className="font-heading text-sm font-light text-white/50">{t("location")}</p>
             </div>
           </div>
           <div>
             <h3 className="font-heading mb-4 text-sm font-medium tracking-wider text-white uppercase">
-              Socials
+              {t("socials")}
             </h3>
             <div className="flex flex-wrap items-center gap-4">
               {socialLinks.map((link) => (
@@ -168,19 +170,21 @@ export default function Footer() {
           </motion.h1>
 
           <div className="font-heading flex flex-wrap items-center gap-x-6 gap-y-2">
-            <span className="text-white/70">
-              © {currentYear} Jakub Perďoch. All rights reserved.
-            </span>
+            <span className="text-white/70">{t("rights", { year: String(currentYear) })}</span>
             <span className="hidden text-white/70 md:inline">•</span>
-            <a href="/privacy-policy" className="text-white/70 transition-colors hover:text-white">
-              Privacy Policy
-            </a>
-            <a
+            <Link
+              href="/privacy-policy"
+              className="text-white/70 transition-colors hover:text-white"
+            >
+              {t("privacyPolicy")}
+            </Link>
+            <Link
               href="/terms-of-service"
               className="text-white/70 transition-colors hover:text-white"
             >
-              Terms of Service
-            </a>
+              {t("termsOfService")}
+            </Link>
+            <LocaleSwitcher tone="dark" className="md:ml-auto" />
           </div>
         </section>
       </div>

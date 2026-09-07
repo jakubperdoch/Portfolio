@@ -1,0 +1,182 @@
+{
+  "Metadata": {
+    "siteTitle": "Jakub Perďoch — Software Developer",
+    "siteDescription": "Portfolio of Jakub Perďoch, a software developer building fast, well-crafted web experiences with React, Next.js and TypeScript.",
+    "home": {
+      "title": "Jakub Perďoch — Software Developer",
+      "description": "Portfolio of Jakub Perďoch, a software developer building fast, well-crafted web experiences with React, Next.js and TypeScript."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "A collection of projects and case studies by Jakub Perďoch, covering the process, stack and outcome behind each build."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with Jakub Perďoch about software development projects, collaborations, or opportunities."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Privacy policy for jakubperdoch.com."
+    },
+    "termsOfService": {
+      "title": "Terms of Service",
+      "description": "Terms of service for jakubperdoch.com."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you were looking for does not exist or has been moved."
+    },
+    "ogEyebrow": "Software Developer",
+    "ogTagline": "Building fast, well-crafted web experiences with React, Next.js and TypeScript."
+  },
+  "Schema": {
+    "jobTitle": "Software Developer"
+  },
+  "Breadcrumbs": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "Nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Header": {
+    "brand": "Jakub",
+    "resume": "Resume",
+    "menu": "Menu",
+    "close": "Close",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "toggleMenu": "Toggle navigation menu",
+    "github": "Github",
+    "linkedin": "LinkedIn"
+  },
+  "LocaleSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "sk": "Slovenčina"
+  },
+  "GithubActivity": {
+    "lastActive": "Last active {time}",
+    "justNow": "just now",
+    "daysAgo": "{count}d ago",
+    "hoursAgo": "{count}h ago",
+    "minutesAgo": "{count}m ago"
+  },
+  "Hero": {
+    "greetingStart": "Hi, I am",
+    "name": "Jakub",
+    "greetingEnd": "and I",
+    "loveTo": "love to",
+    "words": ["Design.", "Code.", "Build.", "Ship.", "Refine.", "Repeat."],
+    "wordPlaceholder": "Refine.",
+    "profileAlt": "Profile picture of Jakub Perďoch",
+    "description": "Frontend Developer turning ideas into interfaces that move, respond, and feel alive. Based in a town most maps skip past — <location>Turzovka, Slovakia</location>, shipping for a much bigger one.",
+    "available": "Available for projects",
+    "linkedinLabel": "Open LinkedIn profile",
+    "githubLabel": "Open GitHub profile",
+    "emailLabel": "Send an email",
+    "resumeLabel": "Download resume"
+  },
+  "TagsRow": {
+    "tags": ["Discover", "Design", "Develop"]
+  },
+  "CaseStudies": {
+    "title": "Selected Work",
+    "description": "A collection of projects exploring the boundary between digital precision and human experience.",
+    "previousProject": "Previous project",
+    "nextProject": "Next project",
+    "visibility": {
+      "public": "Public",
+      "private": "Private",
+      "draft": "Draft"
+    }
+  },
+  "Experience": {
+    "eyebrow": "Experience",
+    "title": "Commercial History.",
+    "description": "Click on each role to explore responsibilities and achievements.",
+    "present": "Present",
+    "employmentType": {
+      "full-time": "Full-time",
+      "part-time": "Part-time",
+      "freelance": "Freelance",
+      "contract": "Contract",
+      "internship": "Internship"
+    }
+  },
+  "Skills": {
+    "eyebrow": "Knowledge",
+    "title": "Technical Stack",
+    "description": "A collection of technologies and tools I use to build robust, scalable, and high-performance digital products.",
+    "categories": {
+      "frontend-frameworks": "Frontend & Frameworks",
+      "backend-databases": "Backend & Databases",
+      "tools-platforms": "Tools & Platforms",
+      "other": "Other",
+      "languages": "Languages",
+      "version-control": "Version Control",
+      "devops": "DevOps",
+      "cloud": "Cloud",
+      "testing-qa": "Testing & QA",
+      "design": "Design"
+    }
+  },
+  "ProjectsPage": {
+    "eyebrow": "Selected Projects",
+    "title": "My Work.",
+    "description": "A curated selection of work exploring the intersection of design precision and technical performance.",
+    "openLiveSite": "Open the live site",
+    "openSourceCode": "Open the source code"
+  },
+  "ContactPage": {
+    "title": "Contact",
+    "body": "This page is not written yet."
+  },
+  "PrivacyPolicyPage": {
+    "title": "Privacy Policy",
+    "body": "This policy has not been written yet. It should not be treated as a statement of how this site handles personal data."
+  },
+  "TermsOfServicePage": {
+    "title": "Terms of Service",
+    "body": "These terms have not been written yet. They should not be treated as binding."
+  },
+  "Footer": {
+    "eyebrow": "Let’s build something great",
+    "headlineLead": "Have a project in mind?",
+    "headlineTrail": "Let’s turn it into something worth remembering.",
+    "getInTouch": "Get in touch",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "socials": "Socials",
+    "location": "Žilina, Slovakia",
+    "rights": "© {year} Jakub Perďoch. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "BackToTop": {
+    "label": "Back to top"
+  },
+  "ErrorScreen": {
+    "jumpTo": "Or jump straight to"
+  },
+  "NotFound": {
+    "eyebrow": "Page not found",
+    "title": "This page took a wrong turn <em>somewhere.</em>",
+    "description": "The link may be outdated, the page may have been renamed, or it may never have existed at all. Nothing is broken — there is just nothing here.",
+    "backHome": "Back home",
+    "seeProjects": "See projects"
+  },
+  "ErrorPage": {
+    "eyebrow": "Something went wrong",
+    "title": "This one is on me, not on <em>you.</em>",
+    "description": "An unexpected error interrupted this page while it was loading. Trying again often clears it — if it keeps happening, I would genuinely like to hear about it.",
+    "tryAgain": "Try again",
+    "reportIt": "Report it",
+    "reference": "Error reference:"
+  }
+}

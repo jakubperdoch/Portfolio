@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import type { CaseStudy } from "@/components/Home/CaseStudiesSection";
 import { shimmerBlurDataURL } from "@/lib/utils";
 
 const IMAGE_SIZES = "(min-width: 1024px) 40vw, (min-width: 768px) 45vw, 85vw";
 
 export default function Card({ caseStudy, index = 0 }: { caseStudy: CaseStudy; index?: number }) {
+  const t = useTranslations("CaseStudies");
   const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
 
   return (
@@ -37,7 +39,7 @@ export default function Card({ caseStudy, index = 0 }: { caseStudy: CaseStudy; i
         </div>
 
         <span className="font-heading shrink-0 text-sm text-zinc-500 uppercase">
-          {caseStudy.visibility}
+          {t(`visibility.${caseStudy.visibility}`)}
         </span>
       </div>
     </div>

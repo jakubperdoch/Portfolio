@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-
-const tags = ["Discover", "Design", "Develop"];
+import { useTranslations } from "next-intl";
 
 export function TagsRow() {
+  const t = useTranslations("TagsRow");
+  const tags = t.raw("tags") as string[];
+
   const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {

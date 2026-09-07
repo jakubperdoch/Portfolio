@@ -2,10 +2,16 @@ import { getPayload } from "payload";
 import config from "@payload-config";
 import type { Experience } from "@/payload-types";
 
+import { type AppLocale, defaultLocale } from "@/i18n/routing";
+
 export type ExperienceResult =
   { success: true; experiences: Experience[] } | { success: false; error: string };
 
-export async function getExperiences(): Promise<ExperienceResult> {
+interface GetExperiencesOptions {
+  locale: AppLocale;
+}
+
+export async function getExperiences({ locale }: GetExperiencesOptions): Promise<ExperienceResult> {
   try {
     const payload = await getPayload({ config });
 
@@ -13,6 +19,8 @@ export async function getExperiences(): Promise<ExperienceResult> {
       collection: "experience",
       limit: 20,
       sort: "order",
+      locale,
+      fallbackLocale: defaultLocale,
     });
 
     return { success: true, experiences: result.docs };

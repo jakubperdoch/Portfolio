@@ -1,34 +1,38 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { IconFileInvoice } from "@tabler/icons-react";
 import GithubActivity from "@/components/ui/GithubActivity";
 import React, { useEffect, useState } from "react";
 import DockMenu from "@/components/Layout/DockMenu";
+import LocaleSwitcher from "@/components/Layout/LocaleSwitcher";
 import { FileText, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Separator } from "@/components/ui/separator";
 
-const navigationLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  // { label: "My Setup", href: "/my-setup" },
-  { label: "Contact", href: "/contact" },
-];
-
-const profileLinks: { label: string; href: string; icon?: React.ReactNode }[] = [
-  { label: "Github", href: "https://github.com/jakubperdoch" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/jakub-perďoch/" },
-  { label: "Resume", href: "/resume.pdf", icon: <FileText size={15} /> },
-];
+const navigationLinks = [
+  { key: "home", href: "/" },
+  { key: "projects", href: "/projects" },
+  // { key: "mySetup", href: "/my-setup" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 export default function Header() {
+  const t = useTranslations("Header");
+  const tNav = useTranslations("Nav");
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [fullMenuOpen, setFullMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const currentPath = usePathname();
+
+  const profileLinks: { label: string; href: string; icon?: React.ReactNode }[] = [
+    { label: t("github"), href: "https://github.com/jakubperdoch" },
+    { label: t("linkedin"), href: "https://www.linkedin.com/in/jakub-perďoch/" },
+    { label: t("resume"), href: "/resume.pdf", icon: <FileText size={15} /> },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,11 +62,13 @@ export default function Header() {
             href="/"
             className="font-heading text-xl font-bold tracking-tight text-zinc-900 capitalize transition-colors duration-300 ease-in-out hover:text-zinc-900/70"
           >
-            Jakub
+            {t("brand")}
           </Link>
 
           <div className="flex items-center gap-6">
             <GithubActivity className="hidden md:flex" />
+
+            <LocaleSwitcher />
 
             <motion.a
               href="/resume.pdf"
@@ -74,11 +80,13 @@ export default function Header() {
               className="font-heading hidden items-center gap-1.5 rounded-full bg-zinc-900 px-4 py-2 text-sm text-white uppercase md:flex"
             >
               <IconFileInvoice stroke={2} size={16} />
-              Resume
+              {t("resume")}
             </motion.a>
 
             <motion.button
               onClick={() => setFullMenuOpen((val) => !val)}
+              aria-label={t("toggleMenu")}
+              aria-expanded={fullMenuOpen}
               whileHover="menuButtonHover"
               whileTap="menuButtonTap"
               className="font-heading flex cursor-pointer items-center gap-1.5 uppercase"
@@ -92,7 +100,7 @@ export default function Header() {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="text-sm font-medium text-zinc-900"
               >
-                Menu
+                {t("menu")}
               </motion.span>
               <div className="flex flex-col items-end gap-1.5">
                 <motion.div
@@ -136,7 +144,6 @@ export default function Header() {
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1],
             }}
-
             className="fixed bottom-8 left-1/2 z-60 -translate-x-1/2"
           >
             <DockMenu menuOpenHandler={() => setFullMenuOpen((val) => !val)} />
@@ -158,16 +165,19 @@ export default function Header() {
             className="fixed inset-0 z-100 flex flex-col overflow-hidden bg-neutral-900"
           >
             <div className="font-heading flex w-full flex-wrap items-center justify-between gap-x-8 gap-y-4 p-8 text-white lg:px-24">
-              <p className="uppercase opacity-80">Navigation</p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex cursor-pointer items-center gap-1"
-                onClick={() => setFullMenuOpen((state) => !state)}
-              >
-                Close
-                <X size={24} />
-              </motion.button>
+              <p className="uppercase opacity-80">{t("navigation")}</p>
+              <div className="flex items-center gap-6">
+                <LocaleSwitcher tone="dark" />
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex cursor-pointer items-center gap-1"
+                  onClick={() => setFullMenuOpen((state) => !state)}
+                >
+                  {t("close")}
+                  <X size={24} />
+                </motion.button>
+              </div>
             </div>
             <div className="flex flex-1 items-center">
               <nav
@@ -180,7 +190,7 @@ export default function Header() {
                   const isTarget = hoveredIndex === idx || (isActive && !isAnyHovered);
                   return (
                     <Link
-                      key={idx}
+                      key={link.key}
                       href={link.href}
                       onMouseEnter={() => setHoveredIndex(idx)}
                       onClick={() => setFullMenuOpen(false)}
@@ -191,7 +201,7 @@ export default function Header() {
                         "font-heading h-fit w-full text-5xl transition-all duration-500 ease-out md:text-7xl"
                       )}
                     >
-                      {link.label}
+                      {tNav(link.key)}
                     </Link>
                   );
                 })}
@@ -200,7 +210,7 @@ export default function Header() {
             <Separator className="w-full bg-white/20" />
             <div className="flex flex-col px-8 py-12 md:flex-row md:items-end md:justify-between lg:px-24">
               <div className="font-heading space-y-2">
-                <p className="text-white/20 uppercase">Contact</p>
+                <p className="text-white/20 uppercase">{t("contact")}</p>
                 <motion.a
                   whileHover={"contactLinkHover"}
                   href="mailto:jakub.perdoch@gmail.com"
@@ -220,15 +230,17 @@ export default function Header() {
               </div>
 
               <div className="font-heading flex flex-wrap gap-x-2.5 gap-y-1 md:gap-8">
-                {profileLinks.map((link, idx) => (
-                  <Link
-                    key={idx}
+                {profileLinks.map((link) => (
+                  <a
+                    key={link.href}
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1 text-white/40 transition-colors duration-300 ease-in-out hover:text-white"
                   >
                     {link.label}
                     {link.icon && link.icon}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>

@@ -4,9 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update Card component z-index for improved layering and accessibility">
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add Error and NotFound components with custom error handling and user-friendly messages">
+      <change afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages/sk.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/privacy-policy/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/terms-of-service/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/[...rest]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/error.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/not-found.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/sitemap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/LocaleSwitcher.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n/navigation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n/request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n/routing.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/proxy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/migrate-localized-fields.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/contact/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/contact/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/privacy-policy/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/privacy-policy/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/privacy-policy/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/projects/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/projects/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/terms-of-service/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/terms-of-service/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/(marketing)/terms-of-service/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/opengraph-image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/opengraph-image.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/sitemap.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/actions/case-study.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/case-study.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/actions/experience.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/experience.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/actions/skill.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/skill.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/global-error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/global-error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Experience.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Experience.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Projects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Skills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Skills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CaseStudies/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CaseStudies/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/CaseStudiesSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CaseStudiesSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/ExperienceSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/ExperienceSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/SkillsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/SkillsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/BackToTop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/BackToTop.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/DockMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/DockMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/ErrorScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/ErrorScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Projects/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/GithubActivity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/TagsRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/TagsRow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/seo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/seo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +80,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="170" />
+    <option name="cachedIndexableFilesCount" value="686" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FormatOnSaveOptions">
@@ -166,15 +227,14 @@
       <workItem from="1787594425800" duration="35991000" />
       <workItem from="1787705357883" duration="86000" />
       <workItem from="1787707678127" duration="277000" />
-      <workItem from="1787867740193" duration="6473000" />
-    </task>
-    <task id="LOCAL-00020" summary="Add `Footer` component with navigation and social links; update `layout.tsx` to include `Footer`.">
-      <option name="closed" value="true" />
-      <created>1786392875005</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1786392875005</updated>
+      <workItem from="1787867740193" duration="9314000" />
+      <workItem from="1788356627489" duration="1277000" />
+      <workItem from="1788551104055" duration="40000" />
+      <workItem from="1788642694107" duration="701000" />
+      <workItem from="1788711370388" duration="601000" />
+      <workItem from="1788740785921" duration="604000" />
+      <workItem from="1788782199642" duration="36000" />
+      <workItem from="1788782265398" duration="597000" />
     </task>
     <task id="LOCAL-00021" summary="Update `Footer` component: refine layout, add copyright, privacy policy, and terms of service links">
       <option name="closed" value="true" />
@@ -560,14 +620,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787875631960</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="feat: add Error and NotFound components with custom error handling and user-friendly messages">
+      <option name="closed" value="true" />
+      <created>1787875970798</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1787875970798</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: implement Accordion component with context for managing open items and enhance Experience section with formatted date range and responsibilities" />
     <MESSAGE value="fix: adjust margin for tech stack badges in Experience component and update workspace configuration" />
     <MESSAGE value="fix: adjust layout and typography in Experience component for better responsiveness" />
     <MESSAGE value="feat: add SpeedInsights component to layout for performance monitoring" />
@@ -592,7 +659,8 @@
     <MESSAGE value="feat: enhance Card component with motion effects and update layout in ProjectsGridSection for improved responsiveness" />
     <MESSAGE value="feat: update WorkPage to fetch all case studies instead of only featured ones" />
     <MESSAGE value="feat: update Card component z-index for improved layering and accessibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update Card component z-index for improved layering and accessibility" />
+    <MESSAGE value="feat: add Error and NotFound components with custom error handling and user-friendly messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add Error and NotFound components with custom error handling and user-friendly messages" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

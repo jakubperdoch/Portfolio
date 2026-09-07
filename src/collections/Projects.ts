@@ -15,6 +15,7 @@ export const Projects: CollectionConfig = {
       name: "title",
       type: "text",
       required: true,
+      localized: true,
     },
     {
       name: "slug",
@@ -55,6 +56,7 @@ export const Projects: CollectionConfig = {
       name: "description",
       type: "textarea",
       required: true,
+      localized: true,
     },
     {
       name: "content",

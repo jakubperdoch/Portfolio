@@ -6,19 +6,21 @@ import { Dock, DockIcon } from "@/components/ui/dock";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "motion/react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface DockMenuProps {
   menuOpenHandler: () => void;
 }
 
 export default function DockMenu({ menuOpenHandler }: DockMenuProps) {
+  const t = useTranslations("Header");
+
   return (
     <div className="relative">
       <Dock direction="middle" className="rounded-full bg-zinc-900">
         <DockIcon className="w-24!" onClick={menuOpenHandler}>
           <motion.div whileTap={{ scale: 0.95 }} className="flex items-center gap-2">
-            <p className="font-heading text-lg text-white">Menu</p>
+            <p className="font-heading text-lg text-white">{t("menu")}</p>
             <div className="flex flex-col items-end gap-1">
               <div className="h-0.5 w-5 bg-white"></div>
               <div className="h-0.5 w-3 bg-white"></div>
@@ -27,19 +29,29 @@ export default function DockMenu({ menuOpenHandler }: DockMenuProps) {
         </DockIcon>
         <Separator orientation="vertical" className="h-full rounded-full! bg-zinc-500" />
         <DockIcon>
-          <Link href="https://www.linkedin.com/in/jakub-perďoch" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/jakub-perďoch"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={t("linkedin")}
+          >
             <Image src="/icons/linkedin.svg" alt="LinkedIn" width={24} height={24} />
-          </Link>
+          </a>
         </DockIcon>
         <DockIcon>
-          <Link href="https://github.com/jakubperdoch" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/jakubperdoch"
+            target="_blank"
+            rel="noreferrer"
+            aria-label={t("github")}
+          >
             <Image src="/icons/github.svg" alt="GitHub" width={24} height={24} />
-          </Link>
+          </a>
         </DockIcon>
         <DockIcon>
-          <Link href="mailto:perdochjakub@gmail.com" target="_blank" rel="noreferrer">
+          <a href="mailto:perdochjakub@gmail.com" aria-label={t("contact")}>
             <Image src="/icons/gmail.svg" alt="Email" width={24} height={24} />
-          </Link>
+          </a>
         </DockIcon>
       </Dock>
     </div>

@@ -104,10 +104,10 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
-  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('sk' | 'en') | ('sk' | 'en')[];
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'sk') | ('en' | 'sk')[];
   globals: {};
   globalsSelect: {};
-  locale: 'sk' | 'en';
+  locale: 'en' | 'sk';
   widgets: {
     collections: CollectionsWidget;
   };
@@ -889,7 +889,7 @@ export interface Export {
   page?: number | null;
   sort?: string | null;
   sortOrder?: ('asc' | 'desc') | null;
-  locale?: ('all' | 'sk' | 'en') | null;
+  locale?: ('all' | 'en' | 'sk') | null;
   drafts?: ('yes' | 'no') | null;
   selectionToUse?: ('currentSelection' | 'currentFilters' | 'all') | null;
   fields?: string[] | null;

@@ -54,6 +54,7 @@ export const Experience: CollectionConfig = {
     {
       name: "customLabel",
       type: "text",
+      localized: true,
       admin: {
         description:
           'Voliteľné prebitie zobrazeného textu, napr. "2023 — Present". Ak prázdne, generuje sa zo startDate/endDate.',
@@ -72,6 +73,7 @@ export const Experience: CollectionConfig = {
           name: "role",
           type: "text",
           required: true,
+          localized: true,
           admin: { width: "50%" },
         },
       ],
@@ -95,6 +97,7 @@ export const Experience: CollectionConfig = {
     {
       name: "location",
       type: "text",
+      localized: true,
       admin: {
         description: "napr. Remote, Turzovka / Bratislava, Hybrid",
         position: "sidebar",
@@ -127,11 +130,15 @@ export const Experience: CollectionConfig = {
       name: "description",
       type: "textarea",
       required: true,
+      localized: true,
     },
     {
+      // Localized as a whole array: languages rarely need the same number of
+      // bullets, so each locale keeps its own list.
       name: "responsibilities",
       type: "array",
       required: true,
+      localized: true,
       minRows: 1,
       fields: [
         {

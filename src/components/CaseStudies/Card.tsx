@@ -17,11 +17,15 @@ export default function Card({ caseStudy, index = 0 }: { caseStudy: CaseStudy; i
             fill
             sizes={IMAGE_SIZES}
             loading={index < 2 ? "eager" : "lazy"}
+            data-loaded="false"
+            onLoad={(event) => {
+              event.currentTarget.setAttribute("data-loaded", "true");
+            }}
             placeholder="blur"
             blurDataURL={shimmerBlurDataURL(image.width ?? 1200, image.height ?? 800)}
             src={image.url}
             alt={image.alt || caseStudy.title}
-            className="object-cover"
+            className="object-cover data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
           />
         </div>
       )}

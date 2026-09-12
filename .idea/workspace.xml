@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: enhance Card component with improved animations and loading states, and implement contact form functionality">
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/DockMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/DockMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update contact links in DockMenu, Footer, Header, and Hero components to use navigation links">
+      <change beforePath="$PROJECT_DIR$/src/app/actions/contact.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/contact.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,15 +176,7 @@
       <workItem from="1788899024928" duration="606000" />
       <workItem from="1788906384863" duration="746000" />
       <workItem from="1789041166984" duration="1195000" />
-      <workItem from="1789114943955" duration="8738000" />
-    </task>
-    <task id="LOCAL-00026" summary="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration">
-      <option name="closed" value="true" />
-      <created>1786402688786</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1786402688786</updated>
+      <workItem from="1789114943955" duration="9357000" />
     </task>
     <task id="LOCAL-00027" summary="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure">
       <option name="closed" value="true" />
@@ -573,14 +562,21 @@
       <option name="project" value="LOCAL" />
       <updated>1789253644195</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="feat: update contact links in DockMenu, Footer, Header, and Hero components to use navigation links">
+      <option name="closed" value="true" />
+      <created>1789254592169</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1789254592169</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: standardize indentation and formatting in globals.css and update workspace configuration" />
     <MESSAGE value="feat: add viewport configuration to layout for improved responsiveness" />
     <MESSAGE value="feat: add Contact link to navigation and improve layout responsiveness" />
     <MESSAGE value="feat: update favicon and enhance OpenGraph image layout for improved aesthetics" />
@@ -605,7 +601,8 @@
     <MESSAGE value="feat: add ProjectDetail page and enhance Card component with loading state and animations" />
     <MESSAGE value="feat: add ProjectDetail page and enhance Card component with improved animations and loading states" />
     <MESSAGE value="feat: enhance Card component with improved animations and loading states, and implement contact form functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance Card component with improved animations and loading states, and implement contact form functionality" />
+    <MESSAGE value="feat: update contact links in DockMenu, Footer, Header, and Hero components to use navigation links" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update contact links in DockMenu, Footer, Header, and Hero components to use navigation links" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

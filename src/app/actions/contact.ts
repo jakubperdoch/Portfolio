@@ -54,12 +54,17 @@ export async function sendContact(
       text: `Name: ${name}\nEmail: ${email}\nTopic: ${subjects[topic]}\n\n${message}`,
     });
     if (error) {
-      console.error("Contact email rejected:", error.name);
+      // Resend reports configuration problems here (unverified domain, bad
+      // `from`); the message never echoes the submitted body.
+      console.error("Contact email rejected:", error.name, "-", error.message);
       return { status: "error", error: "failed" };
     }
     return { status: "success" };
-  } catch {
-    console.error("Contact delivery failed");
+  } catch (error) {
+    console.error(
+      "Contact delivery failed:",
+      error instanceof Error ? error.message : "unknown error"
+    );
     return { status: "error", error: "failed" };
   }
 }

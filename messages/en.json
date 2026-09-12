@@ -139,8 +139,33 @@
     "openSourceCode": "Open the source code"
   },
   "ContactPage": {
-    "title": "Contact",
-    "body": "This page is not written yet."
+    "title": "Let’s talk.",
+    "eyebrow": "Contact",
+    "body": "Have a project in mind, a role to discuss or a question about my work? Send me a few lines.",
+    "emailLabel": "The best way to reach me",
+    "copy": "Copy email",
+    "copied": "Email copied",
+    "copyError": "Could not copy the email. Select and copy the address manually.",
+    "location": "Žilina, Slovakia",
+    "elsewhere": "Find me elsewhere",
+    "linkedin": "Experience and professional connections",
+    "github": "Code and personal projects",
+    "start": "What do you have in mind?",
+    "intro": "Choose a topic and prepare your message. A short outline of your idea and the collaboration you have in mind is a good start.",
+    "topic": "Message topic",
+    "project": "New project",
+    "opportunity": "Work opportunity",
+    "other": "Something else",
+    "message": "Your message",
+    "placeholder": "What are you working on, and how can I help?",
+    "openEmail": "Prepare email",
+    "emailHint": "Opens your email app. You send the message from there.",
+    "fallback": "If the app does not open, use the email address shown on this page.",
+    "briefTitle": "A useful starting point",
+    "brief1": "What you want to build or improve",
+    "brief2": "The kind of collaboration you are looking for",
+    "brief3": "An approximate timeline and budget, if known",
+    "work": "Explore my projects"
   },
   "PrivacyPolicyPage": {
     "title": "Privacy Policy",
@@ -183,5 +208,44 @@
     "tryAgain": "Try again",
     "reportIt": "Report it",
     "reference": "Error reference:"
+  },
+  "ProjectDetail": {
+    "back": "All projects",
+    "live": "Visit website",
+    "source": "View source",
+    "overview": "Project overview",
+    "client": "Client",
+    "industry": "Industry",
+    "role": "My role",
+    "timeline": "Timeline",
+    "teamSize": "Team size",
+    "teamCount": "{count, plural, one {# person} other {# people}}",
+    "projectType": "Project type",
+    "projectStatus": "Status",
+    "technologies": "Technologies",
+    "targetAudience": "Who it is for",
+    "contribution": "My contribution",
+    "collaboration": "Collaboration",
+    "challenge": "The challenge",
+    "solution": "The solution",
+    "decisions": "Key decisions",
+    "outcomes": "Results & impact",
+    "learnings": "What I learned",
+    "caseStudy": "Case study",
+    "video": "Project walkthrough",
+    "types": {
+      "client": "Client work",
+      "employment": "Employment",
+      "personal": "Personal project",
+      "open-source": "Open source",
+      "academic": "Academic project"
+    },
+    "statuses": {
+      "in-progress": "In progress",
+      "launched": "Launched",
+      "maintained": "Maintained",
+      "completed": "Completed",
+      "archived": "Archived"
+    }
   }
 }

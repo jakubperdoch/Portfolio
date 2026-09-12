@@ -5,6 +5,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 import ProjectDetailClient from "@/app/(apps)/[locale]/(marketing)/projects/[slug]/client";
 import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
+import { getCaseStudy } from "@/app/actions/case-study";
 
 type ProjectDetailPageProps = {
   params: Promise<{ locale: AppLocale; slug: string }>;
@@ -25,6 +26,13 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const { locale, slug } = await params;
   const t = await getTranslations({ locale, namespace: "Breadcrumbs" });
+  const resultCaseStudy = await getCaseStudy({ slug, locale });
+  const caseStudy =
+    resultCaseStudy.success && resultCaseStudy.caseStudy ? resultCaseStudy.caseStudy : null;
+
+  if (!caseStudy) {
+    return null;
+  }
 
   return (
     <>
@@ -38,7 +46,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           locale
         )}
       />
-      <ProjectDetailClient />
+      <ProjectDetailClient {...caseStudy} />
     </>
   );
 }

@@ -59,6 +59,170 @@ export const Projects: CollectionConfig = {
       localized: true,
     },
     {
+      type: "collapsible",
+      label: "Project context",
+      admin: { initCollapsed: true },
+      fields: [
+        {
+          name: "client",
+          type: "text",
+          localized: true,
+          admin: {
+            description: "Klient alebo firma. Pri neverejnom názve použi všeobecný opis.",
+          },
+        },
+        {
+          name: "industry",
+          type: "text",
+          localized: true,
+          admin: { description: "Odvetvie, napr. e-commerce, vzdelávanie alebo fintech." },
+        },
+        {
+          name: "projectType",
+          type: "select",
+          options: [
+            { label: "Client work", value: "client" },
+            { label: "Employment", value: "employment" },
+            { label: "Personal project", value: "personal" },
+            { label: "Open source", value: "open-source" },
+            { label: "Academic project", value: "academic" },
+          ],
+        },
+        {
+          name: "projectStatus",
+          type: "select",
+          admin: { description: "Stav realizácie projektu, nezávislý od viditeľnosti na webe." },
+          options: [
+            { label: "In progress", value: "in-progress" },
+            { label: "Launched", value: "launched" },
+            { label: "Maintained", value: "maintained" },
+            { label: "Completed", value: "completed" },
+            { label: "Archived", value: "archived" },
+          ],
+        },
+        {
+          name: "timeline",
+          type: "text",
+          localized: true,
+          admin: {
+            description: "Obdobie a trvanie tvojej práce, napr. január – apríl 2026, 4 mesiace.",
+          },
+        },
+        {
+          name: "targetAudience",
+          type: "textarea",
+          localized: true,
+          admin: { description: "Pre koho je produkt určený a akú potrebu používateľov rieši." },
+        },
+      ],
+    },
+    {
+      type: "collapsible",
+      label: "My contribution",
+      admin: { initCollapsed: true },
+      fields: [
+        {
+          name: "role",
+          type: "text",
+          localized: true,
+          admin: { description: "Tvoja rola, napr. Full-stack developer alebo Product designer." },
+        },
+        {
+          name: "teamSize",
+          type: "number",
+          min: 1,
+          validate: (value: number | null | undefined) =>
+            value == null || Number.isInteger(value) || "Zadaj celé číslo.",
+          admin: {
+            description:
+              "Počet ľudí v projektovom tíme vrátane teba. Pri samostatnej práci zadaj 1.",
+          },
+        },
+        {
+          name: "collaboration",
+          type: "textarea",
+          localized: true,
+          admin: {
+            description:
+              "S kým si spolupracoval, ako prebiehala komunikácia a prípadné vedenie tímu.",
+          },
+        },
+        {
+          name: "responsibilities",
+          type: "array",
+          localized: true,
+          admin: {
+            description:
+              "Konkrétne časti, za ktoré si osobne zodpovedal. Odlíš svoj prínos od práce tímu.",
+          },
+          fields: [{ name: "item", type: "text", required: true }],
+        },
+      ],
+    },
+    {
+      type: "collapsible",
+      label: "Problem, solution & impact",
+      admin: { initCollapsed: true },
+      fields: [
+        {
+          name: "challenge",
+          type: "textarea",
+          localized: true,
+          admin: { description: "Východiskový problém, cieľ a dôležité obmedzenia projektu." },
+        },
+        {
+          name: "solution",
+          type: "textarea",
+          localized: true,
+          admin: { description: "Ako si problém vyriešil a prečo si zvolil tento prístup." },
+        },
+        {
+          name: "keyDecisions",
+          type: "array",
+          localized: true,
+          admin: {
+            description: "Dôležité technické alebo dizajnové rozhodnutia a ich kompromisy.",
+          },
+          fields: [
+            { name: "decision", type: "text", required: true },
+            { name: "rationale", type: "textarea", required: true },
+          ],
+        },
+        {
+          name: "outcomes",
+          type: "array",
+          localized: true,
+          admin: {
+            description: "Overiteľné výsledky. Ak nemáš čísla, opíš konkrétny kvalitatívny prínos.",
+          },
+          fields: [
+            { name: "result", type: "text", required: true },
+            {
+              name: "metric",
+              type: "text",
+              admin: {
+                description: "Voliteľná hodnota vrátane jednotky alebo porovnania pred/po.",
+              },
+            },
+            {
+              name: "evidence",
+              type: "textarea",
+              admin: {
+                description:
+                  "Zdroj, obdobie a spôsob merania alebo kontext, ktorý výsledok dokladá.",
+              },
+            },
+          ],
+        },
+        {
+          name: "learnings",
+          type: "textarea",
+          localized: true,
+          admin: { description: "Čo si sa naučil a čo by si pri ďalšej iterácii zlepšil." },
+        },
+      ],
+    },
+    {
       name: "content",
       type: "richText",
       localized: true,

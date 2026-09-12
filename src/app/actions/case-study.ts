@@ -26,8 +26,7 @@ export async function getCaseStudies({
       limit,
       sort: "-createdAt",
       locale,
-      // Untranslated fields fall back to the default locale rather than
-      // rendering as blank.
+
       fallbackLocale: defaultLocale,
       where: {
         ...(featuredOnly ? { featured: { equals: true } } : {}),
@@ -38,5 +37,23 @@ export async function getCaseStudies({
   } catch (error) {
     console.error("Error fetching case studies:", error);
     return { success: false, error: "Failed to fetch case studies" };
+  }
+}
+
+export async function getCaseStudy({ slug, locale }: { slug: string; locale: AppLocale }) {
+  try {
+    const payload = await getPayload({ config });
+
+    const result = await payload.find({
+      collection: "projects",
+      where: { slug: { equals: slug } },
+      locale,
+      fallbackLocale: defaultLocale,
+    });
+
+    return { success: true, caseStudy: result.docs[0] };
+  } catch (error) {
+    console.error("Error fetching case study:", error);
+    return { success: false, error: "Failed to fetch case study" };
   }
 }

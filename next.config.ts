@@ -8,6 +8,7 @@ const r2PublicHost = process.env.R2_PUBLIC_URL
 
 const nextConfig: NextConfig = {
   images: {
+    qualities: [75, 100],
     remotePatterns: [
       ...(r2PublicHost
         ? [

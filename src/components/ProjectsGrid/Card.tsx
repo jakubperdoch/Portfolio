@@ -1,7 +1,7 @@
 "use client";
 
 import { Project } from "@/payload-types";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -10,9 +10,11 @@ import { shimmerBlurDataURL } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import { IconBrandGithub } from "@tabler/icons-react";
 
-const IMAGE_SIZES = "(min-width: 1024px) 40vw, (min-width: 768px) 45vw, 85vw";
+export const IMAGE_SIZES =
+  "(min-width: 1536px) 716px, (min-width: 1280px) 588px, (min-width: 1024px) 460px, (min-width: 768px) 704px, (min-width: 640px) 576px, calc(100vw - 48px)";
 
 export default function Card({ caseStudy, index }: { caseStudy: Project; index: number }) {
+  const reducedMotion = useReducedMotion();
   const t = useTranslations("ProjectsPage");
   const image = typeof caseStudy.image === "object" ? caseStudy.image : null;
 
@@ -20,33 +22,34 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
     <motion.article
       whileHover={"cardHover"}
       whileTap={"cardTap"}
-      initial={{ opacity: 0, y: 30 }}
+      initial={reducedMotion ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.6, delay: (index % 2) * 0.08 }}
       viewport={{ once: true }}
       className="relative flex cursor-pointer flex-col gap-4"
     >
       <Link
         href={"/projects/" + caseStudy.slug + "/"}
         aria-label={caseStudy.title}
-        className="absolute inset-0 z-2"
+        className="absolute inset-0 z-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-zinc-900"
       />
 
       <motion.div
         variants={{
           cardHover: {
-            scale: 1.02,
+            scale: reducedMotion ? 1 : 1.01,
           },
           cardTap: {
-            scale: 0.98,
+            scale: reducedMotion ? 1 : 0.99,
           },
         }}
-        className="relative z-1 aspect-video overflow-hidden rounded-sm drop-shadow-lg"
+        className="relative z-1 aspect-video overflow-hidden rounded-sm border border-zinc-100 bg-white shadow-sm"
       >
         {image?.url && (
           <Image
             fill
             sizes={IMAGE_SIZES}
+            quality={100}
             loading={index < 2 ? "eager" : "lazy"}
             data-loaded="false"
             onLoad={(event) => {
@@ -56,17 +59,17 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
             blurDataURL={shimmerBlurDataURL(image.width ?? 1200, image.height ?? 800)}
             src={image.url}
             alt={image.alt || caseStudy.title}
-            className="object-cover data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
+            className="object-contain"
           />
         )}
       </motion.div>
 
-      <div className="flex flex-col justify-between gap-8 lg:flex-row">
+      <div className="flex flex-col justify-between gap-4 xl:flex-row">
         <div className="flex flex-col gap-2">
           <motion.h3
             variants={{
               cardHover: {
-                x: 10,
+                x: reducedMotion ? 0 : 4,
               },
               cardTap: {
                 x: 0,
@@ -80,7 +83,7 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
             {caseStudy.techStack.map((tech, idx) => (
               <div
                 key={idx}
-                className="font-heading relative z-10 flex cursor-default gap-1 rounded-full bg-zinc-100 px-2.5 py-1.5 text-[10px] font-medium tracking-widest text-zinc-600 uppercase hover:text-zinc-900"
+                className="font-heading flex cursor-default gap-1 rounded-full bg-zinc-100 px-2.5 py-1.5 text-[10px] font-medium tracking-widest text-zinc-600 uppercase hover:text-zinc-900"
               >
                 {tech.tech}
               </div>

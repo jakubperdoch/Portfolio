@@ -328,6 +328,87 @@ export interface Project {
   }[];
   description: string;
   /**
+   * Klient alebo firma. Pri neverejnom názve použi všeobecný opis.
+   */
+  client?: string | null;
+  /**
+   * Odvetvie, napr. e-commerce, vzdelávanie alebo fintech.
+   */
+  industry?: string | null;
+  projectType?: ('client' | 'employment' | 'personal' | 'open-source' | 'academic') | null;
+  /**
+   * Stav realizácie projektu, nezávislý od viditeľnosti na webe.
+   */
+  projectStatus?: ('in-progress' | 'launched' | 'maintained' | 'completed' | 'archived') | null;
+  /**
+   * Obdobie a trvanie tvojej práce, napr. január – apríl 2026, 4 mesiace.
+   */
+  timeline?: string | null;
+  /**
+   * Pre koho je produkt určený a akú potrebu používateľov rieši.
+   */
+  targetAudience?: string | null;
+  /**
+   * Tvoja rola, napr. Full-stack developer alebo Product designer.
+   */
+  role?: string | null;
+  /**
+   * Počet ľudí v projektovom tíme vrátane teba. Pri samostatnej práci zadaj 1.
+   */
+  teamSize?: number | null;
+  /**
+   * S kým si spolupracoval, ako prebiehala komunikácia a prípadné vedenie tímu.
+   */
+  collaboration?: string | null;
+  /**
+   * Konkrétne časti, za ktoré si osobne zodpovedal. Odlíš svoj prínos od práce tímu.
+   */
+  responsibilities?:
+    | {
+        item: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Východiskový problém, cieľ a dôležité obmedzenia projektu.
+   */
+  challenge?: string | null;
+  /**
+   * Ako si problém vyriešil a prečo si zvolil tento prístup.
+   */
+  solution?: string | null;
+  /**
+   * Dôležité technické alebo dizajnové rozhodnutia a ich kompromisy.
+   */
+  keyDecisions?:
+    | {
+        decision: string;
+        rationale: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Overiteľné výsledky. Ak nemáš čísla, opíš konkrétny kvalitatívny prínos.
+   */
+  outcomes?:
+    | {
+        result: string;
+        /**
+         * Voliteľná hodnota vrátane jednotky alebo porovnania pred/po.
+         */
+        metric?: string | null;
+        /**
+         * Zdroj, obdobie a spôsob merania alebo kontext, ktorý výsledok dokladá.
+         */
+        evidence?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Čo si sa naučil a čo by si pri ďalšej iterácii zlepšil.
+   */
+  learnings?: string | null;
+  /**
    * Long-form body rendered on the case study detail page.
    */
   content?: {
@@ -1307,6 +1388,39 @@ export interface ProjectsSelect<T extends boolean = true> {
         id?: T;
       };
   description?: T;
+  client?: T;
+  industry?: T;
+  projectType?: T;
+  projectStatus?: T;
+  timeline?: T;
+  targetAudience?: T;
+  role?: T;
+  teamSize?: T;
+  collaboration?: T;
+  responsibilities?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  challenge?: T;
+  solution?: T;
+  keyDecisions?:
+    | T
+    | {
+        decision?: T;
+        rationale?: T;
+        id?: T;
+      };
+  outcomes?:
+    | T
+    | {
+        result?: T;
+        metric?: T;
+        evidence?: T;
+        id?: T;
+      };
+  learnings?: T;
   content?: T;
   visibility?: T;
   featured?: T;

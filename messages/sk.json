@@ -139,8 +139,33 @@
     "openSourceCode": "Otvoriť zdrojový kód"
   },
   "ContactPage": {
-    "title": "Kontakt",
-    "body": "Táto stránka zatiaľ nie je napísaná."
+    "title": "Poďme sa porozprávať.",
+    "eyebrow": "Kontakt",
+    "body": "Máte nápad na projekt, pracovnú príležitosť alebo otázku k mojej práci? Napíšte mi pár riadkov.",
+    "emailLabel": "Najlepšie ma zastihnete e-mailom",
+    "copy": "Kopírovať e-mail",
+    "copied": "E-mail skopírovaný",
+    "copyError": "E-mail sa nepodarilo skopírovať. Označte a skopírujte adresu ručne.",
+    "location": "Žilina, Slovensko",
+    "elsewhere": "Nájdete ma aj tu",
+    "linkedin": "Pracovné skúsenosti a spojenia",
+    "github": "Kód a vlastné projekty",
+    "start": "Čo máte na mysli?",
+    "intro": "Vyberte tému a pripravte si správu. Pomôže mi krátky opis vášho zámeru a predstava o spolupráci.",
+    "topic": "Téma správy",
+    "project": "Nový projekt",
+    "opportunity": "Pracovná príležitosť",
+    "other": "Iná otázka",
+    "message": "Vaša správa",
+    "placeholder": "Čomu sa venujete a s čím vám môžem pomôcť?",
+    "openEmail": "Pripraviť e-mail",
+    "emailHint": "Otvorí sa vaša e-mailová aplikácia. Správu odošlete až v nej.",
+    "fallback": "Ak sa aplikácia neotvorí, použite adresu uvedenú vľavo.",
+    "briefTitle": "Čo pomôže na začiatok",
+    "brief1": "Čo chcete vytvoriť alebo zlepšiť",
+    "brief2": "Aký rozsah spolupráce hľadáte",
+    "brief3": "Približný termín a rozpočet, ak ich už poznáte",
+    "work": "Pozrieť moje projekty"
   },
   "PrivacyPolicyPage": {
     "title": "Ochrana osobných údajov",
@@ -183,5 +208,44 @@
     "tryAgain": "Skúsiť znova",
     "reportIt": "Nahlásiť",
     "reference": "Referencia chyby:"
+  },
+  "ProjectDetail": {
+    "back": "Všetky projekty",
+    "live": "Navštíviť web",
+    "source": "Pozrieť kód",
+    "overview": "Prehľad projektu",
+    "client": "Klient",
+    "industry": "Odvetvie",
+    "role": "Moja rola",
+    "timeline": "Obdobie práce",
+    "teamSize": "Veľkosť tímu",
+    "teamCount": "{count, plural, one {# človek} few {# ľudia} other {# ľudí}}",
+    "projectType": "Typ projektu",
+    "projectStatus": "Stav",
+    "technologies": "Technológie",
+    "targetAudience": "Pre koho je projekt",
+    "contribution": "Môj prínos",
+    "collaboration": "Spolupráca",
+    "challenge": "Výzva",
+    "solution": "Riešenie",
+    "decisions": "Kľúčové rozhodnutia",
+    "outcomes": "Výsledky a prínos",
+    "learnings": "Čo som sa naučil",
+    "caseStudy": "Case study",
+    "video": "Ukážka projektu",
+    "types": {
+      "client": "Klientsky projekt",
+      "employment": "Zamestnanie",
+      "personal": "Vlastný projekt",
+      "open-source": "Open source",
+      "academic": "Školský projekt"
+    },
+    "statuses": {
+      "in-progress": "Vo vývoji",
+      "launched": "Spustený",
+      "maintained": "V údržbe",
+      "completed": "Dokončený",
+      "archived": "Archivovaný"
+    }
   }
 }

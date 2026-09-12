@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: enhance Card component with loading state and animation effects for improved user experience">
-      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/[slug]/client.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/[slug]/page.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add ProjectDetail page and enhance Card component with loading state and animations">
+      <change afterPath="$PROJECT_DIR$/src/components/ProjectDetail/Content.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ProjectDetail/Hero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messages/sk.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/sk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/[slug]/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/[slug]/client.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/[slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/projects/[slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/actions/case-study.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/case-study.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Projects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/Projects.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Projects/ProjectsGridSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/ProjectsGridSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectsGrid/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/migrate-localized-fields.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,15 +185,11 @@
       <workItem from="1788711370388" duration="601000" />
       <workItem from="1788740785921" duration="604000" />
       <workItem from="1788782199642" duration="36000" />
-      <workItem from="1788782265398" duration="1587000" />
-    </task>
-    <task id="LOCAL-00023" summary="Add `TextAnimate` component with customizable motion animations and integrate into `HomeClient` for dynamic text effects">
-      <option name="closed" value="true" />
-      <created>1786400626663</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1786400626663</updated>
+      <workItem from="1788782265398" duration="4547000" />
+      <workItem from="1788899024928" duration="606000" />
+      <workItem from="1788906384863" duration="746000" />
+      <workItem from="1789041166984" duration="1195000" />
+      <workItem from="1789114943955" duration="6375000" />
     </task>
     <task id="LOCAL-00024" summary="Update `HomeClient` text animations: refine word sequence and improve layout styling">
       <option name="closed" value="true" />
@@ -575,14 +575,21 @@
       <option name="project" value="LOCAL" />
       <updated>1788797288243</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="feat: add ProjectDetail page and enhance Card component with loading state and animations">
+      <option name="closed" value="true" />
+      <created>1788798051445</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1788798051445</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add SpeedInsights component to layout for performance monitoring" />
     <MESSAGE value="fix: update BackToTop component visibility and adjust workspace configuration" />
     <MESSAGE value="fix: update visibility of BackToTop component and adjust workspace configuration" />
     <MESSAGE value="fix: standardize indentation and formatting in globals.css and update workspace configuration" />
@@ -607,7 +614,8 @@
     <MESSAGE value="feat: add Error and NotFound components with custom error handling and user-friendly messages" />
     <MESSAGE value="feat: implement localization support across various components and pages" />
     <MESSAGE value="feat: enhance Card component with loading state and animation effects for improved user experience" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance Card component with loading state and animation effects for improved user experience" />
+    <MESSAGE value="feat: add ProjectDetail page and enhance Card component with loading state and animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add ProjectDetail page and enhance Card component with loading state and animations" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

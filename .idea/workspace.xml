@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: update contact links in DockMenu, Footer, Header, and Hero components to use navigation links">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/sk.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/sk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/client.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/actions/contact.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/contact.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,15 +180,7 @@
       <workItem from="1788899024928" duration="606000" />
       <workItem from="1788906384863" duration="746000" />
       <workItem from="1789041166984" duration="1195000" />
-      <workItem from="1789114943955" duration="9357000" />
-    </task>
-    <task id="LOCAL-00027" summary="Update `HomeClient` layout: enhance styling, add social links with animations, and refine section structure">
-      <option name="closed" value="true" />
-      <created>1786403872130</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1786403872130</updated>
+      <workItem from="1789114943955" duration="10235000" />
     </task>
     <task id="LOCAL-00028" summary="Refactor `HomeClient` by modularizing hero and case study sections, enhance `Footer` and `Header` responsiveness, and update project assets configuration">
       <option name="closed" value="true" />
@@ -570,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789254592169</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="feat: update contact links in DockMenu, Footer, Header, and Hero components to use navigation links">
+      <option name="closed" value="true" />
+      <created>1789255419149</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1789255419149</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

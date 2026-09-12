@@ -6,12 +6,7 @@ import { Resend } from "resend";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import { contactSchema, type ContactState } from "@/lib/contact";
-
-const subjects = {
-  project: "New project",
-  opportunity: "Work opportunity",
-  other: "General enquiry",
-};
+import { renderContactEmail } from "@/lib/contactEmail";
 
 export async function sendContact(
   _previous: ContactState,
@@ -45,13 +40,15 @@ export async function sendContact(
     );
     if (!limit || limit.count > 5) return { status: "error", error: "rateLimited" };
 
-    const { name, email, topic, message } = parsed.data;
+    const { subject, html, text } = renderContactEmail(parsed.data);
     const { error } = await new Resend(apiKey).emails.send({
       from,
       to: "perdochjakub@gmail.com",
-      replyTo: email,
-      subject: `Portfolio: ${subjects[topic]}`,
-      text: `Name: ${name}\nEmail: ${email}\nTopic: ${subjects[topic]}\n\n${message}`,
+      replyTo: parsed.data.email,
+      subject,
+      html,
+      // Plain-text alternative for clients that refuse HTML, and better deliverability.
+      text,
     });
     if (error) {
       // Resend reports configuration problems here (unverified domain, bad

@@ -170,7 +170,9 @@
     "yourEmail": "Váš e-mail",
     "send": "Odoslať správu",
     "sending": "Odosielam…",
+    "successTitle": "Správa odoslaná",
     "success": "Správa bola odoslaná. Ďakujem, že ste sa ozvali.",
+    "errorTitle": "Niečo sa pokazilo",
     "errors": {
       "invalid": "Skontrolujte údaje. Vyplňte meno, platný e-mail a správu s aspoň 10 znakmi.",
       "rateLimited": "Príliš veľa pokusov. Skúste to o 15 minút alebo mi napíšte priamo.",

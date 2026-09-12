@@ -7,6 +7,7 @@ import { ArrowUpRight, Check, Copy, MapPin } from "lucide-react";
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 import { Link } from "@/i18n/navigation";
 
+import FormStatus from "@/components/Contact/FormStatus";
 import { sendContact } from "@/app/actions/contact";
 import type { ContactState } from "@/lib/contact";
 
@@ -76,13 +77,6 @@ export default function ContactClient() {
                 )}
                 {copyStatus === "copied" ? t("copied") : t("copy")}
               </button>
-              <p role="status" className="mt-2 text-sm text-zinc-600">
-                {copyStatus === "error"
-                  ? t("copyError")
-                  : copyStatus === "copied"
-                    ? t("copied")
-                    : ""}
-              </p>
             </div>
             <p className="font-heading mt-5 flex items-center gap-2 text-sm text-zinc-500">
               <MapPin size={16} aria-hidden="true" />
@@ -247,17 +241,7 @@ export default function ContactClient() {
                 </p>
               </div>
             </fieldset>
-            <div role="status" aria-live="polite" className="text-sm leading-6 text-zinc-700">
-              {state.status === "success" && t("success")}
-              {state.status === "error" && (
-                <p>
-                  {t(`errors.${state.error || "failed"}`)}{" "}
-                  <a className="underline" href={`mailto:${email}`}>
-                    {email}
-                  </a>
-                </p>
-              )}
-            </div>
+            <FormStatus state={state} email={email} />
           </form>
           <div className="mt-10 border-t border-zinc-200 pt-6">
             <h3 className="font-heading mb-3 text-base font-medium text-zinc-900">

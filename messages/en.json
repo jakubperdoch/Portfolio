@@ -170,7 +170,9 @@
     "yourEmail": "Your email",
     "send": "Send message",
     "sending": "Sending…",
+    "successTitle": "Message sent",
     "success": "Your message has been submitted. Thank you for getting in touch.",
+    "errorTitle": "Something went wrong",
     "errors": {
       "invalid": "Check your details. Please enter a name, a valid email and a message of at least 10 characters.",
       "rateLimited": "Too many attempts. Please try again in 15 minutes, or email me directly.",

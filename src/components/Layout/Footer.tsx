@@ -72,8 +72,8 @@ export default function Footer() {
             viewport={{ once: true }}
             className="group w-fit shrink-0 rounded-full bg-white transition-colors duration-300 hover:bg-zinc-200"
           >
-            <a
-              href="mailto:perdochjakub@gmail.com"
+            <Link
+              href="/contact"
               className="font-heading flex h-full w-full items-center gap-1 px-6 py-3 text-base text-zinc-900 md:px-10 md:py-4 md:text-lg"
             >
               {t("getInTouch")}
@@ -81,7 +81,7 @@ export default function Footer() {
                 stroke={2}
                 className="transform transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
               />
-            </a>
+            </Link>
           </motion.div>
         </section>
 
@@ -123,12 +123,12 @@ export default function Footer() {
               {t("contact")}
             </h3>
             <div className="flex flex-col gap-2">
-              <a
-                href="mailto:perdochjakub@gmail.com"
+              <Link
+                href="/contact"
                 className="font-heading font-light text-white/70 transition-colors duration-300 hover:text-white"
               >
                 perdochjakub@gmail.com
-              </a>
+              </Link>
               <p className="font-heading text-sm font-light text-white/50">{t("location")}</p>
             </div>
           </div>

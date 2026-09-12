@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/i18n/navigation";
 import { Separator } from "@/components/ui/separator";
 
+const MotionLink = motion.create(Link);
+
 const navigationLinks = [
   { key: "home", href: "/" },
   { key: "projects", href: "/projects" },
@@ -211,9 +213,10 @@ export default function Header() {
             <div className="flex flex-col px-8 py-12 md:flex-row md:items-end md:justify-between lg:px-24">
               <div className="font-heading space-y-2">
                 <p className="text-white/20 uppercase">{t("contact")}</p>
-                <motion.a
+                <MotionLink
                   whileHover={"contactLinkHover"}
-                  href="mailto:jakub.perdoch@gmail.com"
+                  href="/contact"
+                  onClick={() => setFullMenuOpen(false)}
                   className="text-white transition-all duration-300 ease-in-out sm:text-lg"
                 >
                   perdochjakub@gmail.com
@@ -226,7 +229,7 @@ export default function Header() {
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     className="h-0.5 w-0 bg-white"
                   />
-                </motion.a>
+                </MotionLink>
               </div>
 
               <div className="font-heading flex flex-wrap gap-x-2.5 gap-y-1 md:gap-8">

@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: add ProjectDetail page and enhance Card component with improved animations and loading states">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/sk.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/sk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/(marketing)/contact/client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(apps)/[locale]/[...rest]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(apps)/[locale]/[...rest]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CaseStudies/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CaseStudies/Card.tsx" afterDir="false" />
+    <list default="true" id="5151184b-ad38-4ef7-874d-22afcad62c32" name="Changes" comment="feat: enhance Card component with improved animations and loading states, and implement contact form functionality">
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/DockMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/DockMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,15 +179,7 @@
       <workItem from="1788899024928" duration="606000" />
       <workItem from="1788906384863" duration="746000" />
       <workItem from="1789041166984" duration="1195000" />
-      <workItem from="1789114943955" duration="7831000" />
-    </task>
-    <task id="LOCAL-00025" summary="Refine `client.tsx` styling: update `overflow-hidden` to `overflow-visible` for improved layout rendering">
-      <option name="closed" value="true" />
-      <created>1786401288334</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1786401288334</updated>
+      <workItem from="1789114943955" duration="8738000" />
     </task>
     <task id="LOCAL-00026" summary="Add `TagsRow` component with motion-based tag animations; update `HomeClient` with enhanced layout and animated tags integration">
       <option name="closed" value="true" />
@@ -575,14 +565,21 @@
       <option name="project" value="LOCAL" />
       <updated>1789252245271</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="feat: enhance Card component with improved animations and loading states, and implement contact form functionality">
+      <option name="closed" value="true" />
+      <created>1789253644195</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1789253644195</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: update visibility of BackToTop component and adjust workspace configuration" />
     <MESSAGE value="fix: standardize indentation and formatting in globals.css and update workspace configuration" />
     <MESSAGE value="feat: add viewport configuration to layout for improved responsiveness" />
     <MESSAGE value="feat: add Contact link to navigation and improve layout responsiveness" />
@@ -607,7 +604,8 @@
     <MESSAGE value="feat: enhance Card component with loading state and animation effects for improved user experience" />
     <MESSAGE value="feat: add ProjectDetail page and enhance Card component with loading state and animations" />
     <MESSAGE value="feat: add ProjectDetail page and enhance Card component with improved animations and loading states" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add ProjectDetail page and enhance Card component with improved animations and loading states" />
+    <MESSAGE value="feat: enhance Card component with improved animations and loading states, and implement contact form functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance Card component with improved animations and loading states, and implement contact form functionality" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

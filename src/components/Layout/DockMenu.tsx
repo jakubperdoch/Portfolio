@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 interface DockMenuProps {
   menuOpenHandler: () => void;
@@ -49,9 +50,9 @@ export default function DockMenu({ menuOpenHandler }: DockMenuProps) {
           </a>
         </DockIcon>
         <DockIcon>
-          <a href="mailto:perdochjakub@gmail.com" aria-label={t("contact")}>
+          <Link href="/contact" aria-label={t("contact")}>
             <Image src="/icons/gmail.svg" alt="Email" width={24} height={24} />
-          </a>
+          </Link>
         </DockIcon>
       </Dock>
     </div>

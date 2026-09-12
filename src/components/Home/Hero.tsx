@@ -7,6 +7,9 @@ import { TagsRow } from "@/components/ui/TagsRow";
 import { IconBrandGithub, IconBrandLinkedin, IconFileInvoice, IconMail } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { Link } from "@/i18n/navigation";
+
+const MotionLink = motion.create(Link);
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -174,18 +177,18 @@ export default function Hero() {
           >
             <IconBrandGithub />
           </motion.a>
-          <motion.a
+          <MotionLink
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.4 }}
-            href="mailto:jakub.perdoch@gmail.com"
+            href="/contact"
             aria-label={t("emailLabel")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="rounded-full bg-zinc-200 p-2 text-zinc-800 transition-colors duration-300 hover:bg-zinc-800 hover:text-white"
           >
             <IconMail />
-          </motion.a>
+          </MotionLink>
           <motion.a
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -151,7 +151,7 @@
     "linkedin": "Pracovné skúsenosti a spojenia",
     "github": "Kód a vlastné projekty",
     "start": "Čo máte na mysli?",
-    "intro": "Vyberte tému a pripravte si správu. Pomôže mi krátky opis vášho zámeru a predstava o spolupráci.",
+    "intro": "Vyberte tému a napíšte mi o svojom nápade alebo príležitosti.",
     "topic": "Téma správy",
     "project": "Nový projekt",
     "opportunity": "Pracovná príležitosť",
@@ -159,13 +159,24 @@
     "message": "Vaša správa",
     "placeholder": "Čomu sa venujete a s čím vám môžem pomôcť?",
     "openEmail": "Pripraviť e-mail",
-    "emailHint": "Otvorí sa vaša e-mailová aplikácia. Správu odošlete až v nej.",
+    "emailHint": "Správa príde priamo do mojej schránky. Odpoviem na e-mail, ktorý uvediete.",
     "fallback": "Ak sa aplikácia neotvorí, použite adresu uvedenú vľavo.",
     "briefTitle": "Čo pomôže na začiatok",
     "brief1": "Čo chcete vytvoriť alebo zlepšiť",
     "brief2": "Aký rozsah spolupráce hľadáte",
     "brief3": "Približný termín a rozpočet, ak ich už poznáte",
-    "work": "Pozrieť moje projekty"
+    "work": "Pozrieť moje projekty",
+    "name": "Vaše meno",
+    "yourEmail": "Váš e-mail",
+    "send": "Odoslať správu",
+    "sending": "Odosielam…",
+    "success": "Správa bola odoslaná. Ďakujem, že ste sa ozvali.",
+    "errors": {
+      "invalid": "Skontrolujte údaje. Vyplňte meno, platný e-mail a správu s aspoň 10 znakmi.",
+      "rateLimited": "Príliš veľa pokusov. Skúste to o 15 minút alebo mi napíšte priamo.",
+      "unavailable": "Formulár je dočasne nedostupný. Napíšte mi priamo na e-mail.",
+      "failed": "Správu sa nepodarilo odoslať. Skúste to znova alebo mi napíšte priamo."
+    }
   },
   "PrivacyPolicyPage": {
     "title": "Ochrana osobných údajov",

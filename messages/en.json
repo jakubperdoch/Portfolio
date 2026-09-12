@@ -151,7 +151,7 @@
     "linkedin": "Experience and professional connections",
     "github": "Code and personal projects",
     "start": "What do you have in mind?",
-    "intro": "Choose a topic and prepare your message. A short outline of your idea and the collaboration you have in mind is a good start.",
+    "intro": "Choose a topic and tell me about your idea or opportunity.",
     "topic": "Message topic",
     "project": "New project",
     "opportunity": "Work opportunity",
@@ -159,13 +159,24 @@
     "message": "Your message",
     "placeholder": "What are you working on, and how can I help?",
     "openEmail": "Prepare email",
-    "emailHint": "Opens your email app. You send the message from there.",
+    "emailHint": "Your message is sent directly to my inbox. I will reply to the email address you provide.",
     "fallback": "If the app does not open, use the email address shown on this page.",
     "briefTitle": "A useful starting point",
     "brief1": "What you want to build or improve",
     "brief2": "The kind of collaboration you are looking for",
     "brief3": "An approximate timeline and budget, if known",
-    "work": "Explore my projects"
+    "work": "Explore my projects",
+    "name": "Your name",
+    "yourEmail": "Your email",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Your message has been submitted. Thank you for getting in touch.",
+    "errors": {
+      "invalid": "Check your details. Please enter a name, a valid email and a message of at least 10 characters.",
+      "rateLimited": "Too many attempts. Please try again in 15 minutes, or email me directly.",
+      "unavailable": "The form is temporarily unavailable. Please email me directly.",
+      "failed": "Your message could not be sent. Please try again or email me directly."
+    }
   },
   "PrivacyPolicyPage": {
     "title": "Privacy Policy",

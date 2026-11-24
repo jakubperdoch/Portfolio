@@ -9,6 +9,7 @@ import { Link } from "@/i18n/navigation";
 import { shimmerBlurDataURL } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import { IconBrandGithub } from "@tabler/icons-react";
+import TechChips from "@/components/ProjectsGrid/TechChips";
 
 export const IMAGE_SIZES =
   "(min-width: 1536px) 716px, (min-width: 1280px) 588px, (min-width: 1024px) 460px, (min-width: 768px) 704px, (min-width: 640px) 576px, calc(100vw - 48px)";
@@ -79,16 +80,10 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
           >
             {caseStudy.title}
           </motion.h3>
-          <div className="flex max-w-lg flex-wrap gap-2">
-            {caseStudy.techStack.map((tech, idx) => (
-              <div
-                key={idx}
-                className="font-heading flex cursor-default gap-1 rounded-full bg-zinc-100 px-2.5 py-1.5 text-[10px] font-medium tracking-widest text-zinc-600 uppercase hover:text-zinc-900"
-              >
-                {tech.tech}
-              </div>
-            ))}
-          </div>
+          {/* A single row of the first few technologies; the full stack lives
+              on the detail page. Order comes from the CMS, so the most telling
+              ones should be listed first there. */}
+          <TechChips techs={caseStudy.techStack.map(({ tech }) => tech)} />
         </div>
 
         <div className="flex gap-2">

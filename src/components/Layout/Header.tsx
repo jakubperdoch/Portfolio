@@ -33,7 +33,7 @@ export default function Header() {
   const profileLinks: { label: string; href: string; icon?: React.ReactNode }[] = [
     { label: t("github"), href: "https://github.com/jakubperdoch" },
     { label: t("linkedin"), href: "https://www.linkedin.com/in/jakub-perďoch/" },
-    { label: t("resume"), href: "/resume.pdf", icon: <FileText size={15} /> },
+    { label: t("resume"), href: t("resumeHref"), icon: <FileText size={15} /> },
   ];
 
   useEffect(() => {
@@ -73,7 +73,7 @@ export default function Header() {
             <LocaleSwitcher />
 
             <motion.a
-              href="/resume.pdf"
+              href={t("resumeHref")}
               download
               target="_blank"
               rel="noopener noreferrer"

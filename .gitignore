@@ -45,5 +45,3 @@ next-env.d.ts
 # next-intl: regenerated from messages/en.json on every dev/build
 messages/*.d.json.ts
 
-# local CMS data backups
-/backups/

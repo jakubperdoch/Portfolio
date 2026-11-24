@@ -192,7 +192,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.4 }}
-            href="/resume.pdf"
+            href={t("resumeHref")}
             download
             aria-label={t("resumeLabel")}
             whileHover={{ scale: 1.1 }}

@@ -52,6 +52,7 @@
   "Header": {
     "brand": "Jakub",
     "resume": "Životopis",
+    "resumeHref": "/resume-sk.pdf",
     "menu": "Menu",
     "close": "Zavrieť",
     "navigation": "Navigácia",
@@ -85,6 +86,7 @@
     "linkedinLabel": "Otvoriť profil na LinkedIne",
     "githubLabel": "Otvoriť profil na GitHube",
     "emailLabel": "Napísať e-mail",
+    "resumeHref": "/resume-sk.pdf",
     "resumeLabel": "Stiahnuť životopis"
   },
   "TagsRow": {

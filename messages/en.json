@@ -52,6 +52,7 @@
   "Header": {
     "brand": "Jakub",
     "resume": "Resume",
+    "resumeHref": "/resume.pdf",
     "menu": "Menu",
     "close": "Close",
     "navigation": "Navigation",
@@ -85,6 +86,7 @@
     "linkedinLabel": "Open LinkedIn profile",
     "githubLabel": "Open GitHub profile",
     "emailLabel": "Send an email",
+    "resumeHref": "/resume.pdf",
     "resumeLabel": "Download resume"
   },
   "TagsRow": {

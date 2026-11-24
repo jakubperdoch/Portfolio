@@ -1,25 +1,53 @@
+import { notFound } from "next/navigation";
 import { AppLocale } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import JsonLd from "@/lib/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, creativeWorkSchema } from "@/lib/schema";
 import ProjectDetailClient from "@/app/(apps)/[locale]/(marketing)/projects/[slug]/client";
 import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
 import { getCaseStudy } from "@/app/actions/case-study";
+import type { Project } from "@/payload-types";
 
 type ProjectDetailPageProps = {
   params: Promise<{ locale: AppLocale; slug: string }>;
 };
 
+/** Upload fields arrive either populated or as a bare id, depending on depth. */
+function imageURL(project: Project): string | undefined {
+  const image = project.image;
+  return image && typeof image === "object" ? (image.url ?? undefined) : undefined;
+}
+
 export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const result = await getCaseStudy({ slug, locale });
+  const project = result.success ? result.caseStudy : undefined;
+
+  // Without a project there is nothing specific to describe, and the page
+  // itself 404s — fall back to the generic copy rather than inventing a title.
+  if (!project) {
+    const t = await getTranslations({ locale, namespace: "Metadata" });
+
+    return constructMetadata({
+      locale,
+      title: t("projectDetail.title"),
+      description: t("projectDetail.description"),
+      path: `/projects/${slug}`,
+      noIndex: true,
+    });
+  }
 
   return constructMetadata({
     locale,
-    title: t("projectDetail.title"),
-    description: t("projectDetail.description"),
+    title: project.title,
+    description: project.description,
     path: `/projects/${slug}`,
+    image: imageURL(project),
+    type: "article",
+    // Private and draft work stays reachable by direct link but out of search
+    // results, the same way the listing marks it as not public.
+    noIndex: project.visibility !== "public",
   });
 }
 
@@ -31,8 +59,13 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
     resultCaseStudy.success && resultCaseStudy.caseStudy ? resultCaseStudy.caseStudy : null;
 
   if (!caseStudy) {
-    return null;
+    notFound();
   }
+
+  const path = `/projects/${slug}`;
+  const liveLinks = [caseStudy.liveLink, caseStudy.githubLink].filter(
+    (link): link is string => !!link
+  );
 
   return (
     <>
@@ -41,10 +74,23 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           [
             { name: t("home"), path: "/" },
             { name: t("projects"), path: "/projects" },
-            { name: t("projectDetail"), path: `/projects/${slug}` },
+            { name: caseStudy.title, path },
           ],
           locale
         )}
+      />
+      <JsonLd
+        data={creativeWorkSchema({
+          locale,
+          name: caseStudy.title,
+          description: caseStudy.description,
+          path,
+          image: imageURL(caseStudy),
+          keywords: caseStudy.techStack?.map(({ tech }) => tech),
+          datePublished: caseStudy.createdAt,
+          dateModified: caseStudy.updatedAt,
+          sameAs: liveLinks,
+        })}
       />
       <ProjectDetailClient {...caseStudy} />
     </>

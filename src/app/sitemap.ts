@@ -12,10 +12,10 @@ const staticRoutes: Array<{
   priority: number;
 }> = [
   { path: "", changeFrequency: "weekly", priority: 1 },
-  { path: "/case-studies", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/projects", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/my-gear", changeFrequency: "monthly", priority: 0.4 },
-  { path: "/contact", changeFrequency: "yearly", priority: 0.5 },
+  { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/contact", changeFrequency: "yearly", priority: 0.6 },
+  // `/privacy-policy` and `/terms-of-service` are deliberately absent: both
+  // still carry placeholder copy and are served with `noIndex`.
 ];
 
 /**
@@ -56,7 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const projectEntries: MetadataRoute.Sitemap = routing.locales.flatMap((locale) =>
     projects.docs.map((project) => {
-      const path = `/case-studies/${project.slug}`;
+      const path = `/projects/${project.slug}`;
 
       return {
         url: `${baseUrl}${localizedPath(path, locale)}`,

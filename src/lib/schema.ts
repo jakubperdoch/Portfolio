@@ -85,3 +85,56 @@ export function websiteSchema({ locale, description }: Omit<LocalizedSchemaArgs,
     inLanguage: locale,
   };
 }
+
+type CreativeWorkArgs = {
+  locale: AppLocale;
+  name: string;
+  description: string;
+  /** Locale-agnostic route, e.g. `/projects/okeilo`. */
+  path: string;
+  image?: string;
+  /** Technologies used, surfaced as `keywords`. */
+  keywords?: string[];
+  datePublished?: string;
+  dateModified?: string;
+  /** Live deployment of the project, if any. */
+  sameAs?: string[];
+};
+
+/**
+ * Per-project structured data. `CreativeWork` is the closest match for a case
+ * study: it carries the author link that ties every project back to the
+ * `Person` entity on the home page.
+ */
+export function creativeWorkSchema({
+  locale,
+  name,
+  description,
+  path,
+  image,
+  keywords,
+  datePublished,
+  dateModified,
+  sameAs,
+}: CreativeWorkArgs) {
+  const baseUrl = getServerSideURL();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name,
+    description,
+    url: `${baseUrl}${localizedPath(path, locale)}`,
+    inLanguage: locale,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: `${baseUrl}${localizedPath("/", locale)}`,
+    },
+    ...(image ? { image } : {}),
+    ...(keywords?.length ? { keywords: keywords.join(", ") } : {}),
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    ...(sameAs?.length ? { sameAs } : {}),
+  };
+}

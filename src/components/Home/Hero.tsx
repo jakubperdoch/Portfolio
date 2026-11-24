@@ -11,6 +11,9 @@ import { Link } from "@/i18n/navigation";
 
 const MotionLink = motion.create(Link);
 
+const WORD_ANIMATION_DURATION = 0.6;
+const WORD_INTERVAL_MS = 2000;
+
 export default function Hero() {
   const t = useTranslations("Hero");
   const words = t.raw("words") as string[];
@@ -25,12 +28,10 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prevIndex) => prevIndex + 1);
-    }, 2000);
+    }, WORD_INTERVAL_MS);
     return () => clearInterval(interval);
   }, []);
 
-  // Wrapping here rather than in the setter keeps the counter valid when a
-  // locale switch swaps in a word list of a different length.
   const currentWord = words[wordIndex % words.length];
 
   return (
@@ -55,19 +56,19 @@ export default function Hero() {
               {t("name")}
             </span>
           </span>{" "}
-          {t("greetingEnd")}
-          <div className="flex flex-nowrap items-center gap-x-3 overflow-visible md:gap-x-6">
+          <div className="flex flex-wrap items-center gap-x-3 overflow-visible md:gap-x-6">
+            {t("greetingEnd")}
             <span className="font-serif whitespace-nowrap text-zinc-500 italic">{t("loveTo")}</span>
             <div className="relative inline-flex h-[1.2em] items-center overflow-visible">
               <span className="pointer-events-none whitespace-nowrap opacity-0">
                 {t("wordPlaceholder")}
               </span>
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="popLayout">
                 <TextAnimate
                   key={currentWord}
                   animation="blurInUp"
                   by="character"
-                  duration={0.6}
+                  duration={WORD_ANIMATION_DURATION}
                   className="absolute left-0 font-medium whitespace-nowrap text-zinc-900"
                 >
                   {currentWord}
@@ -91,9 +92,7 @@ export default function Hero() {
                   transform: "translate(-50%, -105%)",
                 }}
               >
-                <p className='className="animate-bounce-slow absolute -bottom-10 -left-8 z-40 text-7xl'>
-                  👋
-                </p>
+                <p className="absolute -bottom-10 -left-8 z-40 animate-bounce text-7xl">👋</p>
                 <Image
                   width={200}
                   height={200}

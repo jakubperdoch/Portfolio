@@ -10,6 +10,8 @@ export type CodeBlockProps = {
   code: string;
   language?: string | null;
   filename?: string | null;
+  /** Payload's block label; shown as a badge, e.g. "Illustrative example". */
+  blockName?: string | null;
   showLineNumbers?: boolean | null;
   blockType: "code";
 };
@@ -23,6 +25,7 @@ export const CodeBlock: React.FC<Props> = async ({
   code,
   language,
   filename,
+  blockName,
   showLineNumbers = true,
 }) => {
   if (!code) return null;
@@ -38,8 +41,15 @@ export const CodeBlock: React.FC<Props> = async ({
       )}
     >
       <figcaption className="border-border bg-muted/60 flex items-center justify-between gap-3 border-b px-4 py-2">
-        <span className="text-muted-foreground truncate font-mono text-xs">
-          {filename || codeLanguageLabel(language)}
+        <span className="flex min-w-0 items-center gap-2">
+          <span className="text-muted-foreground truncate font-mono text-xs">
+            {filename || codeLanguageLabel(language)}
+          </span>
+          {blockName && (
+            <span className="border-border text-muted-foreground shrink-0 rounded-full border px-2 py-0.5 text-[10px] tracking-wide uppercase">
+              {blockName}
+            </span>
+          )}
         </span>
         <CopyButton code={code} />
       </figcaption>

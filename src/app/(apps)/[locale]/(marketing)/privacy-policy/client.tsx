@@ -1,14 +1,16 @@
 import { useTranslations } from "next-intl";
+import LegalPage from "@/components/Legal/LegalPage";
 
 export default function PrivacyPolicyClient() {
   const t = useTranslations("PrivacyPolicyPage");
 
   return (
-    <div className="container mx-auto px-4 py-24 md:py-32">
-      <h1 className="font-heading text-4xl leading-tight font-bold md:text-6xl">{t("title")}</h1>
-      <p className="font-body text-foreground/80 mt-6 max-w-[60ch] text-base leading-relaxed md:text-lg">
-        {t("body")}
-      </p>
-    </div>
+    <LegalPage
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      updated={t("updated")}
+      intro={t("intro")}
+      sections={t.raw("sections") as { heading: string; body: string }[]}
+    />
   );
 }

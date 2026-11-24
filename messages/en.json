@@ -20,11 +20,11 @@
     },
     "privacyPolicy": {
       "title": "Privacy Policy",
-      "description": "Privacy policy for jakubperdoch.com."
+      "description": "Privacy policy for perdochjakub.com."
     },
     "termsOfService": {
       "title": "Terms of Service",
-      "description": "Terms of service for jakubperdoch.com."
+      "description": "Terms of service for perdochjakub.com."
     },
     "notFound": {
       "title": "Page not found",
@@ -182,11 +182,75 @@
   },
   "PrivacyPolicyPage": {
     "title": "Privacy Policy",
-    "body": "This policy has not been written yet. It should not be treated as a statement of how this site handles personal data."
+    "eyebrow": "Legal",
+    "updated": "Last updated: 24 November 2026",
+    "intro": "This is a personal portfolio, so it collects very little. This page explains exactly what, why, and what you can do about it.",
+    "sections": [
+      {
+        "heading": "Who is responsible",
+        "body": "The controller of personal data on this website is Jakub Perďoch, Slovakia. For anything related to your data, write to perdochjakub@gmail.com."
+      },
+      {
+        "heading": "Contact form",
+        "body": "When you send a message, I receive your name, email address, chosen topic and the message itself. It is delivered to my inbox through the email service Resend and is not stored in this website's database. I use it only to reply to you and keep it for as long as our conversation needs it — ask and I will delete it. The legal basis is my legitimate interest in answering an enquiry you started (Art. 6(1)(f) GDPR), or steps prior to a contract if you are asking about work (Art. 6(1)(b))."
+      },
+      {
+        "heading": "Spam protection",
+        "body": "To stop the form from being abused, a one-way hash of your IP address combined with the current 15-minute window is stored for at most 30 minutes, then deleted automatically. The hash is used only to count attempts and is never linked to your message."
+      },
+      {
+        "heading": "Analytics and performance",
+        "body": "The site uses Vercel Web Analytics and Speed Insights to see aggregate visits and page speed. They do not use cookies and do not build profiles of individual visitors. Like any web server, the hosting provider briefly processes technical data such as your IP address and browser to deliver the page and keep it secure."
+      },
+      {
+        "heading": "Cookies",
+        "body": "The only cookie set by this site is NEXT_LOCALE, which remembers whether you are reading in English or Slovak. It is strictly functional, contains no personal data and expires when you close the browser. There are no advertising or tracking cookies."
+      },
+      {
+        "heading": "Service providers",
+        "body": "Vercel (hosting and analytics), Resend (email delivery), MongoDB Atlas (content database) and Cloudflare R2 (images). Some of them process data outside the EU; in that case they rely on the EU Standard Contractual Clauses or the EU–US Data Privacy Framework."
+      },
+      {
+        "heading": "Your rights",
+        "body": "You have the right to access, correct or delete your data, to restrict or object to its processing and to data portability. Write to the address above and I will reply within 30 days. You can also lodge a complaint with the Office for Personal Data Protection of the Slovak Republic (dataprotection.gov.sk)."
+      },
+      {
+        "heading": "Changes",
+        "body": "If what the site collects changes, this page changes with it. The date at the top always shows the latest version."
+      }
+    ]
   },
   "TermsOfServicePage": {
     "title": "Terms of Service",
-    "body": "These terms have not been written yet. They should not be treated as binding."
+    "eyebrow": "Legal",
+    "updated": "Last updated: 24 November 2026",
+    "intro": "Short version: look around, get in touch, don't copy the site wholesale.",
+    "sections": [
+      {
+        "heading": "About this site",
+        "body": "This website is the personal portfolio of Jakub Perďoch. It presents my work and offers a way to contact me. Using it is free and does not create any contractual relationship."
+      },
+      {
+        "heading": "Content and copyright",
+        "body": "Texts, design and images on this site are mine unless stated otherwise. Project names, logos and screenshots belong to their respective owners and are shown only as references to my work. You are welcome to share links and short quotes with attribution."
+      },
+      {
+        "heading": "Code examples",
+        "body": "Code labelled as coming from a project's codebase is an excerpt from my own projects and remains subject to that project's licence. Code labelled as an illustrative example was written for this site to explain an approach — it is not production code of a client project. Either way, it is provided as is, without any warranty."
+      },
+      {
+        "heading": "No warranty",
+        "body": "I try to keep everything here accurate and up to date, but the content is informational and provided without guarantees. I am not liable for damage arising from its use, as far as the law allows."
+      },
+      {
+        "heading": "External links",
+        "body": "The site links to live projects, GitHub and LinkedIn. I am not responsible for the content or privacy practices of those websites."
+      },
+      {
+        "heading": "Governing law",
+        "body": "These terms are governed by the laws of the Slovak Republic. If anything here is unclear, just ask — that is what the contact page is for."
+      }
+    ]
   },
   "Footer": {
     "eyebrow": "Let’s build something great",

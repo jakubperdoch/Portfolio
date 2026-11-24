@@ -20,11 +20,11 @@
     },
     "privacyPolicy": {
       "title": "Ochrana osobných údajov",
-      "description": "Zásady ochrany osobných údajov pre jakubperdoch.com."
+      "description": "Zásady ochrany osobných údajov pre perdochjakub.com."
     },
     "termsOfService": {
       "title": "Podmienky používania",
-      "description": "Podmienky používania pre jakubperdoch.com."
+      "description": "Podmienky používania pre perdochjakub.com."
     },
     "notFound": {
       "title": "Stránka sa nenašla",
@@ -76,9 +76,9 @@
     "greetingStart": "Ahoj, som",
     "name": "Jakub",
     "greetingEnd": "a",
-    "loveTo": "milujem",
-    "words": ["Navrhovať.", "Kódiť.", "Tvoriť.", "Nasadzovať.", "Ladiť.", "Opakovať."],
-    "wordPlaceholder": "Nasadzovať.",
+    "loveTo": "baví ma",
+    "words": ["Navrhovať.", "Programovať.", "Tvoriť.", "Nasadzovať.", "Dolaďovať.", "Opakovať."],
+    "wordPlaceholder": "Programovať.",
     "profileAlt": "Profilová fotografia Jakuba Perďocha",
     "description": "Frontend vývojár, ktorý mení nápady na rozhrania, čo sa hýbu, reagujú a pôsobia živo. Bývam v mestečku, ktoré väčšina máp preskočí — <location>Turzovka, Slovensko</location>, a tvorím pre oveľa väčšie.",
     "available": "Voľný pre nové projekty",
@@ -182,11 +182,75 @@
   },
   "PrivacyPolicyPage": {
     "title": "Ochrana osobných údajov",
-    "body": "Tieto zásady zatiaľ nie sú spracované. Nemožno ich považovať za vyhlásenie o tom, ako táto stránka nakladá s osobnými údajmi."
+    "eyebrow": "Právne informácie",
+    "updated": "Posledná aktualizácia: 24. novembra 2026",
+    "intro": "Toto je osobné portfólio, takže zbiera veľmi málo. Na tejto stránke presne vysvetľujem čo, prečo a čo s tým môžeš urobiť.",
+    "sections": [
+      {
+        "heading": "Kto zodpovedá",
+        "body": "Prevádzkovateľom osobných údajov na tomto webe je Jakub Perďoch, Slovensko. V čomkoľvek, čo sa týka tvojich údajov, mi napíš na perdochjakub@gmail.com."
+      },
+      {
+        "heading": "Kontaktný formulár",
+        "body": "Keď mi pošleš správu, dostanem tvoje meno, e-mail, zvolenú tému a samotnú správu. Doručí sa mi do schránky cez e-mailovú službu Resend a v databáze webu sa neukladá. Použijem ju len na odpoveď a uchovám ju, kým to naša komunikácia potrebuje — stačí napísať a zmažem ju. Právnym základom je môj oprávnený záujem odpovedať na otázku, ktorú si začal (čl. 6 ods. 1 písm. f) GDPR), prípadne kroky pred uzavretím zmluvy, ak ide o spoluprácu (čl. 6 ods. 1 písm. b))."
+      },
+      {
+        "heading": "Ochrana pred spamom",
+        "body": "Aby sa formulár nedal zneužiť, ukladá sa jednosmerný hash tvojej IP adresy spojený s aktuálnym 15-minútovým oknom, najviac na 30 minút, a potom sa automaticky zmaže. Hash slúži len na počítanie pokusov a nikdy sa nespája s tvojou správou."
+      },
+      {
+        "heading": "Analytika a výkon",
+        "body": "Web používa Vercel Web Analytics a Speed Insights na súhrnný prehľad návštevnosti a rýchlosti stránok. Nepoužívajú cookies a nevytvárajú profily jednotlivých návštevníkov. Ako každý webový server, aj poskytovateľ hostingu krátkodobo spracúva technické údaje ako IP adresu a prehliadač, aby stránku doručil a udržal bezpečnú."
+      },
+      {
+        "heading": "Cookies",
+        "body": "Jediná cookie, ktorú web nastavuje, je NEXT_LOCALE — pamätá si, či čítaš po anglicky alebo po slovensky. Je čisto funkčná, neobsahuje osobné údaje a zanikne po zatvorení prehliadača. Žiadne reklamné ani sledovacie cookies tu nie sú."
+      },
+      {
+        "heading": "Poskytovatelia služieb",
+        "body": "Vercel (hosting a analytika), Resend (doručovanie e-mailov), MongoDB Atlas (databáza obsahu) a Cloudflare R2 (obrázky). Niektorí z nich spracúvajú údaje mimo EÚ; v takom prípade sa opierajú o štandardné zmluvné doložky EÚ alebo rámec ochrany údajov EÚ – USA."
+      },
+      {
+        "heading": "Tvoje práva",
+        "body": "Máš právo na prístup k údajom, ich opravu či vymazanie, obmedzenie spracúvania, námietku a prenosnosť údajov. Napíš na adresu vyššie a odpoviem do 30 dní. Sťažnosť môžeš podať aj na Úrad na ochranu osobných údajov SR (dataprotection.gov.sk)."
+      },
+      {
+        "heading": "Zmeny",
+        "body": "Ak sa zmení to, čo web zbiera, zmení sa aj táto stránka. Dátum hore vždy ukazuje najnovšiu verziu."
+      }
+    ]
   },
   "TermsOfServicePage": {
     "title": "Podmienky používania",
-    "body": "Tieto podmienky zatiaľ nie sú spracované. Nemožno ich považovať za záväzné."
+    "eyebrow": "Právne informácie",
+    "updated": "Posledná aktualizácia: 24. novembra 2026",
+    "intro": "Skrátene: pozri sa okolo, ozvi sa, nekopíruj web celý.",
+    "sections": [
+      {
+        "heading": "O tomto webe",
+        "body": "Tento web je osobné portfólio Jakuba Perďocha. Predstavuje moju prácu a ponúka spôsob, ako ma kontaktovať. Jeho používanie je bezplatné a nevzniká ním žiadny zmluvný vzťah."
+      },
+      {
+        "heading": "Obsah a autorské práva",
+        "body": "Texty, dizajn a obrázky na tomto webe sú moje, ak nie je uvedené inak. Názvy projektov, logá a snímky obrazovky patria ich vlastníkom a sú tu uvedené len ako referencie mojej práce. Odkazy a krátke citácie s uvedením zdroja môžeš pokojne zdieľať."
+      },
+      {
+        "heading": "Ukážky kódu",
+        "body": "Kód označený ako ukážka z kódu projektu je výňatok z mojich vlastných projektov a riadi sa licenciou daného projektu. Kód označený ako ilustračná ukážka vznikol pre tento web na vysvetlenie prístupu — nejde o produkčný kód klientskeho projektu. V oboch prípadoch je poskytnutý tak, ako je, bez akejkoľvek záruky."
+      },
+      {
+        "heading": "Bez záruky",
+        "body": "Snažím sa, aby bolo všetko presné a aktuálne, no obsah má informatívny charakter a je bez záruk. V rozsahu, ktorý zákon dovoľuje, nezodpovedám za škodu vzniknutú jeho použitím."
+      },
+      {
+        "heading": "Externé odkazy",
+        "body": "Web odkazuje na živé projekty, GitHub a LinkedIn. Za obsah a ochranu súkromia na týchto weboch nezodpovedám."
+      },
+      {
+        "heading": "Rozhodné právo",
+        "body": "Tieto podmienky sa riadia právom Slovenskej republiky. Ak je tu čokoľvek nejasné, stačí sa opýtať — na to je kontaktná stránka."
+      }
+    ]
   },
   "Footer": {
     "eyebrow": "Poďme vytvoriť niečo skvelé",

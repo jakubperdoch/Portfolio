@@ -56,8 +56,8 @@ export default function Hero() {
               {t("name")}
             </span>
           </span>{" "}
+          {t("greetingEnd")}
           <div className="flex flex-wrap items-center gap-x-3 overflow-visible md:gap-x-6">
-            {t("greetingEnd")}
             <span className="font-serif whitespace-nowrap text-zinc-500 italic">{t("loveTo")}</span>
             <div className="relative inline-flex h-[1.2em] items-center overflow-visible">
               <span className="pointer-events-none whitespace-nowrap opacity-0">

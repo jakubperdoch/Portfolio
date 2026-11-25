@@ -4,19 +4,32 @@ import { useLayoutEffect, useRef, useState } from "react";
 
 type TechChipsProps = {
   techs: string[];
-  max?: number;
+  maxRows?: number;
 };
 
-export default function TechChips({ techs, max = 4 }: TechChipsProps) {
+export default function TechChips({ techs, maxRows = 2 }: TechChipsProps) {
   const rowRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(Math.min(max, techs.length));
+  const [visible, setVisible] = useState(techs.length);
 
   useLayoutEffect(() => {
     const row = rowRef.current;
-    if (row && visible > 1 && row.scrollWidth > row.clientWidth) {
-      setVisible((count) => count - 1);
-    }
-  }, [visible]);
+    if (!row || visible <= 1) return;
+
+    const children = Array.from(row.children) as HTMLElement[];
+    if (children.length === 0) return;
+
+    const rowOffsets = [...new Set(children.map((child) => child.offsetTop))].sort((a, b) => a - b);
+    if (rowOffsets.length <= maxRows) return;
+
+    // First row that no longer fits — everything from there down has to go.
+    const cutoff = rowOffsets[maxRows];
+    const chipsThatFit = children.filter(
+      (child) => child.dataset.chip !== undefined && child.offsetTop < cutoff
+    ).length;
+
+    const next = Math.max(1, chipsThatFit < visible ? chipsThatFit : visible - 1);
+    if (next < visible) setVisible(next);
+  }, [visible, maxRows, techs.length]);
 
   useLayoutEffect(() => {
     const row = rowRef.current;
@@ -25,21 +38,22 @@ export default function TechChips({ techs, max = 4 }: TechChipsProps) {
     const observer = new ResizeObserver(() => {
       if (row.clientWidth !== lastWidth) {
         lastWidth = row.clientWidth;
-        setVisible(Math.min(max, techs.length));
+        setVisible(techs.length);
       }
     });
     observer.observe(row);
     return () => observer.disconnect();
-  }, [max, techs.length]);
+  }, [techs.length]);
 
   const hidden = techs.length - visible;
 
   return (
-    <div ref={rowRef} className="flex max-w-lg flex-nowrap gap-2 overflow-hidden">
+    <div ref={rowRef} className="flex w-full max-w-lg min-w-0 flex-wrap gap-2">
       {techs.slice(0, visible).map((tech, idx) => (
         <div
           key={idx}
-          className="font-heading flex shrink-0 cursor-default gap-1 rounded-full bg-zinc-100 px-2.5 py-1.5 text-[10px] font-medium tracking-widest whitespace-nowrap text-zinc-600 uppercase hover:text-zinc-900"
+          data-chip=""
+          className="font-heading flex max-w-full shrink-0 cursor-default gap-1 overflow-hidden rounded-full bg-zinc-100 px-2.5 py-1.5 text-[10px] font-medium tracking-widest whitespace-nowrap text-zinc-600 uppercase hover:text-zinc-900"
         >
           {tech}
         </div>

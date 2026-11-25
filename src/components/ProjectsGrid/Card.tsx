@@ -27,7 +27,7 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: (index % 2) * 0.08 }}
       viewport={{ once: true }}
-      className="relative flex cursor-pointer flex-col gap-4"
+      className="relative flex min-w-0 cursor-pointer flex-col gap-4"
     >
       <Link
         href={"/projects/" + caseStudy.slug + "/"}
@@ -65,8 +65,8 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
         )}
       </motion.div>
 
-      <div className="flex flex-col justify-between gap-4 xl:flex-row">
-        <div className="flex flex-col gap-2">
+      <div className="flex min-w-0 flex-col justify-between gap-4 xl:flex-row">
+        <div className="flex min-w-0 flex-col gap-2">
           <motion.h3
             variants={{
               cardHover: {

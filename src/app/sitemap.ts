@@ -14,8 +14,6 @@ const staticRoutes: Array<{
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.6 },
-  // `/privacy-policy` and `/terms-of-service` are served with `noIndex` —
-  // legal boilerplate is not something worth ranking for.
 ];
 
 /**

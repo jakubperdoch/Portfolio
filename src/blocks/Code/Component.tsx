@@ -10,7 +10,6 @@ export type CodeBlockProps = {
   code: string;
   language?: string | null;
   filename?: string | null;
-  /** Payload's block label; shown as a badge, e.g. "Illustrative example". */
   blockName?: string | null;
   showLineNumbers?: boolean | null;
   blockType: "code";

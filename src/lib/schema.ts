@@ -90,22 +90,14 @@ type CreativeWorkArgs = {
   locale: AppLocale;
   name: string;
   description: string;
-  /** Locale-agnostic route, e.g. `/projects/okeilo`. */
   path: string;
   image?: string;
-  /** Technologies used, surfaced as `keywords`. */
   keywords?: string[];
   datePublished?: string;
   dateModified?: string;
-  /** Live deployment of the project, if any. */
   sameAs?: string[];
 };
 
-/**
- * Per-project structured data. `CreativeWork` is the closest match for a case
- * study: it carries the author link that ties every project back to the
- * `Person` entity on the home page.
- */
 export function creativeWorkSchema({
   locale,
   name,

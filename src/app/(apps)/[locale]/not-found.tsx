@@ -1,21 +1,6 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
 import ErrorScreen from "@/components/Layout/ErrorScreen";
-
-// Rendered inside the localized layout, so the locale comes from the
-// surrounding request context rather than from route params — `not-found`
-// receives none. `notFound()` already injects `noindex` on its own.
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Metadata");
-
-  return {
-    title: t("notFound.title"),
-    description: t("notFound.description"),
-    robots: { index: false, follow: false },
-  };
-}
 
 export default function NotFound() {
   const t = useTranslations("NotFound");

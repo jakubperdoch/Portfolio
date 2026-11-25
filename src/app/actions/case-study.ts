@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { Project } from "@/payload-types";
 import config from "@payload-config";
 import { getPayload } from "payload";
@@ -40,7 +41,7 @@ export async function getCaseStudies({
   }
 }
 
-export async function getCaseStudy({ slug, locale }: { slug: string; locale: AppLocale }) {
+const findCaseStudy = cache(async (slug: string, locale: AppLocale) => {
   try {
     const payload = await getPayload({ config });
 
@@ -49,11 +50,35 @@ export async function getCaseStudy({ slug, locale }: { slug: string; locale: App
       where: { slug: { equals: slug } },
       locale,
       fallbackLocale: defaultLocale,
+      limit: 1,
     });
 
-    return { success: true, caseStudy: result.docs[0] };
+    return { success: true as const, caseStudy: result.docs[0] };
   } catch (error) {
     console.error("Error fetching case study:", error);
-    return { success: false, error: "Failed to fetch case study" };
+    return { success: false as const, error: "Failed to fetch case study" };
+  }
+});
+
+export async function getCaseStudy({ slug, locale }: { slug: string; locale: AppLocale }) {
+  return findCaseStudy(slug, locale);
+}
+
+export async function getCaseStudySlugs(): Promise<string[]> {
+  try {
+    const payload = await getPayload({ config });
+
+    const result = await payload.find({
+      collection: "projects",
+      limit: 200,
+      depth: 0,
+      pagination: false,
+      select: { slug: true },
+    });
+
+    return result.docs.map((doc) => doc.slug).filter(Boolean);
+  } catch (error) {
+    console.error("Error fetching case study slugs:", error);
+    return [];
   }
 }

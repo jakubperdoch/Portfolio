@@ -80,9 +80,6 @@ export default function Card({ caseStudy, index }: { caseStudy: Project; index: 
           >
             {caseStudy.title}
           </motion.h3>
-          {/* A single row of the first few technologies; the full stack lives
-              on the detail page. Order comes from the CMS, so the most telling
-              ones should be listed first there. */}
           <TechChips techs={caseStudy.techStack.map(({ tech }) => tech)} />
         </div>
 

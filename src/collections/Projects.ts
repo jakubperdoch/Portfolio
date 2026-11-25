@@ -1,5 +1,6 @@
 // collections/Projects.ts
 import type { CollectionConfig } from "payload";
+import { revalidateSiteAfterChange, revalidateSiteAfterDelete } from "@/hooks/revalidateSite";
 
 export const Projects: CollectionConfig = {
   slug: "projects",
@@ -299,5 +300,9 @@ export const Projects: CollectionConfig = {
       },
     },
   ],
+  hooks: {
+    afterChange: [revalidateSiteAfterChange],
+    afterDelete: [revalidateSiteAfterDelete],
+  },
   timestamps: true,
 };

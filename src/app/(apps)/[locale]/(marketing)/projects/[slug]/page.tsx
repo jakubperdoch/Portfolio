@@ -1,31 +1,34 @@
 import { notFound } from "next/navigation";
 import { AppLocale } from "@/i18n/routing";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import JsonLd from "@/lib/JsonLd";
 import { breadcrumbSchema, creativeWorkSchema } from "@/lib/schema";
 import ProjectDetailClient from "@/app/(apps)/[locale]/(marketing)/projects/[slug]/client";
 import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
-import { getCaseStudy } from "@/app/actions/case-study";
+import { getCaseStudy, getCaseStudySlugs } from "@/app/actions/case-study";
 import type { Project } from "@/payload-types";
 
 type ProjectDetailPageProps = {
   params: Promise<{ locale: AppLocale; slug: string }>;
 };
 
-/** Upload fields arrive either populated or as a bare id, depending on depth. */
 function imageURL(project: Project): string | undefined {
   const image = project.image;
   return image && typeof image === "object" ? (image.url ?? undefined) : undefined;
 }
 
+export async function generateStaticParams() {
+  const slugs = await getCaseStudySlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const result = await getCaseStudy({ slug, locale });
   const project = result.success ? result.caseStudy : undefined;
 
-  // Without a project there is nothing specific to describe, and the page
-  // itself 404s — fall back to the generic copy rather than inventing a title.
   if (!project) {
     const t = await getTranslations({ locale, namespace: "Metadata" });
 
@@ -45,14 +48,13 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
     path: `/projects/${slug}`,
     image: imageURL(project),
     type: "article",
-    // Private and draft work stays reachable by direct link but out of search
-    // results, the same way the listing marks it as not public.
     noIndex: project.visibility !== "public",
   });
 }
 
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Breadcrumbs" });
   const resultCaseStudy = await getCaseStudy({ slug, locale });
   const caseStudy =

@@ -1,5 +1,6 @@
 // collections/Skills.ts
 import type { CollectionConfig } from "payload";
+import { revalidateSiteAfterChange, revalidateSiteAfterDelete } from "@/hooks/revalidateSite";
 
 export const SkillCategories = [
   { label: "Frontend & Frameworks", value: "frontend-frameworks" },
@@ -56,8 +57,6 @@ export const Skills: CollectionConfig = {
           },
         },
         {
-          // Most entries are product names that stay identical, but the field
-          // is localized so an occasional translation is possible.
           name: "name",
           type: "text",
           required: true,
@@ -66,5 +65,9 @@ export const Skills: CollectionConfig = {
       ],
     },
   ],
+  hooks: {
+    afterChange: [revalidateSiteAfterChange],
+    afterDelete: [revalidateSiteAfterDelete],
+  },
   timestamps: true,
 };

@@ -1,5 +1,6 @@
 // collections/Experience.ts
 import type { CollectionConfig } from "payload";
+import { revalidateSiteAfterChange, revalidateSiteAfterDelete } from "@/hooks/revalidateSite";
 
 export const Experience: CollectionConfig = {
   slug: "experience",
@@ -163,5 +164,9 @@ export const Experience: CollectionConfig = {
       ],
     },
   ],
+  hooks: {
+    afterChange: [revalidateSiteAfterChange],
+    afterDelete: [revalidateSiteAfterDelete],
+  },
   timestamps: true,
 };
